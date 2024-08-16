@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6b3a016457669903424cb2540ac254cb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/css-ripple-effect@1.0.5/dist/ripple.min.css"/>
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6b3a016457669903424cb2540ac254cb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6b3a016457669903424cb2540ac254cb = L.map(
+                "map_6b3a016457669903424cb2540ac254cb",
+                {
+                    center: [42.41048199999999, 0.1383884],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e108e81de3f249a782f4556872ea0091 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_e108e81de3f249a782f4556872ea0091.addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+
+            var geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92 = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_bb8eb045a3b3aea65d8d155901f7ad92 = geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92["provider"];
+
+            var customGeocoder_geocoder_bb8eb045a3b3aea65d8d155901f7ad92 = L.Control.Geocoder[ geocoderName_geocoder_bb8eb045a3b3aea65d8d155901f7ad92 ](
+                geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92['providerOptions']
+            );
+            geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92["geocoder"] = customGeocoder_geocoder_bb8eb045a3b3aea65d8d155901f7ad92;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_bb8eb045a3b3aea65d8d155901f7ad92['zoom'] || map_6b3a016457669903424cb2540ac254cb.getZoom();
+                map_6b3a016457669903424cb2540ac254cb.setView(e.geocode.center, zoom);
+            }).addTo(map_6b3a016457669903424cb2540ac254cb);
+
+        
+    
+            var marker_f8372577c139f5c9fb67ab46f492c9a0 = L.marker(
+                [42.41048199999999, 0.1383884],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_01e0927a6d4de34a97c641e62e88c5b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f8372577c139f5c9fb67ab46f492c9a0.setIcon(icon_01e0927a6d4de34a97c641e62e88c5b2);
+        
+    
+        var popup_c9d6d56af1806bc2e99be7ca281e709d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_fa98c19ecbba7758eee67a9fa72bab01 = $(`<div id="html_fa98c19ecbba7758eee67a9fa72bab01" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 2505<br>                <strong>Centro:</strong> CEIP ASUNCIÓN PAÑART MONTANER AINSA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.41048199999999, 0.1383884]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c9d6d56af1806bc2e99be7ca281e709d.setContent(html_fa98c19ecbba7758eee67a9fa72bab01);
+            
+        
+
+        marker_f8372577c139f5c9fb67ab46f492c9a0.bindPopup(popup_c9d6d56af1806bc2e99be7ca281e709d)
+        ;
+
+        
+    
+    
+            var marker_5740c9a6c2de521d7638a7bfa4dae2bf = L.marker(
+                [41.8649478, 0.4606029],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_7cc37e458f3d4369723f29d6475e4e9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5740c9a6c2de521d7638a7bfa4dae2bf.setIcon(icon_7cc37e458f3d4369723f29d6475e4e9f);
+        
+    
+        var popup_99dd9664c91e13619d228b89c5211356 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bf07c65ca57a320a9a8e54c93ebe3ea2 = $(`<div id="html_bf07c65ca57a320a9a8e54c93ebe3ea2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1720<br>                <strong>Centro:</strong> CRA LA LLITERA ALBELDA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.8649478, 0.4606029]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_99dd9664c91e13619d228b89c5211356.setContent(html_bf07c65ca57a320a9a8e54c93ebe3ea2);
+            
+        
+
+        marker_5740c9a6c2de521d7638a7bfa4dae2bf.bindPopup(popup_99dd9664c91e13619d228b89c5211356)
+        ;
+
+        
+    
+    
+            var marker_cc77fc4fb29034ecafc450f375dd2966 = L.marker(
+                [41.7212086, 0.1095413],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_a4019012ad1ce2ee81c7e186c1bc9a37 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cc77fc4fb29034ecafc450f375dd2966.setIcon(icon_a4019012ad1ce2ee81c7e186c1bc9a37);
+        
+    
+        var popup_98111e909047938534ce7972c3b0d708 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_679dde335ec96294d598fa20cc56973e = $(`<div id="html_679dde335ec96294d598fa20cc56973e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6326<br>                <strong>Centro:</strong> CEIP JOSÉ MANUEL BLECUA ALCOLEA DE CINCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Música<br>                <strong>Coordenadas:</strong> [41.7212086, 0.1095413]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Música.                </div>`)[0];
+                popup_98111e909047938534ce7972c3b0d708.setContent(html_679dde335ec96294d598fa20cc56973e);
+            
+        
+
+        marker_cc77fc4fb29034ecafc450f375dd2966.bindPopup(popup_98111e909047938534ce7972c3b0d708)
+        ;
+
+        
+    
+    
+            var marker_08bc102ad99e8c7917f169535e9dad3b = L.marker(
+                [41.8003586, 0.4124048],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_74a5ba015af8e002daa5452bc2def28f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_08bc102ad99e8c7917f169535e9dad3b.setIcon(icon_74a5ba015af8e002daa5452bc2def28f);
+        
+    
+        var popup_e536babf11c7e0f0c04188c7661bd029 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_333978a8e774ce9c994838154bebb8d2 = $(`<div id="html_333978a8e774ce9c994838154bebb8d2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 498<br>                <strong>Centro:</strong> CRA DE ALTORRICÓN ALTORRICON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Educación Infantil<br>                <strong>Coordenadas:</strong> [41.8003586, 0.4124048]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Infantil.                </div>`)[0];
+                popup_e536babf11c7e0f0c04188c7661bd029.setContent(html_333978a8e774ce9c994838154bebb8d2);
+            
+        
+
+        marker_08bc102ad99e8c7917f169535e9dad3b.bindPopup(popup_e536babf11c7e0f0c04188c7661bd029)
+        ;
+
+        
+    
+    
+            var marker_754e84b8d420ba18446d3fe0332152d8 = L.marker(
+                [42.033222, 0.1217132],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_db78b0fa111033c1ba23cc39a31b9f8d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_754e84b8d420ba18446d3fe0332152d8.setIcon(icon_db78b0fa111033c1ba23cc39a31b9f8d);
+        
+    
+        var popup_c65e09253408c63c2edb03c775e808a3 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bc23492c419838108dd8a3e55d50aa84 = $(`<div id="html_bc23492c419838108dd8a3e55d50aa84" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1705<br>                <strong>Centro:</strong> CEIP LA MERCED BARBASTRO (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.033222, 0.1217132]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c65e09253408c63c2edb03c775e808a3.setContent(html_bc23492c419838108dd8a3e55d50aa84);
+            
+        
+
+        marker_754e84b8d420ba18446d3fe0332152d8.bindPopup(popup_c65e09253408c63c2edb03c775e808a3)
+        ;
+
+        
+    
+    
+            var marker_1bd4dc9bf5a1481e7910d2a2da18bfb5 = L.marker(
+                [42.0392038, 0.127244],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_3c90fe5dd5e1774802c812e9e3969218 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1bd4dc9bf5a1481e7910d2a2da18bfb5.setIcon(icon_3c90fe5dd5e1774802c812e9e3969218);
+        
+    
+        var popup_3d44e59e790875e39e209ada35a04c77 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_173faefc58256c47e41e0cdcece817cd = $(`<div id="html_173faefc58256c47e41e0cdcece817cd" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1696<br>                <strong>Centro:</strong> CEIP PEDRO I BARBASTRO (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.0392038, 0.127244]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_3d44e59e790875e39e209ada35a04c77.setContent(html_173faefc58256c47e41e0cdcece817cd);
+            
+        
+
+        marker_1bd4dc9bf5a1481e7910d2a2da18bfb5.bindPopup(popup_3d44e59e790875e39e209ada35a04c77)
+        ;
+
+        
+    
+    
+            var marker_a25e0eb331ace1af09d9b9b45666f8db = L.marker(
+                [42.6037423, 0.5225831],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_a81e5e166abacaa42b51916f22b0d638 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a25e0eb331ace1af09d9b9b45666f8db.setIcon(icon_a81e5e166abacaa42b51916f22b0d638);
+        
+    
+        var popup_db964b29068fd626358fa109f7ab1007 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_99b7caa87e4aeeb8c77c4f93136f012b = $(`<div id="html_99b7caa87e4aeeb8c77c4f93136f012b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6321<br>                <strong>Centro:</strong> CRA ALTA RIBAGORZA BENASQUE (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.6037423, 0.5225831]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_db964b29068fd626358fa109f7ab1007.setContent(html_99b7caa87e4aeeb8c77c4f93136f012b);
+            
+        
+
+        marker_a25e0eb331ace1af09d9b9b45666f8db.bindPopup(popup_db964b29068fd626358fa109f7ab1007)
+        ;
+
+        
+    
+    
+            var marker_d77d755372f0ddf6be8a6a0263b9883b = L.marker(
+                [42.63321320000001, 0.2181676],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_8dba4a353098c9fa948689f769aeaeda = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d77d755372f0ddf6be8a6a0263b9883b.setIcon(icon_8dba4a353098c9fa948689f769aeaeda);
+        
+    
+        var popup_58fa3c12051bc702f9aa05c2516a5c57 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e16e19d11911d6717c1ac22e2d4779be = $(`<div id="html_e16e19d11911d6717c1ac22e2d4779be" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 446<br>                <strong>Centro:</strong> CRA CINCA-CINQUETA BIELSA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.63321320000001, 0.2181676]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_58fa3c12051bc702f9aa05c2516a5c57.setContent(html_e16e19d11911d6717c1ac22e2d4779be);
+            
+        
+
+        marker_d77d755372f0ddf6be8a6a0263b9883b.bindPopup(popup_58fa3c12051bc702f9aa05c2516a5c57)
+        ;
+
+        
+    
+    
+            var marker_2146fb177bde9f100ede97dd5f640b4d = L.marker(
+                [41.8246324, 0.1997129],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_46c31f9a78ae2bd062edea6acb2fb93d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2146fb177bde9f100ede97dd5f640b4d.setIcon(icon_46c31f9a78ae2bd062edea6acb2fb93d);
+        
+    
+        var popup_4ab1efc2206a2450f53c17cce738934a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6c0479d353f159b2cda316454b4e2ff0 = $(`<div id="html_6c0479d353f159b2cda316454b4e2ff0" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 464<br>                <strong>Centro:</strong> CRA EL TRÉBOL BINACED (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [41.8246324, 0.1997129]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_4ab1efc2206a2450f53c17cce738934a.setContent(html_6c0479d353f159b2cda316454b4e2ff0);
+            
+        
+
+        marker_2146fb177bde9f100ede97dd5f640b4d.bindPopup(popup_4ab1efc2206a2450f53c17cce738934a)
+        ;
+
+        
+    
+    
+            var marker_d399fa6977e9d35b62fb174e8d63cccc = L.marker(
+                [42.0108345, 0.2615711],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_0fbd61e620c38957463b2e2f23e30c36 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d399fa6977e9d35b62fb174e8d63cccc.setIcon(icon_0fbd61e620c38957463b2e2f23e30c36);
+        
+    
+        var popup_bb583c866cba3969ec312d24ce7d3742 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9ceba7ac647bf1c53be281ff84327219 = $(`<div id="html_9ceba7ac647bf1c53be281ff84327219" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 645<br>                <strong>Centro:</strong> CRA LA CANDELETA FONZ (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.0108345, 0.2615711]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_bb583c866cba3969ec312d24ce7d3742.setContent(html_9ceba7ac647bf1c53be281ff84327219);
+            
+        
+
+        marker_d399fa6977e9d35b62fb174e8d63cccc.bindPopup(popup_bb583c866cba3969ec312d24ce7d3742)
+        ;
+
+        
+    
+    
+            var marker_c85fb18520ae942e0aa5533b9478908b = L.marker(
+                [41.5202713, 0.3318591],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_a5d2af012022ad1df5df6dfc686235ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c85fb18520ae942e0aa5533b9478908b.setIcon(icon_a5d2af012022ad1df5df6dfc686235ad);
+        
+    
+        var popup_061b43a680663b77fcf35b0251014716 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_cde50c9e7f7efedaf47f604be55430ba = $(`<div id="html_cde50c9e7f7efedaf47f604be55430ba" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 992<br>                <strong>Centro:</strong> CEIP MIGUEL SERVET FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.5202713, 0.3318591]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_061b43a680663b77fcf35b0251014716.setContent(html_cde50c9e7f7efedaf47f604be55430ba);
+            
+        
+
+        marker_c85fb18520ae942e0aa5533b9478908b.bindPopup(popup_061b43a680663b77fcf35b0251014716)
+        ;
+
+        
+    
+    
+            var marker_469bb5f114face04f6477c8342dda286 = L.marker(
+                [41.5202713, 0.3318591],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_03f3246dcb4877ebe2535bab41179fa6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_469bb5f114face04f6477c8342dda286.setIcon(icon_03f3246dcb4877ebe2535bab41179fa6);
+        
+    
+        var popup_80acfe66078b6d7a965dced3e276b055 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5512d3c9f6679c997c22bd4e6e376087 = $(`<div id="html_5512d3c9f6679c997c22bd4e6e376087" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1832<br>                <strong>Centro:</strong> CEIP MIGUEL SERVET FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> C1 Inglés Educación física<br>                <strong>Coordenadas:</strong> [41.5202713, 0.3318591]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Física. Se requiere titulación de nivel C1 o superior (INGLES)                </div>`)[0];
+                popup_80acfe66078b6d7a965dced3e276b055.setContent(html_5512d3c9f6679c997c22bd4e6e376087);
+            
+        
+
+        marker_469bb5f114face04f6477c8342dda286.bindPopup(popup_80acfe66078b6d7a965dced3e276b055)
+        ;
+
+        
+    
+    
+            var marker_f0b117d08aba5dda6cb7b21344bf80dd = L.marker(
+                [41.5227928, 0.3418659],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_cc658d7ba57390e0dfadd6df4f4c7aae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f0b117d08aba5dda6cb7b21344bf80dd.setIcon(icon_cc658d7ba57390e0dfadd6df4f4c7aae);
+        
+    
+        var popup_425e1cc2134eced9b947febed9db3066 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_42f0aad788cea3e43f12a90e31318e8d = $(`<div id="html_42f0aad788cea3e43f12a90e31318e8d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6343<br>                <strong>Centro:</strong> CEIP SAN JOSÉ DE CALASANZ FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.5227928, 0.3418659]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_425e1cc2134eced9b947febed9db3066.setContent(html_42f0aad788cea3e43f12a90e31318e8d);
+            
+        
+
+        marker_f0b117d08aba5dda6cb7b21344bf80dd.bindPopup(popup_425e1cc2134eced9b947febed9db3066)
+        ;
+
+        
+    
+    
+            var marker_77f9d92ca297d7ebfeaae1b93355ce90 = L.marker(
+                [42.1308648, -0.4173625],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_94b74414474e85e11313e13ad2ebf355 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_77f9d92ca297d7ebfeaae1b93355ce90.setIcon(icon_94b74414474e85e11313e13ad2ebf355);
+        
+    
+        var popup_feb4c6a80b8cfd3c6e71ec8e8d97f5d4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0126ba17b17a045fb43bf72d333d73cd = $(`<div id="html_0126ba17b17a045fb43bf72d333d73cd" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 534<br>                <strong>Centro:</strong> CEIP ALCORAZ HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.1308648, -0.4173625]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_feb4c6a80b8cfd3c6e71ec8e8d97f5d4.setContent(html_0126ba17b17a045fb43bf72d333d73cd);
+            
+        
+
+        marker_77f9d92ca297d7ebfeaae1b93355ce90.bindPopup(popup_feb4c6a80b8cfd3c6e71ec8e8d97f5d4)
+        ;
+
+        
+    
+    
+            var marker_2a79f4907482cc9ab53ab2340919b443 = L.marker(
+                [42.14196099999999, -0.3965649],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_fa23ee58acaa936d330dd5cdc3063ac9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2a79f4907482cc9ab53ab2340919b443.setIcon(icon_fa23ee58acaa936d330dd5cdc3063ac9);
+        
+    
+        var popup_7728ed25836c6b73d4c4b51c19403b8c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ad6df25d7af7a4edfec332d339471e2e = $(`<div id="html_ad6df25d7af7a4edfec332d339471e2e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 808<br>                <strong>Centro:</strong> CEIP PÍO XII HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.14196099999999, -0.3965649]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7728ed25836c6b73d4c4b51c19403b8c.setContent(html_ad6df25d7af7a4edfec332d339471e2e);
+            
+        
+
+        marker_2a79f4907482cc9ab53ab2340919b443.bindPopup(popup_7728ed25836c6b73d4c4b51c19403b8c)
+        ;
+
+        
+    
+    
+            var marker_0896143f97c4b412416da0668e35cf72 = L.marker(
+                [42.14196099999999, -0.3965649],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_c3d6e481ac1ae545b23089744202fc98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0896143f97c4b412416da0668e35cf72.setIcon(icon_c3d6e481ac1ae545b23089744202fc98);
+        
+    
+        var popup_796f4f22803a098324eec877becb4fd3 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_49ffe74d76d21fa3b5b5f51284f3e428 = $(`<div id="html_49ffe74d76d21fa3b5b5f51284f3e428" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 802<br>                <strong>Centro:</strong> CEIP PÍO XII HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje en aula TEA Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [42.14196099999999, -0.3965649]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_796f4f22803a098324eec877becb4fd3.setContent(html_49ffe74d76d21fa3b5b5f51284f3e428);
+            
+        
+
+        marker_0896143f97c4b412416da0668e35cf72.bindPopup(popup_796f4f22803a098324eec877becb4fd3)
+        ;
+
+        
+    
+    
+            var marker_d6d3b30ef4f94d20274704f1fbbdb137 = L.marker(
+                [42.1301293, -0.4015361000000001],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_56e1a949ca966fdaef8a9bb0f383ca7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d6d3b30ef4f94d20274704f1fbbdb137.setIcon(icon_56e1a949ca966fdaef8a9bb0f383ca7b);
+        
+    
+        var popup_4fe5ca9b62d087002349a85893ffe7c5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_df3226adb5d27d53dd0f2c13538ec81b = $(`<div id="html_df3226adb5d27d53dd0f2c13538ec81b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 505<br>                <strong>Centro:</strong> CEIP PIRINEOS-PYRÉNÉES HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.1301293, -0.4015361000000001]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_4fe5ca9b62d087002349a85893ffe7c5.setContent(html_df3226adb5d27d53dd0f2c13538ec81b);
+            
+        
+
+        marker_d6d3b30ef4f94d20274704f1fbbdb137.bindPopup(popup_4fe5ca9b62d087002349a85893ffe7c5)
+        ;
+
+        
+    
+    
+            var marker_6b3147d761465da5fcb5fd09a6f46c2e = L.marker(
+                [42.14159069999999, -0.4075114],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_518d39c99d925cee5051833b769cddb3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6b3147d761465da5fcb5fd09a6f46c2e.setIcon(icon_518d39c99d925cee5051833b769cddb3);
+        
+    
+        var popup_d67896bd0d58d6fb6a59e6176e7907c7 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1a9f4838c918a10fb5d332082ac6d407 = $(`<div id="html_1a9f4838c918a10fb5d332082ac6d407" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 772<br>                <strong>Centro:</strong> CEIP SAN VICENTE HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [42.14159069999999, -0.4075114]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_d67896bd0d58d6fb6a59e6176e7907c7.setContent(html_1a9f4838c918a10fb5d332082ac6d407);
+            
+        
+
+        marker_6b3147d761465da5fcb5fd09a6f46c2e.bindPopup(popup_d67896bd0d58d6fb6a59e6176e7907c7)
+        ;
+
+        
+    
+    
+            var marker_47367198fd2a1596d1794c5464dd6a5f = L.marker(
+                [41.9111878, 0.1825772],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_9de5218fc85b93f635f1b658b4f67582 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_47367198fd2a1596d1794c5464dd6a5f.setIcon(icon_9de5218fc85b93f635f1b658b4f67582);
+        
+    
+        var popup_a787da0c0fdb75113e6548c5fae3f476 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_aed8cc4ea0b09d8dad98f85cfc73d75f = $(`<div id="html_aed8cc4ea0b09d8dad98f85cfc73d75f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1766<br>                <strong>Centro:</strong> CEE LA ALEGRÍA MONZON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [41.9111878, 0.1825772]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_a787da0c0fdb75113e6548c5fae3f476.setContent(html_aed8cc4ea0b09d8dad98f85cfc73d75f);
+            
+        
+
+        marker_47367198fd2a1596d1794c5464dd6a5f.bindPopup(popup_a787da0c0fdb75113e6548c5fae3f476)
+        ;
+
+        
+    
+    
+            var marker_6327ff4c8593fbcdbdfc8d0549c4e9a1 = L.marker(
+                [41.9111878, 0.1825772],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_1abab0b6634fbd841fbc03754a9ce51e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6327ff4c8593fbcdbdfc8d0549c4e9a1.setIcon(icon_1abab0b6634fbd841fbc03754a9ce51e);
+        
+    
+        var popup_69e7866cd9cad2b9506189218b95aa0c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_4ebe88f4973c50a85268683f2f4324c0 = $(`<div id="html_4ebe88f4973c50a85268683f2f4324c0" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1767<br>                <strong>Centro:</strong> CEE LA ALEGRÍA MONZON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [41.9111878, 0.1825772]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_69e7866cd9cad2b9506189218b95aa0c.setContent(html_4ebe88f4973c50a85268683f2f4324c0);
+            
+        
+
+        marker_6327ff4c8593fbcdbdfc8d0549c4e9a1.bindPopup(popup_69e7866cd9cad2b9506189218b95aa0c)
+        ;
+
+        
+    
+    
+            var marker_87644962b610c08115f5e9ec12016508 = L.marker(
+                [41.9111878, 0.1825772],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_294fdea8dd01ab3ba05802f022706fca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_87644962b610c08115f5e9ec12016508.setIcon(icon_294fdea8dd01ab3ba05802f022706fca);
+        
+    
+        var popup_b76df9c5163e21a959cf54e6209cac52 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0cde0b6e274cd1e9d6a22a0cc497b9ba = $(`<div id="html_0cde0b6e274cd1e9d6a22a0cc497b9ba" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 3271<br>                <strong>Centro:</strong> CEE LA ALEGRÍA MONZON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> [41.9111878, 0.1825772]<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_b76df9c5163e21a959cf54e6209cac52.setContent(html_0cde0b6e274cd1e9d6a22a0cc497b9ba);
+            
+        
+
+        marker_87644962b610c08115f5e9ec12016508.bindPopup(popup_b76df9c5163e21a959cf54e6209cac52)
+        ;
+
+        
+    
+    
+            var marker_a8d3fa8568ae9640c95d43573827283c = L.marker(
+                [41.9120637, 0.1930841],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_60d87f9d0226dd66b4562970b5c7fe2e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a8d3fa8568ae9640c95d43573827283c.setIcon(icon_60d87f9d0226dd66b4562970b5c7fe2e);
+        
+    
+        var popup_7daa4dc6b87960e56dc69b93153380e4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b0b896d13ad5a7e3dc7156ac6b52edd7 = $(`<div id="html_b0b896d13ad5a7e3dc7156ac6b52edd7" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1628<br>                <strong>Centro:</strong> CEIP JOAQUÍN COSTA MONZON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Inglés<br>                <strong>Coordenadas:</strong> [41.9120637, 0.1930841]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Inglés o bien un B2 por ese idioma.                </div>`)[0];
+                popup_7daa4dc6b87960e56dc69b93153380e4.setContent(html_b0b896d13ad5a7e3dc7156ac6b52edd7);
+            
+        
+
+        marker_a8d3fa8568ae9640c95d43573827283c.bindPopup(popup_7daa4dc6b87960e56dc69b93153380e4)
+        ;
+
+        
+    
+    
+            var marker_b606bcaaf7e0da07bf2d3c7f1a4ef3a4 = L.marker(
+                [41.9009784, 0.1824016],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_58efc963f0aded55552d9081fa64d905 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b606bcaaf7e0da07bf2d3c7f1a4ef3a4.setIcon(icon_58efc963f0aded55552d9081fa64d905);
+        
+    
+        var popup_a40839359e6fa990eb02242a7f7f0a81 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b5fe19c2ef1597bb6d2de4ecf4d1c417 = $(`<div id="html_b5fe19c2ef1597bb6d2de4ecf4d1c417" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 1673<br>                <strong>Centro:</strong> CEIP MONZÓN III MONZON (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje en aula TEA Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.9009784, 0.1824016]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_a40839359e6fa990eb02242a7f7f0a81.setContent(html_b5fe19c2ef1597bb6d2de4ecf4d1c417);
+            
+        
+
+        marker_b606bcaaf7e0da07bf2d3c7f1a4ef3a4.bindPopup(popup_a40839359e6fa990eb02242a7f7f0a81)
+        ;
+
+        
+    
+    
+            var marker_9fb7732c25f26c93fddb1c227bc16ca5 = L.marker(
+                [41.5017116, -0.0379318],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_41690736541b24da6847f8f56490a07e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9fb7732c25f26c93fddb1c227bc16ca5.setIcon(icon_41690736541b24da6847f8f56490a07e);
+        
+    
+        var popup_778a42b91eab08ead73a33194de01d08 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f1d75fdcf13a9b11ab5b4a127be2556b = $(`<div id="html_f1d75fdcf13a9b11ab5b4a127be2556b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 865<br>                <strong>Centro:</strong> CRA MONTESNEGROS PEÑALBA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.5017116, -0.0379318]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_778a42b91eab08ead73a33194de01d08.setContent(html_f1d75fdcf13a9b11ab5b4a127be2556b);
+            
+        
+
+        marker_9fb7732c25f26c93fddb1c227bc16ca5.bindPopup(popup_778a42b91eab08ead73a33194de01d08)
+        ;
+
+        
+    
+    
+            var marker_f3ecfde2ac5f4d2374e1cdc585ddce92 = L.marker(
+                [41.869964, -0.462401],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_64f451e34f1b22e5385d32e3725b0710 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f3ecfde2ac5f4d2374e1cdc585ddce92.setIcon(icon_64f451e34f1b22e5385d32e3725b0710);
+        
+    
+        var popup_09e04e4c23a4770647774043450164d4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d95934e420e29a55ed903ca08b82656d = $(`<div id="html_d95934e420e29a55ed903ca08b82656d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 866<br>                <strong>Centro:</strong> CRA LA SABINA ROBRES (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> [41.869964, -0.462401]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_09e04e4c23a4770647774043450164d4.setContent(html_d95934e420e29a55ed903ca08b82656d);
+            
+        
+
+        marker_f3ecfde2ac5f4d2374e1cdc585ddce92.bindPopup(popup_09e04e4c23a4770647774043450164d4)
+        ;
+
+        
+    
+    
+            var marker_c566005c7c9394a74cfc289ba98a6163 = L.marker(
+                [42.5026187, -0.3610133],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_d9875067f80bf5bad68deb51b57015a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c566005c7c9394a74cfc289ba98a6163.setIcon(icon_d9875067f80bf5bad68deb51b57015a9);
+        
+    
+        var popup_0ecf567f5e1fc06ba77316272b34bd91 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_3a0806491c89849f75293c75592dda2c = $(`<div id="html_3a0806491c89849f75293c75592dda2c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6353<br>                <strong>Centro:</strong> CEIP PUENTE SARDAS SABIÑANIGO (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Educación física<br>                <strong>Coordenadas:</strong> [42.5026187, -0.3610133]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Física.                </div>`)[0];
+                popup_0ecf567f5e1fc06ba77316272b34bd91.setContent(html_3a0806491c89849f75293c75592dda2c);
+            
+        
+
+        marker_c566005c7c9394a74cfc289ba98a6163.bindPopup(popup_0ecf567f5e1fc06ba77316272b34bd91)
+        ;
+
+        
+    
+    
+            var marker_74d0ef0a66253a649c642c1b17ed4b2d = L.marker(
+                [41.86391829999999, 0.4263687],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_d674bc580ff65ea30ed49dd71306d944 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_74d0ef0a66253a649c642c1b17ed4b2d.setIcon(icon_d674bc580ff65ea30ed49dd71306d944);
+        
+    
+        var popup_7601c66eddcb855775a9d56b8cddc7b2 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_12bc4589aa2b743d88b863ec925601c3 = $(`<div id="html_12bc4589aa2b743d88b863ec925601c3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 891<br>                <strong>Centro:</strong> CEIP SAN MIGUEL TAMARITE DE LITERA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Primaria<br>                <strong>Coordenadas:</strong> [41.86391829999999, 0.4263687]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Primaria.                </div>`)[0];
+                popup_7601c66eddcb855775a9d56b8cddc7b2.setContent(html_12bc4589aa2b743d88b863ec925601c3);
+            
+        
+
+        marker_74d0ef0a66253a649c642c1b17ed4b2d.bindPopup(popup_7601c66eddcb855775a9d56b8cddc7b2)
+        ;
+
+        
+    
+    
+            var marker_61d8e170e0ba994be2ce5c7b805aabfe = L.marker(
+                [41.863023, 0.4269631],
+                {"tags": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE", "Curso Completo", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var icon_dec62e9706c67e76639bfc438f8d61eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_61d8e170e0ba994be2ce5c7b805aabfe.setIcon(icon_dec62e9706c67e76639bfc438f8d61eb);
+        
+    
+        var popup_84002ed72c4b45f1926dce4ca03b4890 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_eca8dfe62c446cb8a005de188d371cfc = $(`<div id="html_eca8dfe62c446cb8a005de188d371cfc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6577<br>                <strong>Centro:</strong> IES LA LLITERA TAMARITE DE LITERA (HUESCA)<br>                <strong>Especialidad:</strong> MAESTROS AL - AUDICIÓN Y LENGUAJE<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje<br>                <strong>Coordenadas:</strong> [41.863023, 0.4269631]<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Audición y Lenguaje.                </div>`)[0];
+                popup_84002ed72c4b45f1926dce4ca03b4890.setContent(html_eca8dfe62c446cb8a005de188d371cfc);
+            
+        
+
+        marker_61d8e170e0ba994be2ce5c7b805aabfe.bindPopup(popup_84002ed72c4b45f1926dce4ca03b4890)
+        ;
+
+        
+    
+    
+            var tag_filter_button_b3848c71f6857678606b969ee0707f16 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Completa"], "filterOnEveryClick": true, "icon": "glyphicon-time", "openPopupOnHover": false}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var tag_filter_button_3f038c5cb9bb63cbf2df99e1f3f2c96a = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["MAESTROS AL - AUDICI\u00d3N Y LENGUAJE"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var tag_filter_button_966f8e4ff300b8ab1b839d5f5d07c9cb = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Curso Completo"], "filterOnEveryClick": true, "icon": "glyphicon-calendar", "openPopupOnHover": false}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+    
+            var tag_filter_button_062ea3f97df8cb76c08db8b9d3a2fa2f = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["De Cupo Sin titular", "Comisi\u00f3n Servicio docente (reserva titular)", "De Plantilla Definitiva Sin Titular"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_6b3a016457669903424cb2540ac254cb);
+        
+</script>
+</html>
