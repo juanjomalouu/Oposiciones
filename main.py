@@ -220,6 +220,7 @@ if __name__ == '__main__':
     if os.path.exists(informationFilePath):
         print("Ya existe un archivo que leer")
         locations = readFile(informationFilePath)
+        aaa
     else:
         print("No existe archivo, leyendo el pdf para parsearlo")
         text = extract_text_from_pdf(pdf_path)
