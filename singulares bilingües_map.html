@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_da3556b4d3ce5e814682ca48b08f9a32 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/css-ripple-effect@1.0.5/dist/ripple.min.css"/>
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_da3556b4d3ce5e814682ca48b08f9a32" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_da3556b4d3ce5e814682ca48b08f9a32 = L.map(
+                "map_da3556b4d3ce5e814682ca48b08f9a32",
+                {
+                    center: [41.84692159999999, 0.2959172],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a68b3b50a9ae1823cc00921f5ad2b06a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a68b3b50a9ae1823cc00921f5ad2b06a.addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+
+            var geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645 = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_355e9cbb7e77743ba7a328ef4d282645 = geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645["provider"];
+
+            var customGeocoder_geocoder_355e9cbb7e77743ba7a328ef4d282645 = L.Control.Geocoder[ geocoderName_geocoder_355e9cbb7e77743ba7a328ef4d282645 ](
+                geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645['providerOptions']
+            );
+            geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645["geocoder"] = customGeocoder_geocoder_355e9cbb7e77743ba7a328ef4d282645;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_355e9cbb7e77743ba7a328ef4d282645['zoom'] || map_da3556b4d3ce5e814682ca48b08f9a32.getZoom();
+                map_da3556b4d3ce5e814682ca48b08f9a32.setView(e.geocode.center, zoom);
+            }).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+
+        
+    
+            var marker_ac2f170793f1812f3b5f93b4616313d4 = L.marker(
+                [41.84692159999999, 0.2959172],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_b426d4d5b07c6b74542160cf2d3670c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ac2f170793f1812f3b5f93b4616313d4.setIcon(icon_b426d4d5b07c6b74542160cf2d3670c3);
+        
+    
+        var popup_b3e49cd0bf570113b1e2bf9c6d9178a1 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_a3a8c9ce76a0a37d5c09134138b5210b = $(`<div id="html_a3a8c9ce76a0a37d5c09134138b5210b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7704<br>                <strong>Centro:</strong> CEIP VÍCTOR MENDOZA MENDOZA BINEFAR (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.84692159999999, 0.2959172)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_b3e49cd0bf570113b1e2bf9c6d9178a1.setContent(html_a3a8c9ce76a0a37d5c09134138b5210b);
+            
+        
+
+        marker_ac2f170793f1812f3b5f93b4616313d4.bindPopup(popup_b3e49cd0bf570113b1e2bf9c6d9178a1)
+        ;
+
+        
+    
+    
+            var marker_5e85b7c48a505ed16e6c47854a46acde = L.marker(
+                [41.84692159999999, 0.2959172],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_a3775b3f1684b66e74dccd54566433f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5e85b7c48a505ed16e6c47854a46acde.setIcon(icon_a3775b3f1684b66e74dccd54566433f3);
+        
+    
+        var popup_7e3cd297a04b4fbb1215a649dd1c5735 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9257e0d07271e2ce0f7689903618c9c5 = $(`<div id="html_9257e0d07271e2ce0f7689903618c9c5" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7723<br>                <strong>Centro:</strong> CEIP VÍCTOR MENDOZA MENDOZA BINEFAR (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.84692159999999, 0.2959172)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_7e3cd297a04b4fbb1215a649dd1c5735.setContent(html_9257e0d07271e2ce0f7689903618c9c5);
+            
+        
+
+        marker_5e85b7c48a505ed16e6c47854a46acde.bindPopup(popup_7e3cd297a04b4fbb1215a649dd1c5735)
+        ;
+
+        
+    
+    
+            var marker_9ddcbaa0cba03e6e500dff83f0e0ef84 = L.marker(
+                [41.8832651, 0.1433556],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_a19a929cce0a46a9978fc53ce385b573 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9ddcbaa0cba03e6e500dff83f0e0ef84.setIcon(icon_a19a929cce0a46a9978fc53ce385b573);
+        
+    
+        var popup_81994866131ba0b6f80dd598944aab39 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_86e6911d97c15210efce97e513396eca = $(`<div id="html_86e6911d97c15210efce97e513396eca" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7730<br>                <strong>Centro:</strong> CRA ARCO IRIS CONCHEL (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.8832651, 0.1433556)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_81994866131ba0b6f80dd598944aab39.setContent(html_86e6911d97c15210efce97e513396eca);
+            
+        
+
+        marker_9ddcbaa0cba03e6e500dff83f0e0ef84.bindPopup(popup_81994866131ba0b6f80dd598944aab39)
+        ;
+
+        
+    
+    
+            var marker_8b1323883e14e73013a4722a05818a2a = L.marker(
+                [41.5227928, 0.3418659],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_8e04587c96f31bcc663cdaea749dd3fe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8b1323883e14e73013a4722a05818a2a.setIcon(icon_8e04587c96f31bcc663cdaea749dd3fe);
+        
+    
+        var popup_9a9fe915fa055b075833bb071b33e416 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e6325147a6658d1c237f81a549e342d0 = $(`<div id="html_e6325147a6658d1c237f81a549e342d0" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7804<br>                <strong>Centro:</strong> CEIP SAN JOSÉ DE CALASANZ FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.5227928, 0.3418659)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_9a9fe915fa055b075833bb071b33e416.setContent(html_e6325147a6658d1c237f81a549e342d0);
+            
+        
+
+        marker_8b1323883e14e73013a4722a05818a2a.bindPopup(popup_9a9fe915fa055b075833bb071b33e416)
+        ;
+
+        
+    
+    
+            var marker_4bb17e7d0342b08ba28f4f5ba65df85f = L.marker(
+                [42.1381907, -0.4117305000000001],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_ac654edd037656f476e7969d3db168d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4bb17e7d0342b08ba28f4f5ba65df85f.setIcon(icon_ac654edd037656f476e7969d3db168d1);
+        
+    
+        var popup_d10eb6d8fb6f4a0ee5020ce95552167d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_aa550be0109593b09f5c85dd4d6010c1 = $(`<div id="html_aa550be0109593b09f5c85dd4d6010c1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7747<br>                <strong>Centro:</strong> CEIP EL PARQUE HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés Música<br>                <strong>Coordenadas:</strong> (42.1381907, -0.4117305000000001)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite. Se requiere habilitación o titulación habilitante en Música.                </div>`)[0];
+                popup_d10eb6d8fb6f4a0ee5020ce95552167d.setContent(html_aa550be0109593b09f5c85dd4d6010c1);
+            
+        
+
+        marker_4bb17e7d0342b08ba28f4f5ba65df85f.bindPopup(popup_d10eb6d8fb6f4a0ee5020ce95552167d)
+        ;
+
+        
+    
+    
+            var marker_575b9a6152eef367abac456d9be7a308 = L.marker(
+                [42.1296322, -0.4079897],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_14406dfb01d80450d40e656a5f15a5e3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_575b9a6152eef367abac456d9be7a308.setIcon(icon_14406dfb01d80450d40e656a5f15a5e3);
+        
+    
+        var popup_8215d90076dfdfd3e4d5b7c5f8de5e6c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_dbb1dc9e56968fea84e5a68e202f38ad = $(`<div id="html_dbb1dc9e56968fea84e5a68e202f38ad" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7803<br>                <strong>Centro:</strong> CEIP PEDRO J. RUBIO HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (42.1296322, -0.4079897)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_8215d90076dfdfd3e4d5b7c5f8de5e6c.setContent(html_dbb1dc9e56968fea84e5a68e202f38ad);
+            
+        
+
+        marker_575b9a6152eef367abac456d9be7a308.bindPopup(popup_8215d90076dfdfd3e4d5b7c5f8de5e6c)
+        ;
+
+        
+    
+    
+            var marker_853523cf0417d67db7efddb2a17dd97d = L.marker(
+                [42.5677467, -0.5544882],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_005951dcc69f6755258cac2e5ae30098 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_853523cf0417d67db7efddb2a17dd97d.setIcon(icon_005951dcc69f6755258cac2e5ae30098);
+        
+    
+        var popup_ae51ab2f8457667168a848d2c642ae91 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7acc14c88e5487a779993bf3b3d53f5c = $(`<div id="html_7acc14c88e5487a779993bf3b3d53f5c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7865<br>                <strong>Centro:</strong> CEIP SAN JUAN DE LA PEÑA JACA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (42.5677467, -0.5544882)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_ae51ab2f8457667168a848d2c642ae91.setContent(html_7acc14c88e5487a779993bf3b3d53f5c);
+            
+        
+
+        marker_853523cf0417d67db7efddb2a17dd97d.bindPopup(popup_ae51ab2f8457667168a848d2c642ae91)
+        ;
+
+        
+    
+    
+            var marker_12780a5a0ae3bfda795e87ae1fefaa5a = L.marker(
+                [41.9009784, 0.1824016],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_a45b78b9d7d1fc2172d3ccf2536f0118 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_12780a5a0ae3bfda795e87ae1fefaa5a.setIcon(icon_a45b78b9d7d1fc2172d3ccf2536f0118);
+        
+    
+        var popup_3ba1cdbd210664edd1abe1f0d6669171 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_39f8d79381a7f6ee68df04cc94da55c5 = $(`<div id="html_39f8d79381a7f6ee68df04cc94da55c5" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7935<br>                <strong>Centro:</strong> CEIP MONZÓN III MONZON (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.9009784, 0.1824016)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_3ba1cdbd210664edd1abe1f0d6669171.setContent(html_39f8d79381a7f6ee68df04cc94da55c5);
+            
+        
+
+        marker_12780a5a0ae3bfda795e87ae1fefaa5a.bindPopup(popup_3ba1cdbd210664edd1abe1f0d6669171)
+        ;
+
+        
+    
+    
+            var marker_9eb815384e0c4d8b945216f4e632a156 = L.marker(
+                [41.86391829999999, 0.4263687],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_ed4f45ee484103645210ac5b4d708722 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9eb815384e0c4d8b945216f4e632a156.setIcon(icon_ed4f45ee484103645210ac5b4d708722);
+        
+    
+        var popup_e0bc7c637c2efac6bb69e631efa63fc0 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_fece4cc5ee7d462fe52e1bf9bfe266e4 = $(`<div id="html_fece4cc5ee7d462fe52e1bf9bfe266e4" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7666<br>                <strong>Centro:</strong> CEIP SAN MIGUEL TAMARITE DE LITERA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.86391829999999, 0.4263687)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_e0bc7c637c2efac6bb69e631efa63fc0.setContent(html_fece4cc5ee7d462fe52e1bf9bfe266e4);
+            
+        
+
+        marker_9eb815384e0c4d8b945216f4e632a156.bindPopup(popup_e0bc7c637c2efac6bb69e631efa63fc0)
+        ;
+
+        
+    
+    
+            var marker_ec0bc6b90551f75a5348a949cd84563f = L.marker(
+                [41.9769987, -0.5371673],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_26178c8caa473f029591f114a9d7d2cb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ec0bc6b90551f75a5348a949cd84563f.setIcon(icon_26178c8caa473f029591f114a9d7d2cb);
+        
+    
+        var popup_166f6f20a71d82d9867b57279a4d6b5e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_fa034cf38d88bcb2675a85dc45aff76e = $(`<div id="html_fa034cf38d88bcb2675a85dc45aff76e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7801<br>                <strong>Centro:</strong> CRA VIOLADA MONEGROS TARDIENTA (HUESCA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.9769987, -0.5371673)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_166f6f20a71d82d9867b57279a4d6b5e.setContent(html_fa034cf38d88bcb2675a85dc45aff76e);
+            
+        
+
+        marker_ec0bc6b90551f75a5348a949cd84563f.bindPopup(popup_166f6f20a71d82d9867b57279a4d6b5e)
+        ;
+
+        
+    
+    
+            var marker_9f60ef992cd137f2c64f104724cbb9f4 = L.marker(
+                [40.8949817, -0.3845562],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_b93d2f1fe30a72f8be132bea529f9206 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9f60ef992cd137f2c64f104724cbb9f4.setIcon(icon_b93d2f1fe30a72f8be132bea529f9206);
+        
+    
+        var popup_5e0852bd37c2b23bf9caf1d4731be57a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bd606cee32527ec75410bae070ae34a7 = $(`<div id="html_bd606cee32527ec75410bae070ae34a7" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7598<br>                <strong>Centro:</strong> CEIP EL JUSTICIA DE ARAGÓN ALCORISA (TERUEL)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (40.8949817, -0.3845562)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_5e0852bd37c2b23bf9caf1d4731be57a.setContent(html_bd606cee32527ec75410bae070ae34a7);
+            
+        
+
+        marker_9f60ef992cd137f2c64f104724cbb9f4.bindPopup(popup_5e0852bd37c2b23bf9caf1d4731be57a)
+        ;
+
+        
+    
+    
+            var marker_6c0ec1b8fac0e046dc699275b4b12932 = L.marker(
+                [40.3367992, -1.1061615],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_8b6d8fc8b5905d041718c578a488c69f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6c0ec1b8fac0e046dc699275b4b12932.setIcon(icon_8b6d8fc8b5905d041718c578a488c69f);
+        
+    
+        var popup_8803a5b06ecf0c415b6bc02fa7071981 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_df020975700e2b45ba849d2229e3beba = $(`<div id="html_df020975700e2b45ba849d2229e3beba" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7596<br>                <strong>Centro:</strong> CEIP ENSANCHE TERUEL (TERUEL)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (40.3367992, -1.1061615)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_8803a5b06ecf0c415b6bc02fa7071981.setContent(html_df020975700e2b45ba849d2229e3beba);
+            
+        
+
+        marker_6c0ec1b8fac0e046dc699275b4b12932.bindPopup(popup_8803a5b06ecf0c415b6bc02fa7071981)
+        ;
+
+        
+    
+    
+            var marker_bb0f5d382021c41aa84d1836a0a30249 = L.marker(
+                [41.8337231, -1.5341785],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Curso Completo", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_ef4e9038784cc3e33c226b1a9af158da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bb0f5d382021c41aa84d1836a0a30249.setIcon(icon_ef4e9038784cc3e33c226b1a9af158da);
+        
+    
+        var popup_c1d27a7894c28ca69716ea42034ba249 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_446cec95f196fc44d509375d3f4cdc48 = $(`<div id="html_446cec95f196fc44d509375d3f4cdc48" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8288<br>                <strong>Centro:</strong> CEIP CAMPO DE BORJA BORJA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.8337231, -1.5341785)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_c1d27a7894c28ca69716ea42034ba249.setContent(html_446cec95f196fc44d509375d3f4cdc48);
+            
+        
+
+        marker_bb0f5d382021c41aa84d1836a0a30249.bindPopup(popup_c1d27a7894c28ca69716ea42034ba249)
+        ;
+
+        
+    
+    
+            var marker_5b2253dcb4a7e2a00641f2cc98268c87 = L.marker(
+                [41.5693077, -0.7423409],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Curso Completo", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_d34a052d1c467cc345c5d4d501910883 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5b2253dcb4a7e2a00641f2cc98268c87.setIcon(icon_d34a052d1c467cc345c5d4d501910883);
+        
+    
+        var popup_04456f5d9727b38dc879937135579e42 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6c16e9329dbdeceb4db8e46fb11a665a = $(`<div id="html_6c16e9329dbdeceb4db8e46fb11a665a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8274<br>                <strong>Centro:</strong> CPI LA CABAÑETA BURGO DE EBRO (EL)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.5693077, -0.7423409)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_04456f5d9727b38dc879937135579e42.setContent(html_6c16e9329dbdeceb4db8e46fb11a665a);
+            
+        
+
+        marker_5b2253dcb4a7e2a00641f2cc98268c87.bindPopup(popup_04456f5d9727b38dc879937135579e42)
+        ;
+
+        
+    
+    
+            var marker_e9846eccd5b1ead418182ae924455a90 = L.marker(
+                [41.5693077, -0.7423409],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_0f88844bcb2faa40c3d58ada2b107af6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e9846eccd5b1ead418182ae924455a90.setIcon(icon_0f88844bcb2faa40c3d58ada2b107af6);
+        
+    
+        var popup_e9f7e7480a390871db1a15a650ae0aea = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_90d6a2c9a603a047dac9a0830c15da5a = $(`<div id="html_90d6a2c9a603a047dac9a0830c15da5a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7808<br>                <strong>Centro:</strong> CPI LA CABAÑETA BURGO DE EBRO (EL)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.5693077, -0.7423409)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_e9f7e7480a390871db1a15a650ae0aea.setContent(html_90d6a2c9a603a047dac9a0830c15da5a);
+            
+        
+
+        marker_e9846eccd5b1ead418182ae924455a90.bindPopup(popup_e9f7e7480a390871db1a15a650ae0aea)
+        ;
+
+        
+    
+    
+            var marker_0800c2c07223e2940fc830ff610e5102 = L.marker(
+                [41.5970219, -0.9233382000000001],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_433733ccfdd9f296ccb2f4402a5766ee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0800c2c07223e2940fc830ff610e5102.setIcon(icon_433733ccfdd9f296ccb2f4402a5766ee);
+        
+    
+        var popup_7ed3811c14a2611ebecb35f1d2a0a69f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_63f5bde9ab761a6956a0d621ea0bce06 = $(`<div id="html_63f5bde9ab761a6956a0d621ea0bce06" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7641<br>                <strong>Centro:</strong> CEIP PILAR BAYONA CUARTE DE HUERVA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.5970219, -0.9233382000000001)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_7ed3811c14a2611ebecb35f1d2a0a69f.setContent(html_63f5bde9ab761a6956a0d621ea0bce06);
+            
+        
+
+        marker_0800c2c07223e2940fc830ff610e5102.bindPopup(popup_7ed3811c14a2611ebecb35f1d2a0a69f)
+        ;
+
+        
+    
+    
+            var marker_a067dabb428db2fbb093b2a39ab97f7a = L.marker(
+                [42.1265244, -1.1307273],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_c28f7d6f20b51ac87b43133a0b425a81 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a067dabb428db2fbb093b2a39ab97f7a.setIcon(icon_c28f7d6f20b51ac87b43133a0b425a81);
+        
+    
+        var popup_6725a7a32ab2bd2290133e3a3eb1bc9b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c50239093364a2fe57d4731eb9990e1a = $(`<div id="html_c50239093364a2fe57d4731eb9990e1a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8286<br>                <strong>Centro:</strong> CEIP RECTOR MAMÉS ESPERABÉ EJEA DE LOS CABALLEROS (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (42.1265244, -1.1307273)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_6725a7a32ab2bd2290133e3a3eb1bc9b.setContent(html_c50239093364a2fe57d4731eb9990e1a);
+            
+        
+
+        marker_a067dabb428db2fbb093b2a39ab97f7a.bindPopup(popup_6725a7a32ab2bd2290133e3a3eb1bc9b)
+        ;
+
+        
+    
+    
+            var marker_9219d48201650594225fc9ca469bfea0 = L.marker(
+                [41.5422336, -0.9987312],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_c47b88e735b80327407563930bb5b816 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9219d48201650594225fc9ca469bfea0.setIcon(icon_c47b88e735b80327407563930bb5b816);
+        
+    
+        var popup_c0146732c17acd8565fb6528cf36b38a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_71008dcdba06f92f8aae79112f71553c = $(`<div id="html_71008dcdba06f92f8aae79112f71553c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7873<br>                <strong>Centro:</strong> CPI VAL DE LA ATALAYA MARIA DE HUERVA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.5422336, -0.9987312)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_c0146732c17acd8565fb6528cf36b38a.setContent(html_71008dcdba06f92f8aae79112f71553c);
+            
+        
+
+        marker_9219d48201650594225fc9ca469bfea0.bindPopup(popup_c0146732c17acd8565fb6528cf36b38a)
+        ;
+
+        
+    
+    
+            var marker_f32c06ce4ea29975c773d2a823655ddc = L.marker(
+                [41.6321339, -0.7571112],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_1c9830627bde036e30da96549d110fe5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f32c06ce4ea29975c773d2a823655ddc.setIcon(icon_1c9830627bde036e30da96549d110fe5);
+        
+    
+        var popup_3b237db93b61f2d4ef002c66dfdbc1ef = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5901a506fbe25ed814c03a66ba2f0954 = $(`<div id="html_5901a506fbe25ed814c03a66ba2f0954" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8237<br>                <strong>Centro:</strong> CEIP REINO DE ARAGÓN PUEBLA DE ALFINDEN (LA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.6321339, -0.7571112)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_3b237db93b61f2d4ef002c66dfdbc1ef.setContent(html_5901a506fbe25ed814c03a66ba2f0954);
+            
+        
+
+        marker_f32c06ce4ea29975c773d2a823655ddc.bindPopup(popup_3b237db93b61f2d4ef002c66dfdbc1ef)
+        ;
+
+        
+    
+    
+            var marker_0d8cc282ee33db7a85ee351cd046edac = L.marker(
+                [41.9181927, -1.2512193],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_fff0792ce5d055107ebcbc6433d40c6d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0d8cc282ee33db7a85ee351cd046edac.setIcon(icon_fff0792ce5d055107ebcbc6433d40c6d);
+        
+    
+        var popup_dd6c9acaeecde159c4047869eb3dff8a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_84e1ab7ce8de8f854cb45548c3b7c734 = $(`<div id="html_84e1ab7ce8de8f854cb45548c3b7c734" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7789<br>                <strong>Centro:</strong> CEIP ALFONSO I EL BATALLADOR TAUSTE (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.9181927, -1.2512193)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_dd6c9acaeecde159c4047869eb3dff8a.setContent(html_84e1ab7ce8de8f854cb45548c3b7c734);
+            
+        
+
+        marker_0d8cc282ee33db7a85ee351cd046edac.bindPopup(popup_dd6c9acaeecde159c4047869eb3dff8a)
+        ;
+
+        
+    
+    
+            var marker_47b2ae211dfbabc1fe11fb49c69ee48f = L.marker(
+                [41.685965, -0.8718439],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Curso Completo", "De Cupo Sin titular", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_859edb17e8ecc546ec3bed0241d97e32 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_47b2ae211dfbabc1fe11fb49c69ee48f.setIcon(icon_859edb17e8ecc546ec3bed0241d97e32);
+        
+    
+        var popup_334086171be3b4f030b05beaf667349e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f1f6b958c048d83edc1380d16995edfd = $(`<div id="html_f1f6b958c048d83edc1380d16995edfd" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8278<br>                <strong>Centro:</strong> CPI PARQUE GOYA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés C1 Inglés<br>                <strong>Coordenadas:</strong> (41.685965, -0.8718439)<br>                <strong>Requisitos:</strong> Se requiere titulación de nivel C1 o superior Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_334086171be3b4f030b05beaf667349e.setContent(html_f1f6b958c048d83edc1380d16995edfd);
+            
+        
+
+        marker_47b2ae211dfbabc1fe11fb49c69ee48f.bindPopup(popup_334086171be3b4f030b05beaf667349e)
+        ;
+
+        
+    
+    
+            var marker_1541b77107420e3a211f698945171038 = L.marker(
+                [41.6252819, -0.9289932000000001],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Curso Completo", "De Cupo Sin titular", "Parcial"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_f8fb8e968be60ff722b5eeaf84c9a04a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1541b77107420e3a211f698945171038.setIcon(icon_f8fb8e968be60ff722b5eeaf84c9a04a);
+        
+    
+        var popup_55e0325bff1b0ac236028ed74ac64b7e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5ffe41394b2f072f6b80956be83ec689 = $(`<div id="html_5ffe41394b2f072f6b80956be83ec689" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8246<br>                <strong>Centro:</strong> CPI SOLEDAD PUÉRTOLAS ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Curso Completo<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.6252819, -0.9289932000000001)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_55e0325bff1b0ac236028ed74ac64b7e.setContent(html_5ffe41394b2f072f6b80956be83ec689);
+            
+        
+
+        marker_1541b77107420e3a211f698945171038.bindPopup(popup_55e0325bff1b0ac236028ed74ac64b7e)
+        ;
+
+        
+    
+    
+            var marker_b9f66891fb97c6ec03e5af653edb100f = L.marker(
+                [41.6493977, -0.8781726],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_f4c939c5d788aa4dd265ad253e1109a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b9f66891fb97c6ec03e5af653edb100f.setIcon(icon_f4c939c5d788aa4dd265ad253e1109a3);
+        
+    
+        var popup_886740a0523ac771f624c14f2130845a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1021987439526747de5580a5eaaca204 = $(`<div id="html_1021987439526747de5580a5eaaca204" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7531<br>                <strong>Centro:</strong> CEIP GASCÓN Y MARÍN ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.6493977, -0.8781726)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_886740a0523ac771f624c14f2130845a.setContent(html_1021987439526747de5580a5eaaca204);
+            
+        
+
+        marker_b9f66891fb97c6ec03e5af653edb100f.bindPopup(popup_886740a0523ac771f624c14f2130845a)
+        ;
+
+        
+    
+    
+            var marker_4332ec30beb9bf99b6d6763042309c00 = L.marker(
+                [41.64734809999999, -0.8661078],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Maternidad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_5458c98e8bfac5fe7b14071153a94ce6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4332ec30beb9bf99b6d6763042309c00.setIcon(icon_5458c98e8bfac5fe7b14071153a94ce6);
+        
+    
+        var popup_e91aac03ea0f9c95446b47133af997cb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0ccea43251d370e883f2d5624315e338 = $(`<div id="html_0ccea43251d370e883f2d5624315e338" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7590<br>                <strong>Centro:</strong> CEIP LAS FUENTES ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.64734809999999, -0.8661078)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_e91aac03ea0f9c95446b47133af997cb.setContent(html_0ccea43251d370e883f2d5624315e338);
+            
+        
+
+        marker_4332ec30beb9bf99b6d6763042309c00.bindPopup(popup_e91aac03ea0f9c95446b47133af997cb)
+        ;
+
+        
+    
+    
+            var marker_02bcb482973e15ec42b3733607e3755d = L.marker(
+                [41.677026, -0.8775719],
+                {"tags": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S", "Sustituci\u00f3n", "Enfermedad", "Completa"]}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var icon_d7e464f828a24737a5fa8f115a3c19cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_02bcb482973e15ec42b3733607e3755d.setIcon(icon_d7e464f828a24737a5fa8f115a3c19cd);
+        
+    
+        var popup_1b36f2f8e87ae7b1aa2df5beec4d0770 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_3f34c1865ed95b7f01de63e5d68ff384 = $(`<div id="html_3f34c1865ed95b7f01de63e5d68ff384" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8084<br>                <strong>Centro:</strong> CEIP ZALFONADA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PR2 - EDUCACION PRIMARIA: BILINGÜE INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Bilingüe Inglés<br>                <strong>Coordenadas:</strong> (41.677026, -0.8775719)<br>                <strong>Requisitos:</strong> Se requiere perfil bilingüe en inglés o titulación que lo acredite.                </div>`)[0];
+                popup_1b36f2f8e87ae7b1aa2df5beec4d0770.setContent(html_3f34c1865ed95b7f01de63e5d68ff384);
+            
+        
+
+        marker_02bcb482973e15ec42b3733607e3755d.bindPopup(popup_1b36f2f8e87ae7b1aa2df5beec4d0770)
+        ;
+
+        
+    
+    
+            var tag_filter_button_3aadead3dbd1f088b5d642b715505e42 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Completa", "Parcial"], "filterOnEveryClick": true, "icon": "glyphicon-time", "openPopupOnHover": false}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var tag_filter_button_15acd695f492a1db24f1c98cbb5fb1f9 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["PR2 - EDUCACION PRIMARIA: BILING\u00dcE INGL\u00c9S"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var tag_filter_button_54890a5bfefb56748a3bb047b024b81e = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Curso Completo", "Sustituci\u00f3n"], "filterOnEveryClick": true, "icon": "glyphicon-calendar", "openPopupOnHover": false}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+    
+            var tag_filter_button_b686182c1ab15ecf98d6b30eadce2cf4 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Reducci\u00f3n de Jornada", "Maternidad", "Comisi\u00f3n Servicio docente (reserva titular)", "Excedencia cuidado hijos", "De Plantilla Definitiva Sin Titular", "Otras Sustituciones", "Enfermedad", "De Cupo Sin titular"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_da3556b4d3ce5e814682ca48b08f9a32);
+        
+</script>
+</html>

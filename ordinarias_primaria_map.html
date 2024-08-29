@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0ac6e8f2a36c63eae7ab4f831037595f {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/css-ripple-effect@1.0.5/dist/ripple.min.css"/>
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0ac6e8f2a36c63eae7ab4f831037595f" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0ac6e8f2a36c63eae7ab4f831037595f = L.map(
+                "map_0ac6e8f2a36c63eae7ab4f831037595f",
+                {
+                    center: [42.1437168, -0.0094552],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cc49e78b18774caad9833edef5906633 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_cc49e78b18774caad9833edef5906633.addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+
+            var geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_7095c90b16775305c63c4896ddc7320a = geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a["provider"];
+
+            var customGeocoder_geocoder_7095c90b16775305c63c4896ddc7320a = L.Control.Geocoder[ geocoderName_geocoder_7095c90b16775305c63c4896ddc7320a ](
+                geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a['providerOptions']
+            );
+            geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a["geocoder"] = customGeocoder_geocoder_7095c90b16775305c63c4896ddc7320a;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_7095c90b16775305c63c4896ddc7320a['zoom'] || map_0ac6e8f2a36c63eae7ab4f831037595f.getZoom();
+                map_0ac6e8f2a36c63eae7ab4f831037595f.setView(e.geocode.center, zoom);
+            }).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+
+        
+    
+            var marker_d39739f39123268cac3f9e771797422b = L.marker(
+                [42.1437168, -0.0094552],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Asuntos Propios", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e2fbb6de4f110d01e02586c02a24c813 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d39739f39123268cac3f9e771797422b.setIcon(icon_e2fbb6de4f110d01e02586c02a24c813);
+        
+    
+        var popup_9a68db84ec91942d7856bbc651bc3802 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_499a86056f34ee3bebdad9e2df20ed21 = $(`<div id="html_499a86056f34ee3bebdad9e2df20ed21" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7883<br>                <strong>Centro:</strong> CRA VERO-ALCANADRE ADAHUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Asuntos Propios<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1437168, -0.0094552)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9a68db84ec91942d7856bbc651bc3802.setContent(html_499a86056f34ee3bebdad9e2df20ed21);
+            
+        
+
+        marker_d39739f39123268cac3f9e771797422b.bindPopup(popup_9a68db84ec91942d7856bbc651bc3802)
+        ;
+
+        
+    
+    
+            var marker_e5bca88388b8341e97faaa90fe78a900 = L.marker(
+                [41.8649478, 0.4606029],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d44e03071674801fb4bf5330efab111f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e5bca88388b8341e97faaa90fe78a900.setIcon(icon_d44e03071674801fb4bf5330efab111f);
+        
+    
+        var popup_9e5bfa21af752e1ec77886c075ceba06 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_265c25de9948a085724715115c503c8e = $(`<div id="html_265c25de9948a085724715115c503c8e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7751<br>                <strong>Centro:</strong> CRA LA LLITERA ALBELDA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.8649478, 0.4606029)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9e5bfa21af752e1ec77886c075ceba06.setContent(html_265c25de9948a085724715115c503c8e);
+            
+        
+
+        marker_e5bca88388b8341e97faaa90fe78a900.bindPopup(popup_9e5bfa21af752e1ec77886c075ceba06)
+        ;
+
+        
+    
+    
+            var marker_a0e768d126d01379f18958aaf29e3a94 = L.marker(
+                [42.2758672, -0.6878002],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_c1239376e73ab7fe5092834e81ac4d4c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a0e768d126d01379f18958aaf29e3a94.setIcon(icon_c1239376e73ab7fe5092834e81ac4d4c);
+        
+    
+        var popup_e7351df3d812bb119c644daf7fe396aa = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5cc65722b8de77812d7e5bc5d0c44c0a = $(`<div id="html_5cc65722b8de77812d7e5bc5d0c44c0a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7700<br>                <strong>Centro:</strong> CPI RAMÓN Y CAJAL AYERBE (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.2758672, -0.6878002)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e7351df3d812bb119c644daf7fe396aa.setContent(html_5cc65722b8de77812d7e5bc5d0c44c0a);
+            
+        
+
+        marker_a0e768d126d01379f18958aaf29e3a94.bindPopup(popup_e7351df3d812bb119c644daf7fe396aa)
+        ;
+
+        
+    
+    
+            var marker_8409d0553ade5d4d345020e66b1ff6c0 = L.marker(
+                [42.03146539999999, 0.1325269],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_1b6c2a9ce768c1d3d33da1d56804c148 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8409d0553ade5d4d345020e66b1ff6c0.setIcon(icon_1b6c2a9ce768c1d3d33da1d56804c148);
+        
+    
+        var popup_cf30154c7f5d1774dc4cbcc91c5efdcb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7923db6a48bfa0355fbe6f0bd30fed3c = $(`<div id="html_7923db6a48bfa0355fbe6f0bd30fed3c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7647<br>                <strong>Centro:</strong> CEIP ALTO ARAGÓN BARBASTRO (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.03146539999999, 0.1325269)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_cf30154c7f5d1774dc4cbcc91c5efdcb.setContent(html_7923db6a48bfa0355fbe6f0bd30fed3c);
+            
+        
+
+        marker_8409d0553ade5d4d345020e66b1ff6c0.bindPopup(popup_cf30154c7f5d1774dc4cbcc91c5efdcb)
+        ;
+
+        
+    
+    
+            var marker_a792a19324d478cb66c84ea85e1e8e26 = L.marker(
+                [42.6037423, 0.5225831],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_2f3b9d6d695e5c01bcb072324c9b841a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a792a19324d478cb66c84ea85e1e8e26.setIcon(icon_2f3b9d6d695e5c01bcb072324c9b841a);
+        
+    
+        var popup_82ef9a2db64f05cca2ae96baf8556b6c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f173a59196069b328d9c5be23443dada = $(`<div id="html_f173a59196069b328d9c5be23443dada" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7876<br>                <strong>Centro:</strong> CRA ALTA RIBAGORZA BENASQUE (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.6037423, 0.5225831)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_82ef9a2db64f05cca2ae96baf8556b6c.setContent(html_f173a59196069b328d9c5be23443dada);
+            
+        
+
+        marker_a792a19324d478cb66c84ea85e1e8e26.bindPopup(popup_82ef9a2db64f05cca2ae96baf8556b6c)
+        ;
+
+        
+    
+    
+            var marker_2c6d11065449341d13f0a93f422b1013 = L.marker(
+                [42.6037423, 0.5225831],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_b39aa594e0d28165558cb12e76a300f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2c6d11065449341d13f0a93f422b1013.setIcon(icon_b39aa594e0d28165558cb12e76a300f5);
+        
+    
+        var popup_52f4651a01a20a3aa15247ea06446590 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bebf09782f145614a709f1f9625564df = $(`<div id="html_bebf09782f145614a709f1f9625564df" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7556<br>                <strong>Centro:</strong> CRA ALTA RIBAGORZA BENASQUE (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Inglés<br>                <strong>Coordenadas:</strong> (42.6037423, 0.5225831)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Inglés o bien un B2 por ese idioma.                </div>`)[0];
+                popup_52f4651a01a20a3aa15247ea06446590.setContent(html_bebf09782f145614a709f1f9625564df);
+            
+        
+
+        marker_2c6d11065449341d13f0a93f422b1013.bindPopup(popup_52f4651a01a20a3aa15247ea06446590)
+        ;
+
+        
+    
+    
+            var marker_696af35c7b4ae5c62aac8e86da6ee657 = L.marker(
+                [42.6037423, 0.5225831],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_1d89d70fe7e9b9ad8ede1f261db882f7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_696af35c7b4ae5c62aac8e86da6ee657.setIcon(icon_1d89d70fe7e9b9ad8ede1f261db882f7);
+        
+    
+        var popup_db302db896056d9684c8bc5d5f684dfd = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_33b4ec51863e14fa62ee18b82290f69b = $(`<div id="html_33b4ec51863e14fa62ee18b82290f69b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8254<br>                <strong>Centro:</strong> CRA ALTA RIBAGORZA BENASQUE (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.6037423, 0.5225831)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_db302db896056d9684c8bc5d5f684dfd.setContent(html_33b4ec51863e14fa62ee18b82290f69b);
+            
+        
+
+        marker_696af35c7b4ae5c62aac8e86da6ee657.bindPopup(popup_db302db896056d9684c8bc5d5f684dfd)
+        ;
+
+        
+    
+    
+            var marker_fd76ae7904da082c9a789c91c23079cb = L.marker(
+                [42.63321320000001, 0.2181676],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_8181f4a79450f7d022975287051231c4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fd76ae7904da082c9a789c91c23079cb.setIcon(icon_8181f4a79450f7d022975287051231c4);
+        
+    
+        var popup_9919af94da0d4ffa0ff7f630d7c6b6c2 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_a7a4a43f8cf8bdd1ed5ffd456c55478c = $(`<div id="html_a7a4a43f8cf8bdd1ed5ffd456c55478c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8287<br>                <strong>Centro:</strong> CRA CINCA-CINQUETA BIELSA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.63321320000001, 0.2181676)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9919af94da0d4ffa0ff7f630d7c6b6c2.setContent(html_a7a4a43f8cf8bdd1ed5ffd456c55478c);
+            
+        
+
+        marker_fd76ae7904da082c9a789c91c23079cb.bindPopup(popup_9919af94da0d4ffa0ff7f630d7c6b6c2)
+        ;
+
+        
+    
+    
+            var marker_e3bd86b8ccfe68c8962ddb3f1c22bb2a = L.marker(
+                [42.0108345, 0.2615711],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Excedencia cuidado familiares (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_076dfa79bd218949e16b77e23ab48d26 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e3bd86b8ccfe68c8962ddb3f1c22bb2a.setIcon(icon_076dfa79bd218949e16b77e23ab48d26);
+        
+    
+        var popup_2de6c126e663daf2f34c96430ece3a62 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_79cf0929c7e1366fc74cdadaf87ad6d7 = $(`<div id="html_79cf0929c7e1366fc74cdadaf87ad6d7" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7642<br>                <strong>Centro:</strong> CRA LA CANDELETA FONZ (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Excedencia cuidado familiares (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.0108345, 0.2615711)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_2de6c126e663daf2f34c96430ece3a62.setContent(html_79cf0929c7e1366fc74cdadaf87ad6d7);
+            
+        
+
+        marker_e3bd86b8ccfe68c8962ddb3f1c22bb2a.bindPopup(popup_2de6c126e663daf2f34c96430ece3a62)
+        ;
+
+        
+    
+    
+            var marker_6928429e79f00eef3ef6b0833d919eeb = L.marker(
+                [41.5254237, 0.3337244],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_beb8982c3958406f003b12becdbb9e20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6928429e79f00eef3ef6b0833d919eeb.setIcon(icon_beb8982c3958406f003b12becdbb9e20);
+        
+    
+        var popup_eea6f3d8b2969a50891115555f01e50c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c89d61bdd756836a052608071e919e1f = $(`<div id="html_c89d61bdd756836a052608071e919e1f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8083<br>                <strong>Centro:</strong> CEIP MARÍA MOLINER FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5254237, 0.3337244)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_eea6f3d8b2969a50891115555f01e50c.setContent(html_c89d61bdd756836a052608071e919e1f);
+            
+        
+
+        marker_6928429e79f00eef3ef6b0833d919eeb.bindPopup(popup_eea6f3d8b2969a50891115555f01e50c)
+        ;
+
+        
+    
+    
+            var marker_c32c1e210d8196a62ffd4fa406ddf15f = L.marker(
+                [41.5202713, 0.3318591],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_7ee4df38bab0bcc52502fd8e080d491d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c32c1e210d8196a62ffd4fa406ddf15f.setIcon(icon_7ee4df38bab0bcc52502fd8e080d491d);
+        
+    
+        var popup_36bcb2ad556c4af0f233e63295e0812c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5444736dfc95ee22c150e06181fcdb09 = $(`<div id="html_5444736dfc95ee22c150e06181fcdb09" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7726<br>                <strong>Centro:</strong> CEIP MIGUEL SERVET FRAGA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5202713, 0.3318591)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_36bcb2ad556c4af0f233e63295e0812c.setContent(html_5444736dfc95ee22c150e06181fcdb09);
+            
+        
+
+        marker_c32c1e210d8196a62ffd4fa406ddf15f.bindPopup(popup_36bcb2ad556c4af0f233e63295e0812c)
+        ;
+
+        
+    
+    
+            var marker_45f0ff5cf784482e0c68f94b7445f091 = L.marker(
+                [42.189936, 0.338545],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_ac5e075dc883d56723ce727d6bca4867 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_45f0ff5cf784482e0c68f94b7445f091.setIcon(icon_ac5e075dc883d56723ce727d6bca4867);
+        
+    
+        var popup_841bfd52b2cc64d775d61a2c9f08dd9e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6ae67bfcecd83b412a5ef0443c1dd1e8 = $(`<div id="html_6ae67bfcecd83b412a5ef0443c1dd1e8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7736<br>                <strong>Centro:</strong> CEIP JOAQUÍN COSTA GRAUS (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.189936, 0.338545)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_841bfd52b2cc64d775d61a2c9f08dd9e.setContent(html_6ae67bfcecd83b412a5ef0443c1dd1e8);
+            
+        
+
+        marker_45f0ff5cf784482e0c68f94b7445f091.bindPopup(popup_841bfd52b2cc64d775d61a2c9f08dd9e)
+        ;
+
+        
+    
+    
+            var marker_77c6c175df6c6c772a516ed323f7925f = L.marker(
+                [42.1308648, -0.4173625],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Comisi\u00f3n Servicio no docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_aa417a90b1a13c781bd5b7c5b4a7345c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_77c6c175df6c6c772a516ed323f7925f.setIcon(icon_aa417a90b1a13c781bd5b7c5b4a7345c);
+        
+    
+        var popup_7ac5fcf39b23d4925511495a41313b49 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6753a27ba3163ebb9b8b21a8f16124f1 = $(`<div id="html_6753a27ba3163ebb9b8b21a8f16124f1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7488<br>                <strong>Centro:</strong> CEIP ALCORAZ HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> Comisión Servicio no docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Inglés<br>                <strong>Coordenadas:</strong> (42.1308648, -0.4173625)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Inglés o bien un B2 por ese idioma.                </div>`)[0];
+                popup_7ac5fcf39b23d4925511495a41313b49.setContent(html_6753a27ba3163ebb9b8b21a8f16124f1);
+            
+        
+
+        marker_77c6c175df6c6c772a516ed323f7925f.bindPopup(popup_7ac5fcf39b23d4925511495a41313b49)
+        ;
+
+        
+    
+    
+            var marker_8303326691f59945d5d6320e770561cf = L.marker(
+                [42.1308648, -0.4173625],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_7090ee66374bf0114518986402b86f0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8303326691f59945d5d6320e770561cf.setIcon(icon_7090ee66374bf0114518986402b86f0d);
+        
+    
+        var popup_beda34e59b194c595667e0166afcedc7 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c62db0d405378e90ca4eb83af7c1800e = $(`<div id="html_c62db0d405378e90ca4eb83af7c1800e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7925<br>                <strong>Centro:</strong> CEIP ALCORAZ HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1308648, -0.4173625)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_beda34e59b194c595667e0166afcedc7.setContent(html_c62db0d405378e90ca4eb83af7c1800e);
+            
+        
+
+        marker_8303326691f59945d5d6320e770561cf.bindPopup(popup_beda34e59b194c595667e0166afcedc7)
+        ;
+
+        
+    
+    
+            var marker_f3d769f382dc1a829a055d95b8506071 = L.marker(
+                [42.1296322, -0.4079897],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_04cb9bb6c05bb7a11229741e5cfdb1dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f3d769f382dc1a829a055d95b8506071.setIcon(icon_04cb9bb6c05bb7a11229741e5cfdb1dc);
+        
+    
+        var popup_54e9c83a4ffe6b2d0efc610fb9cd8434 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ee49f7b0f036fdc1e9f481e8765ce3fe = $(`<div id="html_ee49f7b0f036fdc1e9f481e8765ce3fe" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8291<br>                <strong>Centro:</strong> CEIP PEDRO J. RUBIO HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1296322, -0.4079897)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_54e9c83a4ffe6b2d0efc610fb9cd8434.setContent(html_ee49f7b0f036fdc1e9f481e8765ce3fe);
+            
+        
+
+        marker_f3d769f382dc1a829a055d95b8506071.bindPopup(popup_54e9c83a4ffe6b2d0efc610fb9cd8434)
+        ;
+
+        
+    
+    
+            var marker_0d213e9f4ef845d7a8f1b3f5f608d8c2 = L.marker(
+                [42.14196099999999, -0.3965649],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d86db795ce9692bf7e8b96638dc2a446 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0d213e9f4ef845d7a8f1b3f5f608d8c2.setIcon(icon_d86db795ce9692bf7e8b96638dc2a446);
+        
+    
+        var popup_8a92654f6f6e284c3646d5c31ae3d6f5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_50670a20b2765cc93010b8528dd62f7f = $(`<div id="html_50670a20b2765cc93010b8528dd62f7f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7728<br>                <strong>Centro:</strong> CEIP PÍO XII HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.14196099999999, -0.3965649)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8a92654f6f6e284c3646d5c31ae3d6f5.setContent(html_50670a20b2765cc93010b8528dd62f7f);
+            
+        
+
+        marker_0d213e9f4ef845d7a8f1b3f5f608d8c2.bindPopup(popup_8a92654f6f6e284c3646d5c31ae3d6f5)
+        ;
+
+        
+    
+    
+            var marker_061156c709026bd902e5f21c361b57da = L.marker(
+                [42.14196099999999, -0.3965649],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_f52a2e065d9bd9e72d14c7343fb38839 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_061156c709026bd902e5f21c361b57da.setIcon(icon_f52a2e065d9bd9e72d14c7343fb38839);
+        
+    
+        var popup_870ba09a5c659c921b4ec038f871fc02 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ff7a2bc540cd18c8b9a32f6a3b26a034 = $(`<div id="html_ff7a2bc540cd18c8b9a32f6a3b26a034" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7645<br>                <strong>Centro:</strong> CEIP PÍO XII HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje<br>                <strong>Coordenadas:</strong> (42.14196099999999, -0.3965649)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Audición y Lenguaje.                </div>`)[0];
+                popup_870ba09a5c659c921b4ec038f871fc02.setContent(html_ff7a2bc540cd18c8b9a32f6a3b26a034);
+            
+        
+
+        marker_061156c709026bd902e5f21c361b57da.bindPopup(popup_870ba09a5c659c921b4ec038f871fc02)
+        ;
+
+        
+    
+    
+            var marker_6e73654ec8cfe818edb57fc33b5e704c = L.marker(
+                [42.1360118, -0.404219],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d8d3cc0b70dc8a3ffa05c1bd35001832 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6e73654ec8cfe818edb57fc33b5e704c.setIcon(icon_d8d3cc0b70dc8a3ffa05c1bd35001832);
+        
+    
+        var popup_5f69e8dd73bc4550332987e755c6cf45 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6eb05c99edc15faa07a8b2179f408271 = $(`<div id="html_6eb05c99edc15faa07a8b2179f408271" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7681<br>                <strong>Centro:</strong> CEIP SANCHO RAMÍREZ HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1360118, -0.404219)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5f69e8dd73bc4550332987e755c6cf45.setContent(html_6eb05c99edc15faa07a8b2179f408271);
+            
+        
+
+        marker_6e73654ec8cfe818edb57fc33b5e704c.bindPopup(popup_5f69e8dd73bc4550332987e755c6cf45)
+        ;
+
+        
+    
+    
+            var marker_9a01f6dc0458a0809453fa2e91160ecd = L.marker(
+                [42.1360118, -0.404219],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e94f5cf78f4fa25729b8f4f615d6e5a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9a01f6dc0458a0809453fa2e91160ecd.setIcon(icon_e94f5cf78f4fa25729b8f4f615d6e5a4);
+        
+    
+        var popup_838c264f3ded767c9bebec5fb046f3a9 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_dcfca51310bc9c322dc2c3ccb30ea7e3 = $(`<div id="html_dcfca51310bc9c322dc2c3ccb30ea7e3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7963<br>                <strong>Centro:</strong> CEIP SANCHO RAMÍREZ HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1360118, -0.404219)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_838c264f3ded767c9bebec5fb046f3a9.setContent(html_dcfca51310bc9c322dc2c3ccb30ea7e3);
+            
+        
+
+        marker_9a01f6dc0458a0809453fa2e91160ecd.bindPopup(popup_838c264f3ded767c9bebec5fb046f3a9)
+        ;
+
+        
+    
+    
+            var marker_6467700c84cbda44350dd17e7464e129 = L.marker(
+                [41.8405309, -0.2598623],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e7046d3c216516a2bfb11ffcba9f7648 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6467700c84cbda44350dd17e7464e129.setIcon(icon_e7046d3c216516a2bfb11ffcba9f7648);
+        
+    
+        var popup_6e9a851fd5bba1a9d90250b8de714a40 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c42ac0bcf18ab00aa31a9e6526de31c4 = $(`<div id="html_c42ac0bcf18ab00aa31a9e6526de31c4" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8206<br>                <strong>Centro:</strong> CRA MONEGROS-HOYA LALUEZA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.8405309, -0.2598623)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_6e9a851fd5bba1a9d90250b8de714a40.setContent(html_c42ac0bcf18ab00aa31a9e6526de31c4);
+            
+        
+
+        marker_6467700c84cbda44350dd17e7464e129.bindPopup(popup_6e9a851fd5bba1a9d90250b8de714a40)
+        ;
+
+        
+    
+    
+            var marker_7220bbfd9278bf163ff2c301632ee1aa = L.marker(
+                [41.7698986, -0.3319792],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_ded009533f268bcdaf4ba51637ef43dd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7220bbfd9278bf163ff2c301632ee1aa.setIcon(icon_ded009533f268bcdaf4ba51637ef43dd);
+        
+    
+        var popup_76d216428ce88a041cb52b60a3179693 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_21fb7763696b4c055493333518bcd10f = $(`<div id="html_21fb7763696b4c055493333518bcd10f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7489<br>                <strong>Centro:</strong> CRA MONEGROS NORTE LANAJA (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7698986, -0.3319792)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_76d216428ce88a041cb52b60a3179693.setContent(html_21fb7763696b4c055493333518bcd10f);
+            
+        
+
+        marker_7220bbfd9278bf163ff2c301632ee1aa.bindPopup(popup_76d216428ce88a041cb52b60a3179693)
+        ;
+
+        
+    
+    
+            var marker_161a0f97361cfa9379045ef1113bd756 = L.marker(
+                [41.9165754, 0.192798],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_eb66c4fc426881e7a2653c72aef8c4a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_161a0f97361cfa9379045ef1113bd756.setIcon(icon_eb66c4fc426881e7a2653c72aef8c4a5);
+        
+    
+        var popup_7ea47ebc2c8fdf424bbd379bedb04da1 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_924817f4ce42daf55af13b545f80bad9 = $(`<div id="html_924817f4ce42daf55af13b545f80bad9" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7622<br>                <strong>Centro:</strong> CEIP ARAGÓN MONZON (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9165754, 0.192798)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7ea47ebc2c8fdf424bbd379bedb04da1.setContent(html_924817f4ce42daf55af13b545f80bad9);
+            
+        
+
+        marker_161a0f97361cfa9379045ef1113bd756.bindPopup(popup_7ea47ebc2c8fdf424bbd379bedb04da1)
+        ;
+
+        
+    
+    
+            var marker_5493b3ecf26a643562a9976c53d4b2e4 = L.marker(
+                [41.9009784, 0.1824016],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_5759d3b702ab24763e03b03f254b5996 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5493b3ecf26a643562a9976c53d4b2e4.setIcon(icon_5759d3b702ab24763e03b03f254b5996);
+        
+    
+        var popup_93377d33f43bc5b069d1b6ee4c4796aa = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_2c2977a3d8609fd796303ecfc049980d = $(`<div id="html_2c2977a3d8609fd796303ecfc049980d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7620<br>                <strong>Centro:</strong> CEIP MONZÓN III MONZON (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9009784, 0.1824016)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_93377d33f43bc5b069d1b6ee4c4796aa.setContent(html_2c2977a3d8609fd796303ecfc049980d);
+            
+        
+
+        marker_5493b3ecf26a643562a9976c53d4b2e4.bindPopup(popup_93377d33f43bc5b069d1b6ee4c4796aa)
+        ;
+
+        
+    
+    
+            var marker_3a54f670c4312f158b5519b77c876529 = L.marker(
+                [42.5026187, -0.3610133],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_a4ae05faa588aee6b0f34b489273eea6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3a54f670c4312f158b5519b77c876529.setIcon(icon_a4ae05faa588aee6b0f34b489273eea6);
+        
+    
+        var popup_1a3789d58aa744e214874972f7fb230c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_cee3c5cb12945961da0f57c9d6140c36 = $(`<div id="html_cee3c5cb12945961da0f57c9d6140c36" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7731<br>                <strong>Centro:</strong> CEIP PUENTE SARDAS SABIÑANIGO (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.5026187, -0.3610133)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1a3789d58aa744e214874972f7fb230c.setContent(html_cee3c5cb12945961da0f57c9d6140c36);
+            
+        
+
+        marker_3a54f670c4312f158b5519b77c876529.bindPopup(popup_1a3789d58aa744e214874972f7fb230c)
+        ;
+
+        
+    
+    
+            var marker_a51387d02d1bbcd317b98ff52342814f = L.marker(
+                [41.604806, 0.2660582],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_6c8cfc56fcedcda4d1fe04338ca8eed9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a51387d02d1bbcd317b98ff52342814f.setIcon(icon_6c8cfc56fcedcda4d1fe04338ca8eed9);
+        
+    
+        var popup_2ec6cfa934835be94dcaa9c72c236b7d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e3301bcea990a7645d394a68b3bb0b65 = $(`<div id="html_e3301bcea990a7645d394a68b3bb0b65" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7690<br>                <strong>Centro:</strong> CEIP SAN JUAN BAUTISTA ZAIDIN (HUESCA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.604806, 0.2660582)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_2ec6cfa934835be94dcaa9c72c236b7d.setContent(html_e3301bcea990a7645d394a68b3bb0b65);
+            
+        
+
+        marker_a51387d02d1bbcd317b98ff52342814f.bindPopup(popup_2ec6cfa934835be94dcaa9c72c236b7d)
+        ;
+
+        
+    
+    
+            var marker_3330fe9c0026cbc376a2cebb030163b0 = L.marker(
+                [41.1191579, -0.5099538],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_0a101b324494067c2d107aa5eb6f8c0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3330fe9c0026cbc376a2cebb030163b0.setIcon(icon_0a101b324494067c2d107aa5eb6f8c0e);
+        
+    
+        var popup_1db1e6ee648a08766919777e412aed9e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e04f75396f103ad6f8ef6deb1df14126 = $(`<div id="html_e04f75396f103ad6f8ef6deb1df14126" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7893<br>                <strong>Centro:</strong> CEIP ROMÁN GARCÍA ALBALATE DEL ARZOBISPO (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.1191579, -0.5099538)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1db1e6ee648a08766919777e412aed9e.setContent(html_e04f75396f103ad6f8ef6deb1df14126);
+            
+        
+
+        marker_3330fe9c0026cbc376a2cebb030163b0.bindPopup(popup_1db1e6ee648a08766919777e412aed9e)
+        ;
+
+        
+    
+    
+            var marker_42527363bed2f0f9cce98189438c6e64 = L.marker(
+                [41.1191579, -0.5099538],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_96b51323c0792ee4138b3d77090e2967 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_42527363bed2f0f9cce98189438c6e64.setIcon(icon_96b51323c0792ee4138b3d77090e2967);
+        
+    
+        var popup_523117f0283de55031db3e239ac74348 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1979b203d610e2aff67c0fd4761c3506 = $(`<div id="html_1979b203d610e2aff67c0fd4761c3506" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7897<br>                <strong>Centro:</strong> CEIP ROMÁN GARCÍA ALBALATE DEL ARZOBISPO (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.1191579, -0.5099538)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_523117f0283de55031db3e239ac74348.setContent(html_1979b203d610e2aff67c0fd4761c3506);
+            
+        
+
+        marker_42527363bed2f0f9cce98189438c6e64.bindPopup(popup_523117f0283de55031db3e239ac74348)
+        ;
+
+        
+    
+    
+            var marker_a5a5847df3f793d1eb08c28da810cd88 = L.marker(
+                [41.0519156, -0.1297776],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e7bfcde546e8ccd9fa1a8c4e718b3ccc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a5a5847df3f793d1eb08c28da810cd88.setIcon(icon_e7bfcde546e8ccd9fa1a8c4e718b3ccc);
+        
+    
+        var popup_fd3b072ff22cda70950ec1e592f620b3 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1539b39baa711fd5789420aca2bb2512 = $(`<div id="html_1539b39baa711fd5789420aca2bb2512" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7911<br>                <strong>Centro:</strong> CPEPA RÍO GUADALOPE ALCAÑIZ (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.0519156, -0.1297776)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_fd3b072ff22cda70950ec1e592f620b3.setContent(html_1539b39baa711fd5789420aca2bb2512);
+            
+        
+
+        marker_a5a5847df3f793d1eb08c28da810cd88.bindPopup(popup_fd3b072ff22cda70950ec1e592f620b3)
+        ;
+
+        
+    
+    
+            var marker_1b5c99a8d17bbdde571b1e4ede7085ec = L.marker(
+                [41.0528229, -0.1303772],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_ec57bd9a578b9394f1394a186db884dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1b5c99a8d17bbdde571b1e4ede7085ec.setIcon(icon_ec57bd9a578b9394f1394a186db884dc);
+        
+    
+        var popup_0df8c446d1856cf34fff8fb52191232b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_a38435ef71ab829f63057a2c8e53b542 = $(`<div id="html_a38435ef71ab829f63057a2c8e53b542" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7968<br>                <strong>Centro:</strong> IES BAJO ARAGÓN ALCAÑIZ (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.0528229, -0.1303772)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0df8c446d1856cf34fff8fb52191232b.setContent(html_a38435ef71ab829f63057a2c8e53b542);
+            
+        
+
+        marker_1b5c99a8d17bbdde571b1e4ede7085ec.bindPopup(popup_0df8c446d1856cf34fff8fb52191232b)
+        ;
+
+        
+    
+    
+            var marker_819588f389f459824b5f466c320e6c6c = L.marker(
+                [40.9745592, -0.4481836],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_80ca94a4a0795caa59b60b3f80538594 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_819588f389f459824b5f466c320e6c6c.setIcon(icon_80ca94a4a0795caa59b60b3f80538594);
+        
+    
+        var popup_677b1dcdb2b6b905725cb6b0ffdced69 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_2978fc9d379b232bc064a123d494f925 = $(`<div id="html_2978fc9d379b232bc064a123d494f925" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8028<br>                <strong>Centro:</strong> CEIP JUAN RAMÓN ALEGRE ANDORRA (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.9745592, -0.4481836)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_677b1dcdb2b6b905725cb6b0ffdced69.setContent(html_2978fc9d379b232bc064a123d494f925);
+            
+        
+
+        marker_819588f389f459824b5f466c320e6c6c.bindPopup(popup_677b1dcdb2b6b905725cb6b0ffdced69)
+        ;
+
+        
+    
+    
+            var marker_a38747b4fab9a6e9da2e904f35eefdb6 = L.marker(
+                [40.9173028, -1.299939],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_8d82ec6d9e74e402169adeda8a9f729b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a38747b4fab9a6e9da2e904f35eefdb6.setIcon(icon_8d82ec6d9e74e402169adeda8a9f729b);
+        
+    
+        var popup_584f2aeeb1d2b8a0fdc3b91f800d3217 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_197903a3c4d47d1fbdd2929681447603 = $(`<div id="html_197903a3c4d47d1fbdd2929681447603" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7593<br>                <strong>Centro:</strong> CPEPA JILOCA CALAMOCHA (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.9173028, -1.299939)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_584f2aeeb1d2b8a0fdc3b91f800d3217.setContent(html_197903a3c4d47d1fbdd2929681447603);
+            
+        
+
+        marker_a38747b4fab9a6e9da2e904f35eefdb6.bindPopup(popup_584f2aeeb1d2b8a0fdc3b91f800d3217)
+        ;
+
+        
+    
+    
+            var marker_81d59563c2659a547e27bf5ec5af4f69 = L.marker(
+                [40.4570345, -1.287054],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_61c121637e182179e79b57bebde8b6e4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_81d59563c2659a547e27bf5ec5af4f69.setIcon(icon_61c121637e182179e79b57bebde8b6e4);
+        
+    
+        var popup_3eb84618a8cfe0cd080fe6b1960547eb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_23e50ee7ca462b726a059e64e940673a = $(`<div id="html_23e50ee7ca462b726a059e64e940673a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8059<br>                <strong>Centro:</strong> CEIP ASTRÓNOMO ZARZOSO CELLA (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.4570345, -1.287054)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_3eb84618a8cfe0cd080fe6b1960547eb.setContent(html_23e50ee7ca462b726a059e64e940673a);
+            
+        
+
+        marker_81d59563c2659a547e27bf5ec5af4f69.bindPopup(popup_3eb84618a8cfe0cd080fe6b1960547eb)
+        ;
+
+        
+    
+    
+            var marker_125c2c9ab5a46e2bee55d1e8492ee94f = L.marker(
+                [40.8661337, -0.5198330999999999],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_93a9ed8461e8a508d1376bf56f3745eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_125c2c9ab5a46e2bee55d1e8492ee94f.setIcon(icon_93a9ed8461e8a508d1376bf56f3745eb);
+        
+    
+        var popup_b69772b0bbe5cde996ad89ea8c3f840e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f2d910b6cbad670f9b704b73330daa7c = $(`<div id="html_f2d910b6cbad670f9b704b73330daa7c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7885<br>                <strong>Centro:</strong> CRA SOMONTANO-BAJO ARAGÓN MATA DE LOS OLMOS (LA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Pedagogía terapeútica<br>                <strong>Coordenadas:</strong> (40.8661337, -0.5198330999999999)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Pedagogía Terapeútica.                </div>`)[0];
+                popup_b69772b0bbe5cde996ad89ea8c3f840e.setContent(html_f2d910b6cbad670f9b704b73330daa7c);
+            
+        
+
+        marker_125c2c9ab5a46e2bee55d1e8492ee94f.bindPopup(popup_b69772b0bbe5cde996ad89ea8c3f840e)
+        ;
+
+        
+    
+    
+            var marker_d61496bdf7e94c38716b58c422d0a026 = L.marker(
+                [41.0327755, -0.811547],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_2046cf8d1e5de5725bf129e5616d6b05 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d61496bdf7e94c38716b58c422d0a026.setIcon(icon_2046cf8d1e5de5725bf129e5616d6b05);
+        
+    
+        var popup_c5011631883e86a213335813d3428b11 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6bcad9b0eae7d57a2a9f2e349541b99e = $(`<div id="html_6bcad9b0eae7d57a2a9f2e349541b99e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 6284<br>                <strong>Centro:</strong> CRA DE MUNIESA MUNIESA (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje<br>                <strong>Coordenadas:</strong> (41.0327755, -0.811547)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Audición y Lenguaje.                </div>`)[0];
+                popup_c5011631883e86a213335813d3428b11.setContent(html_6bcad9b0eae7d57a2a9f2e349541b99e);
+            
+        
+
+        marker_d61496bdf7e94c38716b58c422d0a026.bindPopup(popup_c5011631883e86a213335813d3428b11)
+        ;
+
+        
+    
+    
+            var marker_ddd551125e0df96a0df0291cada46c2c = L.marker(
+                [41.2297995, -0.4408037],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_8b459f1a61f7761bbab0018c45a0e462 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ddd551125e0df96a0df0291cada46c2c.setIcon(icon_8b459f1a61f7761bbab0018c45a0e462);
+        
+    
+        var popup_882cf1d29751afa59a131f0ad3923fc7 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_3c4f051e4dbb9df4ad53bdcc08fb0cd9 = $(`<div id="html_3c4f051e4dbb9df4ad53bdcc08fb0cd9" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7569<br>                <strong>Centro:</strong> CRA BAJO MARTÍN PUEBLA DE HIJAR (LA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.2297995, -0.4408037)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_882cf1d29751afa59a131f0ad3923fc7.setContent(html_3c4f051e4dbb9df4ad53bdcc08fb0cd9);
+            
+        
+
+        marker_ddd551125e0df96a0df0291cada46c2c.bindPopup(popup_882cf1d29751afa59a131f0ad3923fc7)
+        ;
+
+        
+    
+    
+            var marker_e7205a9afab23f677fc43d82646501a0 = L.marker(
+                [40.1404096, -0.8103197999999999],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Excedencia cuidado familiares (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_60acd0999ddb708d32630c5fd03ddcb6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e7205a9afab23f677fc43d82646501a0.setIcon(icon_60acd0999ddb708d32630c5fd03ddcb6);
+        
+    
+        var popup_d251554e5915d1a42556b9de4852a05a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f32160677de42df14f03d1d1e0ccaf58 = $(`<div id="html_f32160677de42df14f03d1d1e0ccaf58" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7602<br>                <strong>Centro:</strong> CEIP DE SARRIÓN SARRION (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Excedencia cuidado familiares (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.1404096, -0.8103197999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_d251554e5915d1a42556b9de4852a05a.setContent(html_f32160677de42df14f03d1d1e0ccaf58);
+            
+        
+
+        marker_e7205a9afab23f677fc43d82646501a0.bindPopup(popup_d251554e5915d1a42556b9de4852a05a)
+        ;
+
+        
+    
+    
+            var marker_f955fec90bea4a2a5d761831da3133a0 = L.marker(
+                [40.8733163, 0.1543512],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_28c0b4d42fd499a5e45ab5a2f9213255 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f955fec90bea4a2a5d761831da3133a0.setIcon(icon_28c0b4d42fd499a5e45ab5a2f9213255);
+        
+    
+        var popup_0b0260583f9e183669f35c0c9c911005 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f060d3d062233bf4bf2c4cf71f98773a = $(`<div id="html_f060d3d062233bf4bf2c4cf71f98773a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7977<br>                <strong>Centro:</strong> CEIP VICENTE FERRER RAMOS VALDERROBRES (TERUEL)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.8733163, 0.1543512)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0b0260583f9e183669f35c0c9c911005.setContent(html_f060d3d062233bf4bf2c4cf71f98773a);
+            
+        
+
+        marker_f955fec90bea4a2a5d761831da3133a0.bindPopup(popup_0b0260583f9e183669f35c0c9c911005)
+        ;
+
+        
+    
+    
+            var marker_7253f3cc85689c2528f71054e0af0d32 = L.marker(
+                [41.7734718, -1.1254531],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d8ce196830a568dbde58aa8a855d14f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7253f3cc85689c2528f71054e0af0d32.setIcon(icon_d8ce196830a568dbde58aa8a855d14f2);
+        
+    
+        var popup_8413876dec74afb95a12d00c58cf1951 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ccb5435ad279d80bc4a6879e1a7e97bc = $(`<div id="html_ccb5435ad279d80bc4a6879e1a7e97bc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7504<br>                <strong>Centro:</strong> CEIP ARAGÓN ALAGON (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7734718, -1.1254531)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8413876dec74afb95a12d00c58cf1951.setContent(html_ccb5435ad279d80bc4a6879e1a7e97bc);
+            
+        
+
+        marker_7253f3cc85689c2528f71054e0af0d32.bindPopup(popup_8413876dec74afb95a12d00c58cf1951)
+        ;
+
+        
+    
+    
+            var marker_319a14243b7cd6d1e03b44fd64bc622e = L.marker(
+                [41.29690859999999, -1.8939172],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Paternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e9599c43e05b9ace0c1c86206794f5ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_319a14243b7cd6d1e03b44fd64bc622e.setIcon(icon_e9599c43e05b9ace0c1c86206794f5ec);
+        
+    
+        var popup_e6362861409e2a9206dbfa6aa8501bd0 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0b3ff4df109542308b3f8d68f7a87329 = $(`<div id="html_0b3ff4df109542308b3f8d68f7a87329" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7659<br>                <strong>Centro:</strong> CEIP PABLO LUNA ALHAMA DE ARAGON (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Paternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.29690859999999, -1.8939172)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e6362861409e2a9206dbfa6aa8501bd0.setContent(html_0b3ff4df109542308b3f8d68f7a87329);
+            
+        
+
+        marker_319a14243b7cd6d1e03b44fd64bc622e.bindPopup(popup_e6362861409e2a9206dbfa6aa8501bd0)
+        ;
+
+        
+    
+    
+            var marker_f141d7ed6bea57acc89f3111a5d9d15e = L.marker(
+                [41.4759701, -1.3754676],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_161b944da5a17d3360b8b01ca8fc9f59 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f141d7ed6bea57acc89f3111a5d9d15e.setIcon(icon_161b944da5a17d3360b8b01ca8fc9f59);
+        
+    
+        var popup_9a2aed96d5696d7be68dc39d7e134bd5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6ef6dd70f25b2143d7b76a1da18f55f7 = $(`<div id="html_6ef6dd70f25b2143d7b76a1da18f55f7" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8231<br>                <strong>Centro:</strong> CEIP FLORIÁN REY ALMUNIA DE DOÑA GODINA (LA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.4759701, -1.3754676)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9a2aed96d5696d7be68dc39d7e134bd5.setContent(html_6ef6dd70f25b2143d7b76a1da18f55f7);
+            
+        
+
+        marker_f141d7ed6bea57acc89f3111a5d9d15e.bindPopup(popup_9a2aed96d5696d7be68dc39d7e134bd5)
+        ;
+
+        
+    
+    
+            var marker_c1166d988e299e2732eecd977ce8156a = L.marker(
+                [41.472017, -1.370835],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_20778af5a903d1c2451527a3c9c55aaf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c1166d988e299e2732eecd977ce8156a.setIcon(icon_20778af5a903d1c2451527a3c9c55aaf);
+        
+    
+        var popup_dc664feaa8d4594251d20048a20e8c14 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1645b879484b9354fd83893a8f2ca102 = $(`<div id="html_1645b879484b9354fd83893a8f2ca102" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8258<br>                <strong>Centro:</strong> CEIP NERTÓBRIGA ALMUNIA DE DOÑA GODINA (LA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.472017, -1.370835)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_dc664feaa8d4594251d20048a20e8c14.setContent(html_1645b879484b9354fd83893a8f2ca102);
+            
+        
+
+        marker_c1166d988e299e2732eecd977ce8156a.bindPopup(popup_dc664feaa8d4594251d20048a20e8c14)
+        ;
+
+        
+    
+    
+            var marker_ae7ce6e21f041be683700a15b402aa13 = L.marker(
+                [41.8337231, -1.5341785],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_cd89d9da74ece0c6e08446212b934843 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ae7ce6e21f041be683700a15b402aa13.setIcon(icon_cd89d9da74ece0c6e08446212b934843);
+        
+    
+        var popup_7a84ba585520489c5a39f0dee928c33c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_2185623cbe0e385d6dd3b3b27ae8ec5f = $(`<div id="html_2185623cbe0e385d6dd3b3b27ae8ec5f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7617<br>                <strong>Centro:</strong> CEIP CAMPO DE BORJA BORJA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.8337231, -1.5341785)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7a84ba585520489c5a39f0dee928c33c.setContent(html_2185623cbe0e385d6dd3b3b27ae8ec5f);
+            
+        
+
+        marker_ae7ce6e21f041be683700a15b402aa13.bindPopup(popup_7a84ba585520489c5a39f0dee928c33c)
+        ;
+
+        
+    
+    
+            var marker_3d8cad5dd3dae2d0c9380f87f082be82 = L.marker(
+                [41.3417544, -1.6414651],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Parcial"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d150bfdc186721b738c7fa8998694db4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3d8cad5dd3dae2d0c9380f87f082be82.setIcon(icon_d150bfdc186721b738c7fa8998694db4);
+        
+    
+        var popup_0185e31a931b8cff9eb8d40e0addc1c8 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_5cd51fbea132111c9857e473fac2c3a2 = $(`<div id="html_5cd51fbea132111c9857e473fac2c3a2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7712<br>                <strong>Centro:</strong> CEIP BALTASAR GRACIÁN CALATAYUD (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.3417544, -1.6414651)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0185e31a931b8cff9eb8d40e0addc1c8.setContent(html_5cd51fbea132111c9857e473fac2c3a2);
+            
+        
+
+        marker_3d8cad5dd3dae2d0c9380f87f082be82.bindPopup(popup_0185e31a931b8cff9eb8d40e0addc1c8)
+        ;
+
+        
+    
+    
+            var marker_e848d44cfb0d4f1961977424181cd0eb = L.marker(
+                [41.71932899999999, -1.0253731],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Paternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_203d0a144b8ed953b91e7577de71546d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e848d44cfb0d4f1961977424181cd0eb.setIcon(icon_203d0a144b8ed953b91e7577de71546d);
+        
+    
+        var popup_26eb50ee3cf206b5d52d7a87bedefac5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_77e7bb78429fe4ba7379ac01d701ce0e = $(`<div id="html_77e7bb78429fe4ba7379ac01d701ce0e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7517<br>                <strong>Centro:</strong> CPEPA MIGUEL HERNÁNDEZ CASETAS (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Paternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.71932899999999, -1.0253731)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_26eb50ee3cf206b5d52d7a87bedefac5.setContent(html_77e7bb78429fe4ba7379ac01d701ce0e);
+            
+        
+
+        marker_e848d44cfb0d4f1961977424181cd0eb.bindPopup(popup_26eb50ee3cf206b5d52d7a87bedefac5)
+        ;
+
+        
+    
+    
+            var marker_c82921637684c85a7dc7f69997c2468d = L.marker(
+                [41.6474339, -0.8861451],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_ba2f9f7e4c11ba8dae49280ee2952e27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c82921637684c85a7dc7f69997c2468d.setIcon(icon_ba2f9f7e4c11ba8dae49280ee2952e27);
+        
+    
+        var popup_eef075787608f10cf5dfd7accc4ada52 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_174c63a7ac94e1707be8b5b599d65bb5 = $(`<div id="html_174c63a7ac94e1707be8b5b599d65bb5" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8239<br>                <strong>Centro:</strong> CEIP ALEJO LORÉN ALBAREDA CASPE (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6474339, -0.8861451)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_eef075787608f10cf5dfd7accc4ada52.setContent(html_174c63a7ac94e1707be8b5b599d65bb5);
+            
+        
+
+        marker_c82921637684c85a7dc7f69997c2468d.bindPopup(popup_eef075787608f10cf5dfd7accc4ada52)
+        ;
+
+        
+    
+    
+            var marker_c4cafe318ed4937c0b08e38c1a38af00 = L.marker(
+                [41.5970219, -0.9233382000000001],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_b1b4ce4fb1a6b58070d95bb8f3b3fe36 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c4cafe318ed4937c0b08e38c1a38af00.setIcon(icon_b1b4ce4fb1a6b58070d95bb8f3b3fe36);
+        
+    
+        var popup_5922a57feb1f8d0b5102f5cd790eb241 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d89463601bcbdda7f20c53aa9a299e98 = $(`<div id="html_d89463601bcbdda7f20c53aa9a299e98" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7813<br>                <strong>Centro:</strong> CEIP PILAR BAYONA CUARTE DE HUERVA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5970219, -0.9233382000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5922a57feb1f8d0b5102f5cd790eb241.setContent(html_d89463601bcbdda7f20c53aa9a299e98);
+            
+        
+
+        marker_c4cafe318ed4937c0b08e38c1a38af00.bindPopup(popup_5922a57feb1f8d0b5102f5cd790eb241)
+        ;
+
+        
+    
+    
+            var marker_b22e967bd97eb51f032b91120cd2549c = L.marker(
+                [41.1101674, -1.4217336],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_fbdb8c48e16218aa4f2d3780973343e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b22e967bd97eb51f032b91120cd2549c.setIcon(icon_fbdb8c48e16218aa4f2d3780973343e6);
+        
+    
+        var popup_62cae46ccf322df4416ac9c59588ee22 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_2f6ae30049e9b91b706b779531ed6e7c = $(`<div id="html_2f6ae30049e9b91b706b779531ed6e7c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7886<br>                <strong>Centro:</strong> CEIP PEDRO SÁNCHEZ CIRUELO DAROCA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.1101674, -1.4217336)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_62cae46ccf322df4416ac9c59588ee22.setContent(html_2f6ae30049e9b91b706b779531ed6e7c);
+            
+        
+
+        marker_b22e967bd97eb51f032b91120cd2549c.bindPopup(popup_62cae46ccf322df4416ac9c59588ee22)
+        ;
+
+        
+    
+    
+            var marker_a2635849500280b10e80fe970ca4bc75 = L.marker(
+                [41.1101674, -1.4217336],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d14ea1151326c06480abb754e70cfb94 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a2635849500280b10e80fe970ca4bc75.setIcon(icon_d14ea1151326c06480abb754e70cfb94);
+        
+    
+        var popup_f333a5918ae373cb6ba07e4b4e7fab19 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7c0ea5354fb610d55569d78add013485 = $(`<div id="html_7c0ea5354fb610d55569d78add013485" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7605<br>                <strong>Centro:</strong> CEIP PEDRO SÁNCHEZ CIRUELO DAROCA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.1101674, -1.4217336)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_f333a5918ae373cb6ba07e4b4e7fab19.setContent(html_7c0ea5354fb610d55569d78add013485);
+            
+        
+
+        marker_a2635849500280b10e80fe970ca4bc75.bindPopup(popup_f333a5918ae373cb6ba07e4b4e7fab19)
+        ;
+
+        
+    
+    
+            var marker_3f285d943d863a54d03791873f3cce31 = L.marker(
+                [42.1265244, -1.1307273],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_d7de7f0990f5f1f370fc7fb65611f4d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3f285d943d863a54d03791873f3cce31.setIcon(icon_d7de7f0990f5f1f370fc7fb65611f4d7);
+        
+    
+        var popup_064b340fddbb2952f424b45141dd93fc = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f3cc27fe93ec2668af3b158155f128b0 = $(`<div id="html_f3cc27fe93ec2668af3b158155f128b0" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7760<br>                <strong>Centro:</strong> CEIP RECTOR MAMÉS ESPERABÉ EJEA DE LOS CABALLEROS (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1265244, -1.1307273)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_064b340fddbb2952f424b45141dd93fc.setContent(html_f3cc27fe93ec2668af3b158155f128b0);
+            
+        
+
+        marker_3f285d943d863a54d03791873f3cce31.bindPopup(popup_064b340fddbb2952f424b45141dd93fc)
+        ;
+
+        
+    
+    
+            var marker_a23244619f360f81b9e53c94463c8738 = L.marker(
+                [41.5985758, -1.2759215],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_77f521b9ce35252242d65dee49e7360e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a23244619f360f81b9e53c94463c8738.setIcon(icon_77f521b9ce35252242d65dee49e7360e);
+        
+    
+        var popup_4fdce49d8dc471ebea95283fc4ad9094 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ffb3d9e03dee28e35203f58019798670 = $(`<div id="html_ffb3d9e03dee28e35203f58019798670" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7589<br>                <strong>Centro:</strong> CEIP GASPAR REMIRO EPILA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5985758, -1.2759215)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_4fdce49d8dc471ebea95283fc4ad9094.setContent(html_ffb3d9e03dee28e35203f58019798670);
+            
+        
+
+        marker_a23244619f360f81b9e53c94463c8738.bindPopup(popup_4fdce49d8dc471ebea95283fc4ad9094)
+        ;
+
+        
+    
+    
+            var marker_8b5b6087152caf959552aa7418aecab7 = L.marker(
+                [41.5985758, -1.2759215],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_e6b00c92583adcaf57d853d4d58281c3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8b5b6087152caf959552aa7418aecab7.setIcon(icon_e6b00c92583adcaf57d853d4d58281c3);
+        
+    
+        var popup_6b254849e0016e122b7641ce23224d91 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_42a081a5f235c68374dabae3f2850d9c = $(`<div id="html_42a081a5f235c68374dabae3f2850d9c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7713<br>                <strong>Centro:</strong> CEIP GASPAR REMIRO EPILA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5985758, -1.2759215)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_6b254849e0016e122b7641ce23224d91.setContent(html_42a081a5f235c68374dabae3f2850d9c);
+            
+        
+
+        marker_8b5b6087152caf959552aa7418aecab7.bindPopup(popup_6b254849e0016e122b7641ce23224d91)
+        ;
+
+        
+    
+    
+            var marker_3f8938395c931558eaa8dae670b5d1f1 = L.marker(
+                [41.5390958, -1.6259812],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_8142bebfbd1fe6bb060094c7d2a4cfa6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3f8938395c931558eaa8dae670b5d1f1.setIcon(icon_8142bebfbd1fe6bb060094c7d2a4cfa6);
+        
+    
+        var popup_e58958fff38fe6075df334276f4cf463 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b4ef4f59eb06ad909d5b0f7d534bef97 = $(`<div id="html_b4ef4f59eb06ad909d5b0f7d534bef97" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8012<br>                <strong>Centro:</strong> CEIP BENEDICTO XIII ILLUECA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5390958, -1.6259812)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e58958fff38fe6075df334276f4cf463.setContent(html_b4ef4f59eb06ad909d5b0f7d534bef97);
+            
+        
+
+        marker_3f8938395c931558eaa8dae670b5d1f1.bindPopup(popup_e58958fff38fe6075df334276f4cf463)
+        ;
+
+        
+    
+    
+            var marker_4affe9595471027fc8262d6fb95ce894 = L.marker(
+                [41.2867863, -1.6171584],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_ba68f3d937d3ee1985e7f26c118369a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4affe9595471027fc8262d6fb95ce894.setIcon(icon_ba68f3d937d3ee1985e7f26c118369a3);
+        
+    
+        var popup_ec483077f0d107f2835a19ecf04a2189 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b3e23202ffb8a1e676b2af44efd7cc6a = $(`<div id="html_b3e23202ffb8a1e676b2af44efd7cc6a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7552<br>                <strong>Centro:</strong> CRA TRES RIBERAS MALUENDA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.2867863, -1.6171584)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_ec483077f0d107f2835a19ecf04a2189.setContent(html_b3e23202ffb8a1e676b2af44efd7cc6a);
+            
+        
+
+        marker_4affe9595471027fc8262d6fb95ce894.bindPopup(popup_ec483077f0d107f2835a19ecf04a2189)
+        ;
+
+        
+    
+    
+            var marker_76d3158df82e739a4930cb0e3e4dda80 = L.marker(
+                [41.6687715, -0.8390367999999999],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_435431dd08930203fbdb103c5e8fb7bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_76d3158df82e739a4930cb0e3e4dda80.setIcon(icon_435431dd08930203fbdb103c5e8fb7bd);
+        
+    
+        var popup_7bc8695b42a2ed3be11a5bc68189f0f4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_16e3116928026def80f7d2691566f1a1 = $(`<div id="html_16e3116928026def80f7d2691566f1a1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7549<br>                <strong>Centro:</strong> CEIP JUAN PABLO BONET MOVERA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Audición y lenguaje<br>                <strong>Coordenadas:</strong> (41.6687715, -0.8390367999999999)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Audición y Lenguaje.                </div>`)[0];
+                popup_7bc8695b42a2ed3be11a5bc68189f0f4.setContent(html_16e3116928026def80f7d2691566f1a1);
+            
+        
+
+        marker_76d3158df82e739a4930cb0e3e4dda80.bindPopup(popup_7bc8695b42a2ed3be11a5bc68189f0f4)
+        ;
+
+        
+    
+    
+            var marker_9ded196c894dc13fe5b03a8e5108ce49 = L.marker(
+                [41.9481593, -1.6934211],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_429a2584272c92332713280707f22936 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9ded196c894dc13fe5b03a8e5108ce49.setIcon(icon_429a2584272c92332713280707f22936);
+        
+    
+        var popup_0fe4d41082f1b5c474348de9dd0087e5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b198db26212d8437908fbecaa72498ea = $(`<div id="html_b198db26212d8437908fbecaa72498ea" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7879<br>                <strong>Centro:</strong> CRA BÉCQUER NOVALLAS (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9481593, -1.6934211)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0fe4d41082f1b5c474348de9dd0087e5.setContent(html_b198db26212d8437908fbecaa72498ea);
+            
+        
+
+        marker_9ded196c894dc13fe5b03a8e5108ce49.bindPopup(popup_0fe4d41082f1b5c474348de9dd0087e5)
+        ;
+
+        
+    
+    
+            var marker_daa5d5d91950e58ecfe7b1c8c51eeca0 = L.marker(
+                [41.9481593, -1.6934211],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_4e5aafccc50073b8fd54e6c44880eba7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_daa5d5d91950e58ecfe7b1c8c51eeca0.setIcon(icon_4e5aafccc50073b8fd54e6c44880eba7);
+        
+    
+        var popup_829009a4e3f0ab9430c1e48272f8fa65 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_72207eb1822e6a8e00762f6ea067a8b2 = $(`<div id="html_72207eb1822e6a8e00762f6ea067a8b2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7650<br>                <strong>Centro:</strong> CRA BÉCQUER NOVALLAS (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Inglés<br>                <strong>Coordenadas:</strong> (41.9481593, -1.6934211)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Inglés o bien un B2 por ese idioma.                </div>`)[0];
+                popup_829009a4e3f0ab9430c1e48272f8fa65.setContent(html_72207eb1822e6a8e00762f6ea067a8b2);
+            
+        
+
+        marker_daa5d5d91950e58ecfe7b1c8c51eeca0.bindPopup(popup_829009a4e3f0ab9430c1e48272f8fa65)
+        ;
+
+        
+    
+    
+            var marker_8e7e54b53313933aa5e3e785c8e437d4 = L.marker(
+                [42.1332702, -1.3106484],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_2b9604c01df0bc310faa641a2e70b44f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8e7e54b53313933aa5e3e785c8e437d4.setIcon(icon_2b9604c01df0bc310faa641a2e70b44f);
+        
+    
+        var popup_97b49359ca0cf58cc86165bda30949b7 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_331558b9254a2ab8e0dc669a2238d7a1 = $(`<div id="html_331558b9254a2ab8e0dc669a2238d7a1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7985<br>                <strong>Centro:</strong> CRA LUIS BUÑUEL PINSORO (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1332702, -1.3106484)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_97b49359ca0cf58cc86165bda30949b7.setContent(html_331558b9254a2ab8e0dc669a2238d7a1);
+            
+        
+
+        marker_8e7e54b53313933aa5e3e785c8e437d4.bindPopup(popup_97b49359ca0cf58cc86165bda30949b7)
+        ;
+
+        
+    
+    
+            var marker_0067dfd115187b3a6710585fba4d7658 = L.marker(
+                [41.9082954, -1.719409],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_354ee0ab35c9b648844c2c8322bcadc2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0067dfd115187b3a6710585fba4d7658.setIcon(icon_354ee0ab35c9b648844c2c8322bcadc2);
+        
+    
+        var popup_74b63a11c3db5462346254deee253dbb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_cfcb412a649bcd75e982e775b193dc72 = $(`<div id="html_cfcb412a649bcd75e982e775b193dc72" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7657<br>                <strong>Centro:</strong> CEIP MONCAYO TARAZONA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9082954, -1.719409)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_74b63a11c3db5462346254deee253dbb.setContent(html_cfcb412a649bcd75e982e775b193dc72);
+            
+        
+
+        marker_0067dfd115187b3a6710585fba4d7658.bindPopup(popup_74b63a11c3db5462346254deee253dbb)
+        ;
+
+        
+    
+    
+            var marker_d77766525878c04e41e1ceb0d1bdf297 = L.marker(
+                [41.7578331, -1.0666342],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_47aa090fdea134c8bf01f783b9e6cca0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d77766525878c04e41e1ceb0d1bdf297.setIcon(icon_47aa090fdea134c8bf01f783b9e6cca0);
+        
+    
+        var popup_9356dcab18bc091b6da8199c6b12d19e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b32f3d1686765b52a8a7f9ba549933e5 = $(`<div id="html_b32f3d1686765b52a8a7f9ba549933e5" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7507<br>                <strong>Centro:</strong> CEIP MONTES DEL CASTELLAR TORRES DE BERRELLEN (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7578331, -1.0666342)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9356dcab18bc091b6da8199c6b12d19e.setContent(html_b32f3d1686765b52a8a7f9ba549933e5);
+            
+        
+
+        marker_d77766525878c04e41e1ceb0d1bdf297.bindPopup(popup_9356dcab18bc091b6da8199c6b12d19e)
+        ;
+
+        
+    
+    
+            var marker_b3869b4d4e5480df16320a040c9bece9 = L.marker(
+                [41.7102419, -0.9993348000000001],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_04c7344a2d574e14c0ebecf2aa27f3cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b3869b4d4e5480df16320a040c9bece9.setIcon(icon_04c7344a2d574e14c0ebecf2aa27f3cf);
+        
+    
+        var popup_75a6ce1b22090bf62ebe86bba9ef16be = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_449715643d22268d63f55bcd4e4c1f3f = $(`<div id="html_449715643d22268d63f55bcd4e4c1f3f" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7786<br>                <strong>Centro:</strong> CEIP MIGUEL ARTAZOS TAMÉ UTEBO (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7102419, -0.9993348000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_75a6ce1b22090bf62ebe86bba9ef16be.setContent(html_449715643d22268d63f55bcd4e4c1f3f);
+            
+        
+
+        marker_b3869b4d4e5480df16320a040c9bece9.bindPopup(popup_75a6ce1b22090bf62ebe86bba9ef16be)
+        ;
+
+        
+    
+    
+            var marker_9b854ed65199be3562d7af740ecc5064 = L.marker(
+                [41.6863203, -0.7683673999999999],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Licencia Estudios (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_409e0193e29a6fdbfd8be09a75d68ba5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9b854ed65199be3562d7af740ecc5064.setIcon(icon_409e0193e29a6fdbfd8be09a75d68ba5);
+        
+    
+        var popup_463805b29b1be1af3aa9d9cb8ff4521e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e2f83410ae49bc75de7744110f2b63f3 = $(`<div id="html_e2f83410ae49bc75de7744110f2b63f3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7943<br>                <strong>Centro:</strong> CEIP MARIANO CASTILLO VILLAMAYOR DE GALLEGO (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Licencia Estudios (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6863203, -0.7683673999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_463805b29b1be1af3aa9d9cb8ff4521e.setContent(html_e2f83410ae49bc75de7744110f2b63f3);
+            
+        
+
+        marker_9b854ed65199be3562d7af740ecc5064.bindPopup(popup_463805b29b1be1af3aa9d9cb8ff4521e)
+        ;
+
+        
+    
+    
+            var marker_522c9cece810db11b27ab4b6315b4624 = L.marker(
+                [41.7702125, -0.8256565],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_f246ca97923bb669cc33cc3f6aae25cc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_522c9cece810db11b27ab4b6315b4624.setIcon(icon_f246ca97923bb669cc33cc3f6aae25cc);
+        
+    
+        var popup_8feb2e1a63a377e2f8dece87b0f89d8d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_916d77a7cf128d3a0218b6444b65e55c = $(`<div id="html_916d77a7cf128d3a0218b6444b65e55c" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7758<br>                <strong>Centro:</strong> CEIP PINTOR PRADILLA VILLANUEVA DE GALLEGO (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7702125, -0.8256565)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8feb2e1a63a377e2f8dece87b0f89d8d.setContent(html_916d77a7cf128d3a0218b6444b65e55c);
+            
+        
+
+        marker_522c9cece810db11b27ab4b6315b4624.bindPopup(popup_8feb2e1a63a377e2f8dece87b0f89d8d)
+        ;
+
+        
+    
+    
+            var marker_265df4283fceb0e3e0a274f18f263112 = L.marker(
+                [41.6256588, -0.8814535],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_b74a25740a9763c9bd2e25e8a559774c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_265df4283fceb0e3e0a274f18f263112.setIcon(icon_b74a25740a9763c9bd2e25e8a559774c);
+        
+    
+        var popup_fbb01117c1b3168721d1fbc7890fef43 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_56935d732490323b9f204f77afa5eaad = $(`<div id="html_56935d732490323b9f204f77afa5eaad" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8285<br>                <strong>Centro:</strong> CEIP RAMÓN SÁINZ DE VARANDA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6256588, -0.8814535)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_fbb01117c1b3168721d1fbc7890fef43.setContent(html_56935d732490323b9f204f77afa5eaad);
+            
+        
+
+        marker_265df4283fceb0e3e0a274f18f263112.bindPopup(popup_fbb01117c1b3168721d1fbc7890fef43)
+        ;
+
+        
+    
+    
+            var marker_b0eed845f8e2d8746711449a84fa41e4 = L.marker(
+                [41.6546331, -0.9113183],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_3c7f2ea00362b60b611b7f9dc1841e82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b0eed845f8e2d8746711449a84fa41e4.setIcon(icon_3c7f2ea00362b60b611b7f9dc1841e82);
+        
+    
+        var popup_4521f22f64a1b18647fa69a9193706aa = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7fc66a2453b02b1fce2bc46dff1b9648 = $(`<div id="html_7fc66a2453b02b1fce2bc46dff1b9648" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8247<br>                <strong>Centro:</strong> CEIP ANA MAYAYO ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6546331, -0.9113183)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_4521f22f64a1b18647fa69a9193706aa.setContent(html_7fc66a2453b02b1fce2bc46dff1b9648);
+            
+        
+
+        marker_b0eed845f8e2d8746711449a84fa41e4.bindPopup(popup_4521f22f64a1b18647fa69a9193706aa)
+        ;
+
+        
+    
+    
+            var marker_9aaa79f44c64944ce9643ad995dc48ee = L.marker(
+                [41.637649, -0.9048297],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_8460a2caf7c54143b2bdcc758687ff03 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9aaa79f44c64944ce9643ad995dc48ee.setIcon(icon_8460a2caf7c54143b2bdcc758687ff03);
+        
+    
+        var popup_a56c64db661a1a1040bab9091ef96ebd = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_25190d627e1d2f5317a88f81be885e83 = $(`<div id="html_25190d627e1d2f5317a88f81be885e83" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7583<br>                <strong>Centro:</strong> CEIP CESÁREO ALIERTA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.637649, -0.9048297)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_a56c64db661a1a1040bab9091ef96ebd.setContent(html_25190d627e1d2f5317a88f81be885e83);
+            
+        
+
+        marker_9aaa79f44c64944ce9643ad995dc48ee.bindPopup(popup_a56c64db661a1a1040bab9091ef96ebd)
+        ;
+
+        
+    
+    
+            var marker_64307a8dd6421e0d1b0f54eb3ae39384 = L.marker(
+                [41.6591618, -0.9437348],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Asuntos Propios", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_cd3a1bc71e21365b04608ec539d49eb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_64307a8dd6421e0d1b0f54eb3ae39384.setIcon(icon_cd3a1bc71e21365b04608ec539d49eb2);
+        
+    
+        var popup_cc5d1330b0ffe064360996333f89ec6f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f49a47c981ead73ea9b5cd199b6f4b21 = $(`<div id="html_f49a47c981ead73ea9b5cd199b6f4b21" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7526<br>                <strong>Centro:</strong> CEIP JULIÁN NIETO TAPIA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Asuntos Propios<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6591618, -0.9437348)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_cc5d1330b0ffe064360996333f89ec6f.setContent(html_f49a47c981ead73ea9b5cd199b6f4b21);
+            
+        
+
+        marker_64307a8dd6421e0d1b0f54eb3ae39384.bindPopup(popup_cc5d1330b0ffe064360996333f89ec6f)
+        ;
+
+        
+    
+    
+            var marker_79986ca7004e6300a97231a17c1976d4 = L.marker(
+                [41.6636634, -0.8579721000000001],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_86e8d3728214413d2213261b35a0c1b3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_79986ca7004e6300a97231a17c1976d4.setIcon(icon_86e8d3728214413d2213261b35a0c1b3);
+        
+    
+        var popup_93ebea497e4ad98452a9f804a32df244 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9b13856d520eb636057f72299bfe6bc6 = $(`<div id="html_9b13856d520eb636057f72299bfe6bc6" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8106<br>                <strong>Centro:</strong> CEIP LA ESTRELLA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6636634, -0.8579721000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_93ebea497e4ad98452a9f804a32df244.setContent(html_9b13856d520eb636057f72299bfe6bc6);
+            
+        
+
+        marker_79986ca7004e6300a97231a17c1976d4.bindPopup(popup_93ebea497e4ad98452a9f804a32df244)
+        ;
+
+        
+    
+    
+            var marker_feda20009aaee1916961b20c8463d0c9 = L.marker(
+                [41.6437384, -0.8650076],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_b5e4ebbf1fbfb5a16386c65b4d8be01c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_feda20009aaee1916961b20c8463d0c9.setIcon(icon_b5e4ebbf1fbfb5a16386c65b4d8be01c);
+        
+    
+        var popup_e090fc785fc93c0d70019cb39f273273 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_f1c8479e31059e2b6dd360f5a28375b8 = $(`<div id="html_f1c8479e31059e2b6dd360f5a28375b8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8002<br>                <strong>Centro:</strong> CEIP MARCOS FRECHÍN ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6437384, -0.8650076)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e090fc785fc93c0d70019cb39f273273.setContent(html_f1c8479e31059e2b6dd360f5a28375b8);
+            
+        
+
+        marker_feda20009aaee1916961b20c8463d0c9.bindPopup(popup_e090fc785fc93c0d70019cb39f273273)
+        ;
+
+        
+    
+    
+            var marker_f7f7b5c42c843dadfc14c6e7dd2149a8 = L.marker(
+                [41.6256588, -0.8814535],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_f303f337203d7ece0a2957c2c12ce3cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f7f7b5c42c843dadfc14c6e7dd2149a8.setIcon(icon_f303f337203d7ece0a2957c2c12ce3cf);
+        
+    
+        var popup_bdfe9000acf8df36cfef2985464d00bb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bff0292281763bee57e29ec7ff651eea = $(`<div id="html_bff0292281763bee57e29ec7ff651eea" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7535<br>                <strong>Centro:</strong> CEIP RAMÓN SÁINZ DE VARANDA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6256588, -0.8814535)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_bdfe9000acf8df36cfef2985464d00bb.setContent(html_bff0292281763bee57e29ec7ff651eea);
+            
+        
+
+        marker_f7f7b5c42c843dadfc14c6e7dd2149a8.bindPopup(popup_bdfe9000acf8df36cfef2985464d00bb)
+        ;
+
+        
+    
+    
+            var marker_584198837faf38fce40c6131be673a9f = L.marker(
+                [41.677026, -0.8775719],
+                {"tags": ["PRI - EDUCACI\u00d3N PRIMARIA", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var icon_32548bdc48424a6d4bb9019f2c38b48a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_584198837faf38fce40c6131be673a9f.setIcon(icon_32548bdc48424a6d4bb9019f2c38b48a);
+        
+    
+        var popup_f2df141eb6291ffdbb20183a6109108e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_3c7b5b7c910d2f78dbf2811b5464c82a = $(`<div id="html_3c7b5b7c910d2f78dbf2811b5464c82a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7946<br>                <strong>Centro:</strong> CEIP ZALFONADA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> PRI - EDUCACIÓN PRIMARIA<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.677026, -0.8775719)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_f2df141eb6291ffdbb20183a6109108e.setContent(html_3c7b5b7c910d2f78dbf2811b5464c82a);
+            
+        
+
+        marker_584198837faf38fce40c6131be673a9f.bindPopup(popup_f2df141eb6291ffdbb20183a6109108e)
+        ;
+
+        
+    
+    
+            var tag_filter_button_40f0fd76f23ae9c958cbd5befb631854 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Completa", "Parcial"], "filterOnEveryClick": true, "icon": "glyphicon-time", "openPopupOnHover": false}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var tag_filter_button_d038661e8268090182823e36c80a392d = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["PRI - EDUCACI\u00d3N PRIMARIA"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var tag_filter_button_60e92eb0e86c30f668c106fec2d4e14c = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria"], "filterOnEveryClick": true, "icon": "glyphicon-calendar", "openPopupOnHover": false}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+    
+            var tag_filter_button_6c8c2160516966684eaa0c8092767024 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["De Plantilla Definitiva Sin Titular", "Paternidad", "Licencia Estudios (reserva titular)", "Asuntos Propios", "Otras Sustituciones", "Excedencia cuidado familiares (reserva titular)", "Excedencia cuidado hijos", "Comisi\u00f3n Servicio no docente (reserva titular)", "Comisi\u00f3n Servicio docente (reserva titular)", "Maternidad", "Reducci\u00f3n de Jornada", "Enfermedad"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_0ac6e8f2a36c63eae7ab4f831037595f);
+        
+</script>
+</html>

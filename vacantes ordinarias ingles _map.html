@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dd6142a921820b939ccc54f487e69882 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-tag-filter-button/src/leaflet-tag-filter-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/css-ripple-effect@1.0.5/dist/ripple.min.css"/>
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+    
+            <style>
+                .easy-button-button {
+                  display: block !important;
+                }
+
+                .tag-filter-tags-container {
+                  left: 30px;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dd6142a921820b939ccc54f487e69882" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dd6142a921820b939ccc54f487e69882 = L.map(
+                "map_dd6142a921820b939ccc54f487e69882",
+                {
+                    center: [42.1437168, -0.0094552],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a8a63097a91c80a6911a26962cfe93d2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a8a63097a91c80a6911a26962cfe93d2.addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+
+            var geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9 = {"collapsed": false, "defaultMarkGeocode": true, "position": "topright", "provider": "nominatim", "providerOptions": {}, "zoom": 11};
+
+            // note: geocoder name should start with lowercase
+            var geocoderName_geocoder_13c3ff715024e204cb0cea4ddf6113e9 = geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9["provider"];
+
+            var customGeocoder_geocoder_13c3ff715024e204cb0cea4ddf6113e9 = L.Control.Geocoder[ geocoderName_geocoder_13c3ff715024e204cb0cea4ddf6113e9 ](
+                geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9['providerOptions']
+            );
+            geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9["geocoder"] = customGeocoder_geocoder_13c3ff715024e204cb0cea4ddf6113e9;
+
+            L.Control.geocoder(
+                geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9
+            ).on('markgeocode', function(e) {
+                var zoom = geocoderOpts_geocoder_13c3ff715024e204cb0cea4ddf6113e9['zoom'] || map_dd6142a921820b939ccc54f487e69882.getZoom();
+                map_dd6142a921820b939ccc54f487e69882.setView(e.geocode.center, zoom);
+            }).addTo(map_dd6142a921820b939ccc54f487e69882);
+
+        
+    
+            var marker_16842e734a93f17b624cfc480aea2580 = L.marker(
+                [42.1437168, -0.0094552],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_54a973ee834afe41ff6b8776907002ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_16842e734a93f17b624cfc480aea2580.setIcon(icon_54a973ee834afe41ff6b8776907002ed);
+        
+    
+        var popup_b365534cd191f4b41d0ecd4eae69ed9c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_3131fde3486476292d3c78e76b23a7a2 = $(`<div id="html_3131fde3486476292d3c78e76b23a7a2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7917<br>                <strong>Centro:</strong> CRA VERO-ALCANADRE ADAHUESCA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1437168, -0.0094552)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_b365534cd191f4b41d0ecd4eae69ed9c.setContent(html_3131fde3486476292d3c78e76b23a7a2);
+            
+        
+
+        marker_16842e734a93f17b624cfc480aea2580.bindPopup(popup_b365534cd191f4b41d0ecd4eae69ed9c)
+        ;
+
+        
+    
+    
+            var marker_2610dc99bb60aeac3eaeca5fe71a2c94 = L.marker(
+                [42.1437168, -0.0094552],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_3591028e775a32480cffdf5e4ddcc1f1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2610dc99bb60aeac3eaeca5fe71a2c94.setIcon(icon_3591028e775a32480cffdf5e4ddcc1f1);
+        
+    
+        var popup_8e8202aafde82a4e8377797673d9c64a = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_4b619c971b8de06d4715cb13c052f041 = $(`<div id="html_4b619c971b8de06d4715cb13c052f041" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7710<br>                <strong>Centro:</strong> CRA VERO-ALCANADRE ADAHUESCA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> Si - Fecha Final Estimada - 08/11/2024<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1437168, -0.0094552)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8e8202aafde82a4e8377797673d9c64a.setContent(html_4b619c971b8de06d4715cb13c052f041);
+            
+        
+
+        marker_2610dc99bb60aeac3eaeca5fe71a2c94.bindPopup(popup_8e8202aafde82a4e8377797673d9c64a)
+        ;
+
+        
+    
+    
+            var marker_43f85c2f2ac2fc111e2d8723ff602a17 = L.marker(
+                [41.8649478, 0.4606029],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_e504656bef01c7592ca0182a231e0fd7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_43f85c2f2ac2fc111e2d8723ff602a17.setIcon(icon_e504656bef01c7592ca0182a231e0fd7);
+        
+    
+        var popup_f4711f2a4a24291841e0e0ca102c3f04 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_70f3cc60f6f374725dce46a1534666d6 = $(`<div id="html_70f3cc60f6f374725dce46a1534666d6" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7685<br>                <strong>Centro:</strong> CRA LA LLITERA ALBELDA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.8649478, 0.4606029)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_f4711f2a4a24291841e0e0ca102c3f04.setContent(html_70f3cc60f6f374725dce46a1534666d6);
+            
+        
+
+        marker_43f85c2f2ac2fc111e2d8723ff602a17.bindPopup(popup_f4711f2a4a24291841e0e0ca102c3f04)
+        ;
+
+        
+    
+    
+            var marker_17fee27f78aae477ea5ddf1e794d48dc = L.marker(
+                [41.7237459, 0.1467745],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_8f280f9079ab58babfd080a8a3d06b71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_17fee27f78aae477ea5ddf1e794d48dc.setIcon(icon_8f280f9079ab58babfd080a8a3d06b71);
+        
+    
+        var popup_b84033fb411bd1c75eac3a4ed97a1e03 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_62d674a5c5de8d40dea578e2085dfadc = $(`<div id="html_62d674a5c5de8d40dea578e2085dfadc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7770<br>                <strong>Centro:</strong> CRA ALBEOS BELVER DE CINCA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7237459, 0.1467745)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_b84033fb411bd1c75eac3a4ed97a1e03.setContent(html_62d674a5c5de8d40dea578e2085dfadc);
+            
+        
+
+        marker_17fee27f78aae477ea5ddf1e794d48dc.bindPopup(popup_b84033fb411bd1c75eac3a4ed97a1e03)
+        ;
+
+        
+    
+    
+            var marker_5f5e2afa581da39932e82ec931e1be43 = L.marker(
+                [42.6043434, -0.120361],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_00f924ac26889a672652af28a1730c55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5f5e2afa581da39932e82ec931e1be43.setIcon(icon_00f924ac26889a672652af28a1730c55);
+        
+    
+        var popup_8d0908e5b52f7382434cf54ad5b0ee2f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c37f23d2bd4f1ddd0471b8768f9d9d42 = $(`<div id="html_c37f23d2bd4f1ddd0471b8768f9d9d42" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7929<br>                <strong>Centro:</strong> CRA ALTO ARA BROTO (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.6043434, -0.120361)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8d0908e5b52f7382434cf54ad5b0ee2f.setContent(html_c37f23d2bd4f1ddd0471b8768f9d9d42);
+            
+        
+
+        marker_5f5e2afa581da39932e82ec931e1be43.bindPopup(popup_8d0908e5b52f7382434cf54ad5b0ee2f)
+        ;
+
+        
+    
+    
+            var marker_a679a7a54d70e3faacb8b2bf593f4241 = L.marker(
+                [42.4094963, 0.3979184],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_b859602eefa5d9254270cb0d3c030e20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a679a7a54d70e3faacb8b2bf593f4241.setIcon(icon_b859602eefa5d9254270cb0d3c030e20);
+        
+    
+        var popup_0a73a8a95e10e35daae8c9bc70aab626 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_305f807550bf0bc6355f00739c6cd919 = $(`<div id="html_305f807550bf0bc6355f00739c6cd919" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8187<br>                <strong>Centro:</strong> CEIP CERBÍN CAMPO (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> Si - Fecha Final Estimada - 18/10/2024<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.4094963, 0.3979184)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0a73a8a95e10e35daae8c9bc70aab626.setContent(html_305f807550bf0bc6355f00739c6cd919);
+            
+        
+
+        marker_a679a7a54d70e3faacb8b2bf593f4241.bindPopup(popup_0a73a8a95e10e35daae8c9bc70aab626)
+        ;
+
+        
+    
+    
+            var marker_66ca987db0fcfb7fd1276257ab400256 = L.marker(
+                [42.0108345, 0.2615711],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_f233083e57642d4c5a69044d27b80459 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_66ca987db0fcfb7fd1276257ab400256.setIcon(icon_f233083e57642d4c5a69044d27b80459);
+        
+    
+        var popup_2d369693878a008cfcd14db5c81575da = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c996641f98e506d86858c58f9087f04b = $(`<div id="html_c996641f98e506d86858c58f9087f04b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7707<br>                <strong>Centro:</strong> CRA LA CANDELETA FONZ (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.0108345, 0.2615711)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_2d369693878a008cfcd14db5c81575da.setContent(html_c996641f98e506d86858c58f9087f04b);
+            
+        
+
+        marker_66ca987db0fcfb7fd1276257ab400256.bindPopup(popup_2d369693878a008cfcd14db5c81575da)
+        ;
+
+        
+    
+    
+            var marker_a24cda51f81217cc664d5150f8f7876a = L.marker(
+                [42.1408134, -0.4189552],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_bb2f245f8195f879c7852d89c79da730 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a24cda51f81217cc664d5150f8f7876a.setIcon(icon_bb2f245f8195f879c7852d89c79da730);
+        
+    
+        var popup_ebdab50ff00ba3d27185bb36fe287796 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9408d5dd1da626351eb82bd159043342 = $(`<div id="html_9408d5dd1da626351eb82bd159043342" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7629<br>                <strong>Centro:</strong> CEIP JUAN XXIII HUESCA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1408134, -0.4189552)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_ebdab50ff00ba3d27185bb36fe287796.setContent(html_9408d5dd1da626351eb82bd159043342);
+            
+        
+
+        marker_a24cda51f81217cc664d5150f8f7876a.bindPopup(popup_ebdab50ff00ba3d27185bb36fe287796)
+        ;
+
+        
+    
+    
+            var marker_818ec59e8b3cfd9fd5d3c2f48cdefef2 = L.marker(
+                [42.5677467, -0.5544882],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_6fd6cbc2ce9982f453b48ddaa74e4f64 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_818ec59e8b3cfd9fd5d3c2f48cdefef2.setIcon(icon_6fd6cbc2ce9982f453b48ddaa74e4f64);
+        
+    
+        var popup_9c785d5a0c19c38c90ae68922ba54fe7 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9c894daa36aaaca7d4ea7c8844590cad = $(`<div id="html_9c894daa36aaaca7d4ea7c8844590cad" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7740<br>                <strong>Centro:</strong> CEIP SAN JUAN DE LA PEÑA JACA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.5677467, -0.5544882)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9c785d5a0c19c38c90ae68922ba54fe7.setContent(html_9c894daa36aaaca7d4ea7c8844590cad);
+            
+        
+
+        marker_818ec59e8b3cfd9fd5d3c2f48cdefef2.bindPopup(popup_9c785d5a0c19c38c90ae68922ba54fe7)
+        ;
+
+        
+    
+    
+            var marker_3297e5eddb5b6d37fc216a8cf0e3bba1 = L.marker(
+                [41.9314097, -0.0670857],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_4ecd3e8261ba298ba11513a19db90d86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3297e5eddb5b6d37fc216a8cf0e3bba1.setIcon(icon_4ecd3e8261ba298ba11513a19db90d86);
+        
+    
+        var popup_b3342dd7b5c0eb7d915a34c84159d53f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_58cfa2ddb5a3183fd9abacdde7b4e1c1 = $(`<div id="html_58cfa2ddb5a3183fd9abacdde7b4e1c1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7742<br>                <strong>Centro:</strong> CRA A REDOLADA PERALTA DE ALCOFEA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9314097, -0.0670857)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_b3342dd7b5c0eb7d915a34c84159d53f.setContent(html_58cfa2ddb5a3183fd9abacdde7b4e1c1);
+            
+        
+
+        marker_3297e5eddb5b6d37fc216a8cf0e3bba1.bindPopup(popup_b3342dd7b5c0eb7d915a34c84159d53f)
+        ;
+
+        
+    
+    
+            var marker_fd557e57b31c269cb6ec8173fbbb3777 = L.marker(
+                [41.869964, -0.462401],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_cd9f4577ad37dbd2887bf97de6907ed8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fd557e57b31c269cb6ec8173fbbb3777.setIcon(icon_cd9f4577ad37dbd2887bf97de6907ed8);
+        
+    
+        var popup_e164ea1895879958dfd041d440e07569 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b7d7b896906b693825ba666961831a84 = $(`<div id="html_b7d7b896906b693825ba666961831a84" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7743<br>                <strong>Centro:</strong> CRA LA SABINA ROBRES (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.869964, -0.462401)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e164ea1895879958dfd041d440e07569.setContent(html_b7d7b896906b693825ba666961831a84);
+            
+        
+
+        marker_fd557e57b31c269cb6ec8173fbbb3777.bindPopup(popup_e164ea1895879958dfd041d440e07569)
+        ;
+
+        
+    
+    
+            var marker_575770ea470be48510b9c6be1218d0b4 = L.marker(
+                [42.5026187, -0.3610133],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_3cd17ee6a73d6da782697db239a26af2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_575770ea470be48510b9c6be1218d0b4.setIcon(icon_3cd17ee6a73d6da782697db239a26af2);
+        
+    
+        var popup_5d57e2da462f3deb68581bc10026a389 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_07afba830329c1f9e0765960acdae4b1 = $(`<div id="html_07afba830329c1f9e0765960acdae4b1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7932<br>                <strong>Centro:</strong> CEIP PUENTE SARDAS SABIÑANIGO (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.5026187, -0.3610133)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5d57e2da462f3deb68581bc10026a389.setContent(html_07afba830329c1f9e0765960acdae4b1);
+            
+        
+
+        marker_575770ea470be48510b9c6be1218d0b4.bindPopup(popup_5d57e2da462f3deb68581bc10026a389)
+        ;
+
+        
+    
+    
+            var marker_c55b88d76c6157fd2e819242d097ff8c = L.marker(
+                [42.54812219999999, -0.3443624],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_e98caf9b48502f6849a5444cfbfb22e6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c55b88d76c6157fd2e819242d097ff8c.setIcon(icon_e98caf9b48502f6849a5444cfbfb22e6);
+        
+    
+        var popup_eb29c67f7679f603cacc886b25cc78e9 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_632fdce59eb0f3bf6fc7a17e31909304 = $(`<div id="html_632fdce59eb0f3bf6fc7a17e31909304" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7734<br>                <strong>Centro:</strong> CEIP MIGUEL SERVET SENEGÜÉ (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.54812219999999, -0.3443624)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_eb29c67f7679f603cacc886b25cc78e9.setContent(html_632fdce59eb0f3bf6fc7a17e31909304);
+            
+        
+
+        marker_c55b88d76c6157fd2e819242d097ff8c.bindPopup(popup_eb29c67f7679f603cacc886b25cc78e9)
+        ;
+
+        
+    
+    
+            var marker_f2b69a9735a875e9215d87e835777469 = L.marker(
+                [41.9769987, -0.5371673],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5b452fe48520d7b5d5dfd5a1b87970a0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f2b69a9735a875e9215d87e835777469.setIcon(icon_5b452fe48520d7b5d5dfd5a1b87970a0);
+        
+    
+        var popup_1b06671304b62953baa123aeb79823aa = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_199042739fa35f5f4655391db2e51181 = $(`<div id="html_199042739fa35f5f4655391db2e51181" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7739<br>                <strong>Centro:</strong> CRA VIOLADA MONEGROS TARDIENTA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.9769987, -0.5371673)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1b06671304b62953baa123aeb79823aa.setContent(html_199042739fa35f5f4655391db2e51181);
+            
+        
+
+        marker_f2b69a9735a875e9215d87e835777469.bindPopup(popup_1b06671304b62953baa123aeb79823aa)
+        ;
+
+        
+    
+    
+            var marker_3132a2ea5036bdb90341bdac825892ac = L.marker(
+                [41.4738581, 0.3337813],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5a916d5e5f5462a11a39a34911f7c1f3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3132a2ea5036bdb90341bdac825892ac.setIcon(icon_5a916d5e5f5462a11a39a34911f7c1f3);
+        
+    
+        var popup_3c797c21bbfb6bf4f4ccdd75743da08b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_6f9d2c714a783dcd92d60eb0795fae14 = $(`<div id="html_6f9d2c714a783dcd92d60eb0795fae14" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7927<br>                <strong>Centro:</strong> CRA RIBERA DEL CINCA TORRENTE DE CINCA (HUESCA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.4738581, 0.3337813)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_3c797c21bbfb6bf4f4ccdd75743da08b.setContent(html_6f9d2c714a783dcd92d60eb0795fae14);
+            
+        
+
+        marker_3132a2ea5036bdb90341bdac825892ac.bindPopup(popup_3c797c21bbfb6bf4f4ccdd75743da08b)
+        ;
+
+        
+    
+    
+            var marker_1dd669507fb79edb39f04ea17b5c401d = L.marker(
+                [41.0504162, -0.1393193],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_33c2537e505666d060297dc75b9cf85d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1dd669507fb79edb39f04ea17b5c401d.setIcon(icon_33c2537e505666d060297dc75b9cf85d);
+        
+    
+        var popup_0477ad3e0f81d3f4ba2d3274f4194c15 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_adda398454ffee4221a38d6dfc0f19e8 = $(`<div id="html_adda398454ffee4221a38d6dfc0f19e8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8061<br>                <strong>Centro:</strong> CEIP JUAN SOBRARIAS ALCAÑIZ (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.0504162, -0.1393193)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0477ad3e0f81d3f4ba2d3274f4194c15.setContent(html_adda398454ffee4221a38d6dfc0f19e8);
+            
+        
+
+        marker_1dd669507fb79edb39f04ea17b5c401d.bindPopup(popup_0477ad3e0f81d3f4ba2d3274f4194c15)
+        ;
+
+        
+    
+    
+            var marker_96693d3633e53889cb0b0faa95188fb6 = L.marker(
+                [40.8949817, -0.3845562],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_4e5958af414c3eb4de77c4d24dd9ade1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_96693d3633e53889cb0b0faa95188fb6.setIcon(icon_4e5958af414c3eb4de77c4d24dd9ade1);
+        
+    
+        var popup_88988a5cab5fbeacb38fcfd263a5c723 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ee2e38e7035ee8a4bbcc195034bdd14b = $(`<div id="html_ee2e38e7035ee8a4bbcc195034bdd14b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7882<br>                <strong>Centro:</strong> CEIP EL JUSTICIA DE ARAGÓN ALCORISA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.8949817, -0.3845562)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_88988a5cab5fbeacb38fcfd263a5c723.setContent(html_ee2e38e7035ee8a4bbcc195034bdd14b);
+            
+        
+
+        marker_96693d3633e53889cb0b0faa95188fb6.bindPopup(popup_88988a5cab5fbeacb38fcfd263a5c723)
+        ;
+
+        
+    
+    
+            var marker_a21517e0b2fb3f9258ec56d1db797e6e = L.marker(
+                [40.8949817, -0.3845562],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_35c142ce647a6584babca1fd677a2163 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a21517e0b2fb3f9258ec56d1db797e6e.setIcon(icon_35c142ce647a6584babca1fd677a2163);
+        
+    
+        var popup_0360c08a298ea27b959877004bb2437f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_30c0d60ba620b30c6b39a0a099e57d3d = $(`<div id="html_30c0d60ba620b30c6b39a0a099e57d3d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7896<br>                <strong>Centro:</strong> CEIP EL JUSTICIA DE ARAGÓN ALCORISA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.8949817, -0.3845562)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0360c08a298ea27b959877004bb2437f.setContent(html_30c0d60ba620b30c6b39a0a099e57d3d);
+            
+        
+
+        marker_a21517e0b2fb3f9258ec56d1db797e6e.bindPopup(popup_0360c08a298ea27b959877004bb2437f)
+        ;
+
+        
+    
+    
+            var marker_91a43341c6a9ec768d004259dcd028e5 = L.marker(
+                [40.912662, -1.3019187],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_68ee415ea3d32456b57fa836452dbf16 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_91a43341c6a9ec768d004259dcd028e5.setIcon(icon_68ee415ea3d32456b57fa836452dbf16);
+        
+    
+        var popup_38f87560d692f8b9c9c8ba18f568774c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_217a80390f699680cb7068c9f6cb2dd3 = $(`<div id="html_217a80390f699680cb7068c9f6cb2dd3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8031<br>                <strong>Centro:</strong> CEIP RICARDO MALLÉN CALAMOCHA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.912662, -1.3019187)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_38f87560d692f8b9c9c8ba18f568774c.setContent(html_217a80390f699680cb7068c9f6cb2dd3);
+            
+        
+
+        marker_91a43341c6a9ec768d004259dcd028e5.bindPopup(popup_38f87560d692f8b9c9c8ba18f568774c)
+        ;
+
+        
+    
+    
+            var marker_083dbf4e272eed359aa929d746f62941 = L.marker(
+                [40.8414743, -1.3229861],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_50d04ac99fb0eabd4ab60dd1def8cdad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_083dbf4e272eed359aa929d746f62941.setIcon(icon_50d04ac99fb0eabd4ab60dd1def8cdad);
+        
+    
+        var popup_8c9f2ef0c1da2370bb3dd5ce340abf34 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_36931ccb6febd1d04d676d1fc87e4266 = $(`<div id="html_36931ccb6febd1d04d676d1fc87e4266" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7890<br>                <strong>Centro:</strong> CRA GOYA CAMINREAL (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.8414743, -1.3229861)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_8c9f2ef0c1da2370bb3dd5ce340abf34.setContent(html_36931ccb6febd1d04d676d1fc87e4266);
+            
+        
+
+        marker_083dbf4e272eed359aa929d746f62941.bindPopup(popup_8c9f2ef0c1da2370bb3dd5ce340abf34)
+        ;
+
+        
+    
+    
+            var marker_073baf36b23f874036b0759065feffc5 = L.marker(
+                [40.4370885, -0.8502061999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Dispensa Sindical (reserva titular)", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_6ceb7407801b4ce5abf14875ae0ba29c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_073baf36b23f874036b0759065feffc5.setIcon(icon_6ceb7407801b4ce5abf14875ae0ba29c);
+        
+    
+        var popup_3a11441ae2180df84c8c2f903598ca03 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_253a536e8328a85991d35132f76e425a = $(`<div id="html_253a536e8328a85991d35132f76e425a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7997<br>                <strong>Centro:</strong> CRA PALMIRA PLÁ CEDRILLAS (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Dispensa Sindical (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.4370885, -0.8502061999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_3a11441ae2180df84c8c2f903598ca03.setContent(html_253a536e8328a85991d35132f76e425a);
+            
+        
+
+        marker_073baf36b23f874036b0759065feffc5.bindPopup(popup_3a11441ae2180df84c8c2f903598ca03)
+        ;
+
+        
+    
+    
+            var marker_02245c7df60d3a3e9bca42bd437ccc05 = L.marker(
+                [40.7953071, -0.8116043],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_c28fb9282186265418abd5f34d3608a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_02245c7df60d3a3e9bca42bd437ccc05.setIcon(icon_c28fb9282186265418abd5f34d3608a4);
+        
+    
+        var popup_c4e048edb626af7edd6530a62a1726bf = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d7f131fc6b68124c95be20b6196b94f6 = $(`<div id="html_d7f131fc6b68124c95be20b6196b94f6" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8034<br>                <strong>Centro:</strong> CEIP ANTONIO GARGALLO MOYA ESCUCHA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.7953071, -0.8116043)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c4e048edb626af7edd6530a62a1726bf.setContent(html_d7f131fc6b68124c95be20b6196b94f6);
+            
+        
+
+        marker_02245c7df60d3a3e9bca42bd437ccc05.bindPopup(popup_c4e048edb626af7edd6530a62a1726bf)
+        ;
+
+        
+    
+    
+            var marker_dd73eeb446585414b84979bf7efdbffa = L.marker(
+                [40.8661337, -0.5198330999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_64c93b1a592fd05c1a9ff7e8a1301c2a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_dd73eeb446585414b84979bf7efdbffa.setIcon(icon_64c93b1a592fd05c1a9ff7e8a1301c2a);
+        
+    
+        var popup_1cd186e57e3712cf06a26536c66ff5f2 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_de180d3f093bbb7984e61804a379292d = $(`<div id="html_de180d3f093bbb7984e61804a379292d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7887<br>                <strong>Centro:</strong> CRA SOMONTANO-BAJO ARAGÓN MATA DE LOS OLMOS (LA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.8661337, -0.5198330999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1cd186e57e3712cf06a26536c66ff5f2.setContent(html_de180d3f093bbb7984e61804a379292d);
+            
+        
+
+        marker_dd73eeb446585414b84979bf7efdbffa.bindPopup(popup_1cd186e57e3712cf06a26536c66ff5f2)
+        ;
+
+        
+    
+    
+            var marker_e870aea4b204d9deed8939ad9a2e3142 = L.marker(
+                [40.7907389, -1.3517502],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5406ad478cbf4bf501f4a33a8b9c5a50 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e870aea4b204d9deed8939ad9a2e3142.setIcon(icon_5406ad478cbf4bf501f4a33a8b9c5a50);
+        
+    
+        var popup_1e0394e93179d60b588b30c29ef33837 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e61815ac3326dd0900137fbe09493a41 = $(`<div id="html_e61815ac3326dd0900137fbe09493a41" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7567<br>                <strong>Centro:</strong> CEIP NTRA. SRA. DEL PILAR MONREAL DEL CAMPO (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.7907389, -1.3517502)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1e0394e93179d60b588b30c29ef33837.setContent(html_e61815ac3326dd0900137fbe09493a41);
+            
+        
+
+        marker_e870aea4b204d9deed8939ad9a2e3142.bindPopup(popup_1e0394e93179d60b588b30c29ef33837)
+        ;
+
+        
+    
+    
+            var marker_08e01daf55fa9f6c3d06711608afaae4 = L.marker(
+                [41.0327755, -0.811547],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_2eec26866c7678d54bc5a373399f1d29 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_08e01daf55fa9f6c3d06711608afaae4.setIcon(icon_2eec26866c7678d54bc5a373399f1d29);
+        
+    
+        var popup_db00e8e6afa3bf037b41ec8c8e0c430d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_06c037b8b482a9e34b7c852005bf3dbe = $(`<div id="html_06c037b8b482a9e34b7c852005bf3dbe" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7594<br>                <strong>Centro:</strong> CRA DE MUNIESA MUNIESA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.0327755, -0.811547)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_db00e8e6afa3bf037b41ec8c8e0c430d.setContent(html_06c037b8b482a9e34b7c852005bf3dbe);
+            
+        
+
+        marker_08e01daf55fa9f6c3d06711608afaae4.bindPopup(popup_db00e8e6afa3bf037b41ec8c8e0c430d)
+        ;
+
+        
+    
+    
+            var marker_5bed70e339cfa926411047a4450638c8 = L.marker(
+                [40.1322, -0.62661],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_378c7a7b262a22f5513040cc4cadabf1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5bed70e339cfa926411047a4450638c8.setIcon(icon_378c7a7b262a22f5513040cc4cadabf1);
+        
+    
+        var popup_7d71b1032a11509e884c1168463d79a6 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_c7f7ee32f885ea9f6f90b94f60f47e1a = $(`<div id="html_c7f7ee32f885ea9f6f90b94f60f47e1a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8016<br>                <strong>Centro:</strong> CEIP DE OLBA OLBA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.1322, -0.62661)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7d71b1032a11509e884c1168463d79a6.setContent(html_c7f7ee32f885ea9f6f90b94f60f47e1a);
+            
+        
+
+        marker_5bed70e339cfa926411047a4450638c8.bindPopup(popup_7d71b1032a11509e884c1168463d79a6)
+        ;
+
+        
+    
+    
+            var marker_4c46684ecdc2a1e2fd505cf61299e78f = L.marker(
+                [40.5490444, -1.6513064],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Otras Vacantes (reserva titular)", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_4373abb35082253af1864cda6064da52 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4c46684ecdc2a1e2fd505cf61299e78f.setIcon(icon_4373abb35082253af1864cda6064da52);
+        
+    
+        var popup_895ff56f85c2d0d9277a2c5a9224bb83 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_50c397a3d632fce123b065231248c237 = $(`<div id="html_50c397a3d632fce123b065231248c237" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7951<br>                <strong>Centro:</strong> CRA BRONCHALES-ORIHUELA ORIHUELA DEL TREMEDAL (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Vacantes (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.5490444, -1.6513064)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_895ff56f85c2d0d9277a2c5a9224bb83.setContent(html_50c397a3d632fce123b065231248c237);
+            
+        
+
+        marker_4c46684ecdc2a1e2fd505cf61299e78f.bindPopup(popup_895ff56f85c2d0d9277a2c5a9224bb83)
+        ;
+
+        
+    
+    
+            var marker_aba8362e21264817fe450a107d6c7a66 = L.marker(
+                [40.756579, 0.0391933],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_47bf2b71d16f87e94ad91a067666fda7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_aba8362e21264817fe450a107d6c7a66.setIcon(icon_47bf2b71d16f87e94ad91a067666fda7);
+        
+    
+        var popup_c55fa8c724f0ff2587ac814a17de1a07 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bb2d8a7807b42121de2c25e788da93c8 = $(`<div id="html_bb2d8a7807b42121de2c25e788da93c8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8020<br>                <strong>Centro:</strong> CRA TASTAVÍNS PEÑARROYA DE TASTAVINS (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.756579, 0.0391933)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c55fa8c724f0ff2587ac814a17de1a07.setContent(html_bb2d8a7807b42121de2c25e788da93c8);
+            
+        
+
+        marker_aba8362e21264817fe450a107d6c7a66.bindPopup(popup_c55fa8c724f0ff2587ac814a17de1a07)
+        ;
+
+        
+    
+    
+            var marker_9bc976105fb836f76279b83c6ae87d5e = L.marker(
+                [40.1901266, -0.6541840999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado familiares (reserva titular)", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_772dfafed79b301eb7e25597221bae54 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9bc976105fb836f76279b83c6ae87d5e.setIcon(icon_772dfafed79b301eb7e25597221bae54);
+        
+    
+        var popup_7f19d3b9453823935140dad7d653876f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e1f2891cf87eb3721612fb968af1a682 = $(`<div id="html_e1f2891cf87eb3721612fb968af1a682" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7601<br>                <strong>Centro:</strong> CPEPA DE RUBIELOS DE MORA RUBIELOS DE MORA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado familiares (reserva titular)<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.1901266, -0.6541840999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7f19d3b9453823935140dad7d653876f.setContent(html_e1f2891cf87eb3721612fb968af1a682);
+            
+        
+
+        marker_9bc976105fb836f76279b83c6ae87d5e.bindPopup(popup_7f19d3b9453823935140dad7d653876f)
+        ;
+
+        
+    
+    
+            var marker_8ac328975d1d8dff96b4ddbaf1bbaf7b = L.marker(
+                [40.3579038, -1.1767389],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5d8244f85a73cfb57c3b26c8a05c9de4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8ac328975d1d8dff96b4ddbaf1bbaf7b.setIcon(icon_5d8244f85a73cfb57c3b26c8a05c9de4);
+        
+    
+        var popup_5525d2552599c09eb687dfbe426ff963 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_909714548c4ebe7dbb944a8e156c6132 = $(`<div id="html_909714548c4ebe7dbb944a8e156c6132" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8023<br>                <strong>Centro:</strong> CRA TURIA SAN BLAS (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> - Horas Lectivas -  11:00 horas (45.83%) Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.3579038, -1.1767389)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5525d2552599c09eb687dfbe426ff963.setContent(html_909714548c4ebe7dbb944a8e156c6132);
+            
+        
+
+        marker_8ac328975d1d8dff96b4ddbaf1bbaf7b.bindPopup(popup_5525d2552599c09eb687dfbe426ff963)
+        ;
+
+        
+    
+    
+            var marker_fe1f5106febb5158751d77c195b1df23 = L.marker(
+                [40.3579038, -1.1767389],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Reducci\u00f3n de Jornada", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_0bb08e6d09effddda0c001defc474fba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fe1f5106febb5158751d77c195b1df23.setIcon(icon_0bb08e6d09effddda0c001defc474fba);
+        
+    
+        var popup_9e565fe8eb45394c82c143e23cbcbd90 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9c74af9deab8bc69aed0f0e540c483a8 = $(`<div id="html_9c74af9deab8bc69aed0f0e540c483a8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8026<br>                <strong>Centro:</strong> CRA TURIA SAN BLAS (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Reducción de Jornada<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.3579038, -1.1767389)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_9e565fe8eb45394c82c143e23cbcbd90.setContent(html_9c74af9deab8bc69aed0f0e540c483a8);
+            
+        
+
+        marker_fe1f5106febb5158751d77c195b1df23.bindPopup(popup_9e565fe8eb45394c82c143e23cbcbd90)
+        ;
+
+        
+    
+    
+            var marker_8a09b54649bed7ba6dc216e23fb061cc = L.marker(
+                [40.3528419, -1.112221],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_d48982c707289d3683c79d1e905d6e2e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8a09b54649bed7ba6dc216e23fb061cc.setIcon(icon_d48982c707289d3683c79d1e905d6e2e);
+        
+    
+        var popup_dab3ba1894e4690cbd60c4c3cb11fdd0 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_cd3b3537938f2c76d012cbab8fc7ae56 = $(`<div id="html_cd3b3537938f2c76d012cbab8fc7ae56" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 809<br>                <strong>Centro:</strong> CEIP LAS ANEJAS TERUEL (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.3528419, -1.112221)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_dab3ba1894e4690cbd60c4c3cb11fdd0.setContent(html_cd3b3537938f2c76d012cbab8fc7ae56);
+            
+        
+
+        marker_8a09b54649bed7ba6dc216e23fb061cc.bindPopup(popup_dab3ba1894e4690cbd60c4c3cb11fdd0)
+        ;
+
+        
+    
+    
+            var marker_f5a957417073eefef66cc95e228260c1 = L.marker(
+                [40.4307261, -1.5711111],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_80c8e8f3d2128eecd8e45deec4ba994a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f5a957417073eefef66cc95e228260c1.setIcon(icon_80c8e8f3d2128eecd8e45deec4ba994a);
+        
+    
+        var popup_2f726c257fddeba336b202dd6d9006d1 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0c9cdcce5ac4bbae91d90ec7cc4fbabc = $(`<div id="html_0c9cdcce5ac4bbae91d90ec7cc4fbabc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7972<br>                <strong>Centro:</strong> CRA SIERRA DE ALBARRACÍN TRAMACASTILLA (TERUEL)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (40.4307261, -1.5711111)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_2f726c257fddeba336b202dd6d9006d1.setContent(html_0c9cdcce5ac4bbae91d90ec7cc4fbabc);
+            
+        
+
+        marker_f5a957417073eefef66cc95e228260c1.bindPopup(popup_2f726c257fddeba336b202dd6d9006d1)
+        ;
+
+        
+    
+    
+            var marker_a50549421fce06d3ad6267098423f79f = L.marker(
+                [41.7734718, -1.1254531],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_7c2574866a56e243861f66366cbb79f9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a50549421fce06d3ad6267098423f79f.setIcon(icon_7c2574866a56e243861f66366cbb79f9);
+        
+    
+        var popup_a833ad736742bc3955dd4c3613277c39 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_be1b8b8fb1daa7fa8d3a9770d2d0995e = $(`<div id="html_be1b8b8fb1daa7fa8d3a9770d2d0995e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7540<br>                <strong>Centro:</strong> CEIP ARAGÓN ALAGON (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7734718, -1.1254531)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_a833ad736742bc3955dd4c3613277c39.setContent(html_be1b8b8fb1daa7fa8d3a9770d2d0995e);
+            
+        
+
+        marker_a50549421fce06d3ad6267098423f79f.bindPopup(popup_a833ad736742bc3955dd4c3613277c39)
+        ;
+
+        
+    
+    
+            var marker_ac3ce737179175ba0a1b062f739da129 = L.marker(
+                [41.43759620000001, -1.2425393],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5668d4acac6902eebdb6be817461a638 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ac3ce737179175ba0a1b062f739da129.setIcon(icon_5668d4acac6902eebdb6be817461a638);
+        
+    
+        var popup_367505c8b6b2478329e7fa64bf760087 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_27e304840d8be018fa0405a838db080b = $(`<div id="html_27e304840d8be018fa0405a838db080b" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8005<br>                <strong>Centro:</strong> CEIP MATEO VALERO ALFAMEN (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.43759620000001, -1.2425393)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_367505c8b6b2478329e7fa64bf760087.setContent(html_27e304840d8be018fa0405a838db080b);
+            
+        
+
+        marker_ac3ce737179175ba0a1b062f739da129.bindPopup(popup_367505c8b6b2478329e7fa64bf760087)
+        ;
+
+        
+    
+    
+            var marker_9ae38b0993ef805d38923594400d7767 = L.marker(
+                [41.4759701, -1.3754676],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_f96882ca6271d52a59b2941c1684d8bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9ae38b0993ef805d38923594400d7767.setIcon(icon_f96882ca6271d52a59b2941c1684d8bb);
+        
+    
+        var popup_93cff7fb75d76ffb10997de85e6311bd = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_e58685a84fe9c810efe54702e4d92812 = $(`<div id="html_e58685a84fe9c810efe54702e4d92812" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7636<br>                <strong>Centro:</strong> CEIP FLORIÁN REY ALMUNIA DE DOÑA GODINA (LA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.4759701, -1.3754676)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_93cff7fb75d76ffb10997de85e6311bd.setContent(html_e58685a84fe9c810efe54702e4d92812);
+            
+        
+
+        marker_9ae38b0993ef805d38923594400d7767.bindPopup(popup_93cff7fb75d76ffb10997de85e6311bd)
+        ;
+
+        
+    
+    
+            var marker_8ff0cacee90ee5bdcc5568193c8b467c = L.marker(
+                [41.2806224, -0.7917622999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_8410f072f61019f447b841081f31b817 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8ff0cacee90ee5bdcc5568193c8b467c.setIcon(icon_8410f072f61019f447b841081f31b817);
+        
+    
+        var popup_0440c023185e5f8b4bf3a6d6b9237679 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_4086309c1f1113c9ac69d68166b8f611 = $(`<div id="html_4086309c1f1113c9ac69d68166b8f611" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7788<br>                <strong>Centro:</strong> CRA L' ALBARDÍN AZUARA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.2806224, -0.7917622999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0440c023185e5f8b4bf3a6d6b9237679.setContent(html_4086309c1f1113c9ac69d68166b8f611);
+            
+        
+
+        marker_8ff0cacee90ee5bdcc5568193c8b467c.bindPopup(popup_0440c023185e5f8b4bf3a6d6b9237679)
+        ;
+
+        
+    
+    
+            var marker_e426fc150fbbd0b711587024d6e40f7a = L.marker(
+                [41.3093081, -0.7503212],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_4544ecde5543a0013810390151d80827 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e426fc150fbbd0b711587024d6e40f7a.setIcon(icon_4544ecde5543a0013810390151d80827);
+        
+    
+        var popup_5c7c935a0615e0e88b0e4fdba5923ce3 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0721b0e400eb2ef33e2aa8b922025f93 = $(`<div id="html_0721b0e400eb2ef33e2aa8b922025f93" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7525<br>                <strong>Centro:</strong> CEIP BELIA BELCHITE (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.3093081, -0.7503212)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5c7c935a0615e0e88b0e4fdba5923ce3.setContent(html_0721b0e400eb2ef33e2aa8b922025f93);
+            
+        
+
+        marker_e426fc150fbbd0b711587024d6e40f7a.bindPopup(popup_5c7c935a0615e0e88b0e4fdba5923ce3)
+        ;
+
+        
+    
+    
+            var marker_8ec204500d22508965da41b88943f36f = L.marker(
+                [41.5579201, -0.9601544],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_95d1acfa1888361c122ce5612d8cb973 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8ec204500d22508965da41b88943f36f.setIcon(icon_95d1acfa1888361c122ce5612d8cb973);
+        
+    
+        var popup_a6bb39e08432b08dd07d5c08ee10e71d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_831a4585febdaad04e3a0aa3320070b3 = $(`<div id="html_831a4585febdaad04e3a0aa3320070b3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7858<br>                <strong>Centro:</strong> CPI CASTILLO QADRIT CADRETE (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5579201, -0.9601544)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_a6bb39e08432b08dd07d5c08ee10e71d.setContent(html_831a4585febdaad04e3a0aa3320070b3);
+            
+        
+
+        marker_8ec204500d22508965da41b88943f36f.bindPopup(popup_a6bb39e08432b08dd07d5c08ee10e71d)
+        ;
+
+        
+    
+    
+            var marker_40ba221fba795e460234e6d33800bbdc = L.marker(
+                [41.3501968, -1.6442008],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "De Plantilla Definitiva Sin Titular", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_aae1bee8b2da61f3ad4d49c531595d77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_40ba221fba795e460234e6d33800bbdc.setIcon(icon_aae1bee8b2da61f3ad4d49c531595d77);
+        
+    
+        var popup_e8b825147a7c9a927044b1cc814f0176 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_828b18f3d00783f4823cf75fd2dcb7b3 = $(`<div id="html_828b18f3d00783f4823cf75fd2dcb7b3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8181<br>                <strong>Centro:</strong> CPEPA MARCO VALERIO MARCIAL CALATAYUD (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> De Plantilla Definitiva Sin Titular<br>                <strong>Itinerante:</strong> Si<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.3501968, -1.6442008)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e8b825147a7c9a927044b1cc814f0176.setContent(html_828b18f3d00783f4823cf75fd2dcb7b3);
+            
+        
+
+        marker_40ba221fba795e460234e6d33800bbdc.bindPopup(popup_e8b825147a7c9a927044b1cc814f0176)
+        ;
+
+        
+    
+    
+            var marker_5e04476f957a6e1dc915228833f212a4 = L.marker(
+                [41.50899560000001, -0.6299336],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_9d36ec9ebb1aad8ab456e20ff302475a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5e04476f957a6e1dc915228833f212a4.setIcon(icon_9d36ec9ebb1aad8ab456e20ff302475a);
+        
+    
+        var popup_dc51495b26fa351c44719729a52e765c = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b52d7034dc15c677f0fe150b9c03435e = $(`<div id="html_b52d7034dc15c677f0fe150b9c03435e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8282<br>                <strong>Centro:</strong> CEIP LUIS GARCÍA SÁINZ FUENTES DE EBRO (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.50899560000001, -0.6299336)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_dc51495b26fa351c44719729a52e765c.setContent(html_b52d7034dc15c677f0fe150b9c03435e);
+            
+        
+
+        marker_5e04476f957a6e1dc915228833f212a4.bindPopup(popup_dc51495b26fa351c44719729a52e765c)
+        ;
+
+        
+    
+    
+            var marker_93eb33736e1a131fd0bedd561ee08189 = L.marker(
+                [41.8671842, -1.3118728],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_fbf8ca4c73cd0c23ed1f988aff13a777 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_93eb33736e1a131fd0bedd561ee08189.setIcon(icon_fbf8ca4c73cd0c23ed1f988aff13a777);
+        
+    
+        var popup_a9f1c1e4d722ea74992aa589e0fc6dc3 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7382936ea04306e6e8860107bf09e7a7 = $(`<div id="html_7382936ea04306e6e8860107bf09e7a7" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8267<br>                <strong>Centro:</strong> CPI MARÍA DOMÍNGUEZ GALLUR (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Educación Infantil<br>                <strong>Coordenadas:</strong> (41.8671842, -1.3118728)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Infantil.                </div>`)[0];
+                popup_a9f1c1e4d722ea74992aa589e0fc6dc3.setContent(html_7382936ea04306e6e8860107bf09e7a7);
+            
+        
+
+        marker_93eb33736e1a131fd0bedd561ee08189.bindPopup(popup_a9f1c1e4d722ea74992aa589e0fc6dc3)
+        ;
+
+        
+    
+    
+            var marker_513e2da2439610a8151cbdbaa4615b64 = L.marker(
+                [41.2156785, -1.8333987],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_52b3650586174668e34cd0db68d093b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_513e2da2439610a8151cbdbaa4615b64.setIcon(icon_52b3650586174668e34cd0db68d093b0);
+        
+    
+        var popup_edac1df604849d7dfae2737cd2b08c56 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ec258e185783956af9c2d94d951cd74e = $(`<div id="html_ec258e185783956af9c2d94d951cd74e" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7693<br>                <strong>Centro:</strong> CRA MESA-PIEDRA-ALTO CAMPILLO IBDES (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> Si - Fecha Final Estimada - 08/09/2024<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.2156785, -1.8333987)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_edac1df604849d7dfae2737cd2b08c56.setContent(html_ec258e185783956af9c2d94d951cd74e);
+            
+        
+
+        marker_513e2da2439610a8151cbdbaa4615b64.bindPopup(popup_edac1df604849d7dfae2737cd2b08c56)
+        ;
+
+        
+    
+    
+            var marker_3dd96264e15b69c7201525253a419ecc = L.marker(
+                [41.7982595, -0.6095157999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_8044dde0d4990ae55613bb2eec7ebe9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3dd96264e15b69c7201525253a419ecc.setIcon(icon_8044dde0d4990ae55613bb2eec7ebe9a);
+        
+    
+        var popup_73a5731d1504421e2dea8a37512865a6 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_86a027955aa5d2963945577a1f3caa9a = $(`<div id="html_86a027955aa5d2963945577a1f3caa9a" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7752<br>                <strong>Centro:</strong> CRA BAJO GÁLLEGO LECIÑENA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7982595, -0.6095157999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_73a5731d1504421e2dea8a37512865a6.setContent(html_86a027955aa5d2963945577a1f3caa9a);
+            
+        
+
+        marker_3dd96264e15b69c7201525253a419ecc.bindPopup(popup_73a5731d1504421e2dea8a37512865a6)
+        ;
+
+        
+    
+    
+            var marker_f0a7b1fd2353b5fe2af3a9b13e245407 = L.marker(
+                [41.2867863, -1.6171584],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "De Cupo Sin titular", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_d2fc210be301ec1959d69a7b4a8ecb30 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f0a7b1fd2353b5fe2af3a9b13e245407.setIcon(icon_d2fc210be301ec1959d69a7b4a8ecb30);
+        
+    
+        var popup_392c532bfc398464e91aa2236ca01b95 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_99312958fc68c1177635a047634526e4 = $(`<div id="html_99312958fc68c1177635a047634526e4" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8236<br>                <strong>Centro:</strong> CRA TRES RIBERAS MALUENDA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Educación Infantil<br>                <strong>Coordenadas:</strong> (41.2867863, -1.6171584)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Infantil.                </div>`)[0];
+                popup_392c532bfc398464e91aa2236ca01b95.setContent(html_99312958fc68c1177635a047634526e4);
+            
+        
+
+        marker_f0a7b1fd2353b5fe2af3a9b13e245407.bindPopup(popup_392c532bfc398464e91aa2236ca01b95)
+        ;
+
+        
+    
+    
+            var marker_518cbd4750f0f2f5907786630ae9542e = L.marker(
+                [41.2867863, -1.6171584],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "De Cupo Sin titular", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_f3d4d2807a579c075bc8a93bda30cdf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_518cbd4750f0f2f5907786630ae9542e.setIcon(icon_f3d4d2807a579c075bc8a93bda30cdf6);
+        
+    
+        var popup_f4589e5a40d7ca8aa8a1ade3c66097cf = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_76ae0bce06ade095be1010949477b8b2 = $(`<div id="html_76ae0bce06ade095be1010949477b8b2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8238<br>                <strong>Centro:</strong> CRA TRES RIBERAS MALUENDA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Curso Completo - Obligación - Voluntaria<br>                <strong>Causa:</strong> De Cupo Sin titular<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> Educación Infantil<br>                <strong>Coordenadas:</strong> (41.2867863, -1.6171584)<br>                <strong>Requisitos:</strong> Se requiere habilitación o titulación habilitante en Educación Infantil.                </div>`)[0];
+                popup_f4589e5a40d7ca8aa8a1ade3c66097cf.setContent(html_76ae0bce06ade095be1010949477b8b2);
+            
+        
+
+        marker_518cbd4750f0f2f5907786630ae9542e.bindPopup(popup_f4589e5a40d7ca8aa8a1ade3c66097cf)
+        ;
+
+        
+    
+    
+            var marker_4e43ed1cb8191fd28a9db6de754732d7 = L.marker(
+                [41.5811466, -1.1164554],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_df41f54b80f6f86d20c5b7de91db30f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4e43ed1cb8191fd28a9db6de754732d7.setIcon(icon_df41f54b80f6f86d20c5b7de91db30f2);
+        
+    
+        var popup_50a653a3573e283fe8f8ba1785723c83 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_68b5712313e64a10f751f7a562266a74 = $(`<div id="html_68b5712313e64a10f751f7a562266a74" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8259<br>                <strong>Centro:</strong> CEIP GIL TARÍN MUELA (LA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.5811466, -1.1164554)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_50a653a3573e283fe8f8ba1785723c83.setContent(html_68b5712313e64a10f751f7a562266a74);
+            
+        
+
+        marker_4e43ed1cb8191fd28a9db6de754732d7.bindPopup(popup_50a653a3573e283fe8f8ba1785723c83)
+        ;
+
+        
+    
+    
+            var marker_8d1647df809fe998adc18ccedf7ded53 = L.marker(
+                [42.1332702, -1.3106484],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_362b11d367e517b3c38a1bc4f5e0d03f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8d1647df809fe998adc18ccedf7ded53.setIcon(icon_362b11d367e517b3c38a1bc4f5e0d03f);
+        
+    
+        var popup_25b0e999e2bc017a04c24ca23c82806d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bcbf9c7e6fcaec020f5255a1f00945ed = $(`<div id="html_bcbf9c7e6fcaec020f5255a1f00945ed" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8170<br>                <strong>Centro:</strong> CRA LUIS BUÑUEL PINSORO (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.1332702, -1.3106484)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_25b0e999e2bc017a04c24ca23c82806d.setContent(html_bcbf9c7e6fcaec020f5255a1f00945ed);
+            
+        
+
+        marker_8d1647df809fe998adc18ccedf7ded53.bindPopup(popup_25b0e999e2bc017a04c24ca23c82806d)
+        ;
+
+        
+    
+    
+            var marker_29325fc9ce6d93d58a6732411634764d = L.marker(
+                [41.6330441, -0.749232],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Nupcialidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_f46a7892f40de09d608ea045177e7842 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_29325fc9ce6d93d58a6732411634764d.setIcon(icon_f46a7892f40de09d608ea045177e7842);
+        
+    
+        var popup_f216b615bab72c33512dff451b35e770 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_b9939fa30eb92efd973c1d00676965bc = $(`<div id="html_b9939fa30eb92efd973c1d00676965bc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7537<br>                <strong>Centro:</strong> CEIP LOS ALBARES PUEBLA DE ALFINDEN (LA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Nupcialidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6330441, -0.749232)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_f216b615bab72c33512dff451b35e770.setContent(html_b9939fa30eb92efd973c1d00676965bc);
+            
+        
+
+        marker_29325fc9ce6d93d58a6732411634764d.bindPopup(popup_f216b615bab72c33512dff451b35e770)
+        ;
+
+        
+    
+    
+            var marker_79f602a290dcc54434ef5af05ea1b98b = L.marker(
+                [42.4934695, -1.2170811],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_e7ed78965785ff9da4ac0416a442fdce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_79f602a290dcc54434ef5af05ea1b98b.setIcon(icon_e7ed78965785ff9da4ac0416a442fdce);
+        
+    
+        var popup_97c5a97e6d58740d2c16f1da7331800b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_abe31c93b160efecaab8bc1d476b82e9 = $(`<div id="html_abe31c93b160efecaab8bc1d476b82e9" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8227<br>                <strong>Centro:</strong> CEIP ISIDORO GIL DE JAZ SOS DEL REY CATOLICO (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (42.4934695, -1.2170811)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_97c5a97e6d58740d2c16f1da7331800b.setContent(html_abe31c93b160efecaab8bc1d476b82e9);
+            
+        
+
+        marker_79f602a290dcc54434ef5af05ea1b98b.bindPopup(popup_97c5a97e6d58740d2c16f1da7331800b)
+        ;
+
+        
+    
+    
+            var marker_cfade28fbdae7d69840468160f9daadb = L.marker(
+                [41.7102419, -0.9993348000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_589a701e296537a0de0ffcf40f5952b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cfade28fbdae7d69840468160f9daadb.setIcon(icon_589a701e296537a0de0ffcf40f5952b0);
+        
+    
+        var popup_dde9374dba7032e01e9527e91d252e02 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7e3244ef0637763cabe04a5fc38ee780 = $(`<div id="html_7e3244ef0637763cabe04a5fc38ee780" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7539<br>                <strong>Centro:</strong> CEIP MIGUEL ARTAZOS TAMÉ UTEBO (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7102419, -0.9993348000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_dde9374dba7032e01e9527e91d252e02.setContent(html_7e3244ef0637763cabe04a5fc38ee780);
+            
+        
+
+        marker_cfade28fbdae7d69840468160f9daadb.bindPopup(popup_dde9374dba7032e01e9527e91d252e02)
+        ;
+
+        
+    
+    
+            var marker_54778607884aa60143b35b4aa03d2a2c = L.marker(
+                [41.7050747, -0.9950401000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_c462bd7953d4c5361cfc905a322f8a7c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_54778607884aa60143b35b4aa03d2a2c.setIcon(icon_c462bd7953d4c5361cfc905a322f8a7c);
+        
+    
+        var popup_e3957be4c291c0d05e1f8bd634c9ecc2 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_76a2ba83de9d15579cbf6246abc1faa1 = $(`<div id="html_76a2ba83de9d15579cbf6246abc1faa1" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7750<br>                <strong>Centro:</strong> CEIP OCTAVUS UTEBO (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.7050747, -0.9950401000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e3957be4c291c0d05e1f8bd634c9ecc2.setContent(html_76a2ba83de9d15579cbf6246abc1faa1);
+            
+        
+
+        marker_54778607884aa60143b35b4aa03d2a2c.bindPopup(popup_e3957be4c291c0d05e1f8bd634c9ecc2)
+        ;
+
+        
+    
+    
+            var marker_ea389000dc0739db6e06a2bad7fe7ec8 = L.marker(
+                [41.6546331, -0.9113183],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Comisi\u00f3n Servicio docente (reserva titular)", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_80335773c06ee95fbfc25cc6c9b44c49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ea389000dc0739db6e06a2bad7fe7ec8.setIcon(icon_80335773c06ee95fbfc25cc6c9b44c49);
+        
+    
+        var popup_0e14907cbdc30645a20ed927aefaf3ae = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7a6286ebe0cd14b3ac76930b48d3d699 = $(`<div id="html_7a6286ebe0cd14b3ac76930b48d3d699" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8260<br>                <strong>Centro:</strong> CEIP ANA MAYAYO ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Curso Completo - Obligación - Obligatoria<br>                <strong>Causa:</strong> Comisión Servicio docente (reserva titular)<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6546331, -0.9113183)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0e14907cbdc30645a20ed927aefaf3ae.setContent(html_7a6286ebe0cd14b3ac76930b48d3d699);
+            
+        
+
+        marker_ea389000dc0739db6e06a2bad7fe7ec8.bindPopup(popup_0e14907cbdc30645a20ed927aefaf3ae)
+        ;
+
+        
+    
+    
+            var marker_b0d9e9d6d65e11ddbe021113889e77a7 = L.marker(
+                [41.65551780000001, -0.8993674],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_e313c14263bd9f7cb0858f5a805c8876 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b0d9e9d6d65e11ddbe021113889e77a7.setIcon(icon_e313c14263bd9f7cb0858f5a805c8876);
+        
+    
+        var popup_4b09c537527f0adaabcd01039f9e972b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0522019176f5dd88201ac836409c36f3 = $(`<div id="html_0522019176f5dd88201ac836409c36f3" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7864<br>                <strong>Centro:</strong> CEIP ALJAFERÍA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.65551780000001, -0.8993674)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_4b09c537527f0adaabcd01039f9e972b.setContent(html_0522019176f5dd88201ac836409c36f3);
+            
+        
+
+        marker_b0d9e9d6d65e11ddbe021113889e77a7.bindPopup(popup_4b09c537527f0adaabcd01039f9e972b)
+        ;
+
+        
+    
+    
+            var marker_dfbfd7d81de97c18dbb6ad8448d1e098 = L.marker(
+                [41.65551780000001, -0.8993674],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_33108aeb4ccabf31f4053bb3adb0d70d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_dfbfd7d81de97c18dbb6ad8448d1e098.setIcon(icon_33108aeb4ccabf31f4053bb3adb0d70d);
+        
+    
+        var popup_013544714c4f6a8808e83a8c04589dd9 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_db583d669e7c9787e4bb2287688f17f8 = $(`<div id="html_db583d669e7c9787e4bb2287688f17f8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7866<br>                <strong>Centro:</strong> CEIP ALJAFERÍA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.65551780000001, -0.8993674)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_013544714c4f6a8808e83a8c04589dd9.setContent(html_db583d669e7c9787e4bb2287688f17f8);
+            
+        
+
+        marker_dfbfd7d81de97c18dbb6ad8448d1e098.bindPopup(popup_013544714c4f6a8808e83a8c04589dd9)
+        ;
+
+        
+    
+    
+            var marker_8a70f53ed199e5d66f61072b675c5639 = L.marker(
+                [41.64791899999999, -0.9038632000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_0ca0b7396dc36a7dae2dcde31ab87fae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8a70f53ed199e5d66f61072b675c5639.setIcon(icon_0ca0b7396dc36a7dae2dcde31ab87fae);
+        
+    
+        var popup_5b6049b09a6d0800def11d96681ebab4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d00ff8bddd49b0bfe335d2ccac4e5ab9 = $(`<div id="html_d00ff8bddd49b0bfe335d2ccac4e5ab9" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7610<br>                <strong>Centro:</strong> CEIP ANDRÉS MANJÓN ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.64791899999999, -0.9038632000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_5b6049b09a6d0800def11d96681ebab4.setContent(html_d00ff8bddd49b0bfe335d2ccac4e5ab9);
+            
+        
+
+        marker_8a70f53ed199e5d66f61072b675c5639.bindPopup(popup_5b6049b09a6d0800def11d96681ebab4)
+        ;
+
+        
+    
+    
+            var marker_a10f0378d5527d21eba735b03a5bdd76 = L.marker(
+                [41.6385533, -0.8939028],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_955ad44c3a9915fcfe6535aad110f699 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a10f0378d5527d21eba735b03a5bdd76.setIcon(icon_955ad44c3a9915fcfe6535aad110f699);
+        
+    
+        var popup_1e033cecd78fc6c75543fd8cdbdb028f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_0aa47e32205a6095d09490707dd08ce2 = $(`<div id="html_0aa47e32205a6095d09490707dd08ce2" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7953<br>                <strong>Centro:</strong> CEIP BASILIO PARAÍSO ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6385533, -0.8939028)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_1e033cecd78fc6c75543fd8cdbdb028f.setContent(html_0aa47e32205a6095d09490707dd08ce2);
+            
+        
+
+        marker_a10f0378d5527d21eba735b03a5bdd76.bindPopup(popup_1e033cecd78fc6c75543fd8cdbdb028f)
+        ;
+
+        
+    
+    
+            var marker_99d61ab76abf0ddbb386decf311b1771 = L.marker(
+                [41.6482843, -0.9150567],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_44ffa43ec8ddef004116605b23178ab0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_99d61ab76abf0ddbb386decf311b1771.setIcon(icon_44ffa43ec8ddef004116605b23178ab0);
+        
+    
+        var popup_dedabdb9e55ac20138c7375432670e69 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_91b7014c53a930316f355984449f0527 = $(`<div id="html_91b7014c53a930316f355984449f0527" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7543<br>                <strong>Centro:</strong> CEIP CIUDAD DE ZARAGOZA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6482843, -0.9150567)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_dedabdb9e55ac20138c7375432670e69.setContent(html_91b7014c53a930316f355984449f0527);
+            
+        
+
+        marker_99d61ab76abf0ddbb386decf311b1771.bindPopup(popup_dedabdb9e55ac20138c7375432670e69)
+        ;
+
+        
+    
+    
+            var marker_f4f0a8afdc947afa50357799931304d8 = L.marker(
+                [41.6377016, -0.9054711],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_7ebe92711ab92d2bd6333354f0c34f4a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f4f0a8afdc947afa50357799931304d8.setIcon(icon_7ebe92711ab92d2bd6333354f0c34f4a);
+        
+    
+        var popup_cf50fccaf7d75e17a8136dcc383369da = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_26cebfbf1aaec13350b68a870167ac07 = $(`<div id="html_26cebfbf1aaec13350b68a870167ac07" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7499<br>                <strong>Centro:</strong> CEIP DOCTOR AZÚA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6377016, -0.9054711)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_cf50fccaf7d75e17a8136dcc383369da.setContent(html_26cebfbf1aaec13350b68a870167ac07);
+            
+        
+
+        marker_f4f0a8afdc947afa50357799931304d8.bindPopup(popup_cf50fccaf7d75e17a8136dcc383369da)
+        ;
+
+        
+    
+    
+            var marker_b8a8ff92580289fc7ba00c4fcc4be009 = L.marker(
+                [41.6511165, -0.9274462],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_cdd1118ef555729bfcfe588fbcfe3ff3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b8a8ff92580289fc7ba00c4fcc4be009.setIcon(icon_cdd1118ef555729bfcfe588fbcfe3ff3);
+        
+    
+        var popup_c957313efddbcfe8c5db63620185ad93 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_63ecbd3d7dc8fef0f6f255f863930191 = $(`<div id="html_63ecbd3d7dc8fef0f6f255f863930191" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7529<br>                <strong>Centro:</strong> CEIP FERNANDO EL CATÓLICO ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6511165, -0.9274462)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c957313efddbcfe8c5db63620185ad93.setContent(html_63ecbd3d7dc8fef0f6f255f863930191);
+            
+        
+
+        marker_b8a8ff92580289fc7ba00c4fcc4be009.bindPopup(popup_c957313efddbcfe8c5db63620185ad93)
+        ;
+
+        
+    
+    
+            var marker_3bad689ee0195f74a3e96ff96957b4fc = L.marker(
+                [41.6415051, -0.9296397],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_c0376b8b78a0d7c253997ffb8da3931b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3bad689ee0195f74a3e96ff96957b4fc.setIcon(icon_c0376b8b78a0d7c253997ffb8da3931b);
+        
+    
+        var popup_a43f906d667e6caec703046d22acb7b2 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d26065a735e824602643442837e635ea = $(`<div id="html_d26065a735e824602643442837e635ea" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8039<br>                <strong>Centro:</strong> CEIP JERÓNIMO BLANCAS Y TOMÁS ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6415051, -0.9296397)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_a43f906d667e6caec703046d22acb7b2.setContent(html_d26065a735e824602643442837e635ea);
+            
+        
+
+        marker_3bad689ee0195f74a3e96ff96957b4fc.bindPopup(popup_a43f906d667e6caec703046d22acb7b2)
+        ;
+
+        
+    
+    
+            var marker_a9e16d32c7727054eb46e3e10317bfc5 = L.marker(
+                [41.6570666, -0.9167921000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_32e6e7e0a0cc591f04625543cd41eed1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a9e16d32c7727054eb46e3e10317bfc5.setIcon(icon_32e6e7e0a0cc591f04625543cd41eed1);
+        
+    
+        var popup_e9df28488ee5fd19f0a048fda30b2612 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_163dfcc277ba84d6577a9d0243c2e731 = $(`<div id="html_163dfcc277ba84d6577a9d0243c2e731" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7763<br>                <strong>Centro:</strong> CEIP JOSÉ CAMÓN AZNAR ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6570666, -0.9167921000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e9df28488ee5fd19f0a048fda30b2612.setContent(html_163dfcc277ba84d6577a9d0243c2e731);
+            
+        
+
+        marker_a9e16d32c7727054eb46e3e10317bfc5.bindPopup(popup_e9df28488ee5fd19f0a048fda30b2612)
+        ;
+
+        
+    
+    
+            var marker_800d6fe6b6357f239b38371822a73cf0 = L.marker(
+                [41.6471208, -0.9060925999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Excedencia cuidado hijos", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_39e04f575af4b58ffdb81aade5e7b6a4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_800d6fe6b6357f239b38371822a73cf0.setIcon(icon_39e04f575af4b58ffdb81aade5e7b6a4);
+        
+    
+        var popup_c74561873bf5a3677d11c4407068874b = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bda50ced843e08d64cc1534f0e770adc = $(`<div id="html_bda50ced843e08d64cc1534f0e770adc" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8058<br>                <strong>Centro:</strong> CEIP JOSÉ MARÍA MIR ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Excedencia cuidado hijos<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6471208, -0.9060925999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c74561873bf5a3677d11c4407068874b.setContent(html_bda50ced843e08d64cc1534f0e770adc);
+            
+        
+
+        marker_800d6fe6b6357f239b38371822a73cf0.bindPopup(popup_c74561873bf5a3677d11c4407068874b)
+        ;
+
+        
+    
+    
+            var marker_9149233ad4891e2c812e717137f6b95d = L.marker(
+                [41.6591618, -0.9437348],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_f879741e0371089a28a891ee94903f23 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9149233ad4891e2c812e717137f6b95d.setIcon(icon_f879741e0371089a28a891ee94903f23);
+        
+    
+        var popup_0ef303b2ce57d82717ea940a6c1cb54e = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_72c2f2ca65800a37286e7c8c43ef9212 = $(`<div id="html_72c2f2ca65800a37286e7c8c43ef9212" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8271<br>                <strong>Centro:</strong> CEIP JULIÁN NIETO TAPIA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6591618, -0.9437348)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_0ef303b2ce57d82717ea940a6c1cb54e.setContent(html_72c2f2ca65800a37286e7c8c43ef9212);
+            
+        
+
+        marker_9149233ad4891e2c812e717137f6b95d.bindPopup(popup_0ef303b2ce57d82717ea940a6c1cb54e)
+        ;
+
+        
+    
+    
+            var marker_2abb0a74995934f0e084680a63307b2c = L.marker(
+                [41.6626739, -0.9025359],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Nupcialidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_a22d854221b219d7272fa018ca547997 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2abb0a74995934f0e084680a63307b2c.setIcon(icon_a22d854221b219d7272fa018ca547997);
+        
+    
+        var popup_511d944b16d96ec7f05c5b1ab49bd007 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_d463769b74977f60dff0bdfe17a48756 = $(`<div id="html_d463769b74977f60dff0bdfe17a48756" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7653<br>                <strong>Centro:</strong> CEIP LA ALMOZARA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Nupcialidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6626739, -0.9025359)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_511d944b16d96ec7f05c5b1ab49bd007.setContent(html_d463769b74977f60dff0bdfe17a48756);
+            
+        
+
+        marker_2abb0a74995934f0e084680a63307b2c.bindPopup(popup_511d944b16d96ec7f05c5b1ab49bd007)
+        ;
+
+        
+    
+    
+            var marker_8dd46b1f70db6f2077046bc28e07527d = L.marker(
+                [41.6321672, -0.8874234999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_93ab44ef10ad122a24b5560288c8ed90 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8dd46b1f70db6f2077046bc28e07527d.setIcon(icon_93ab44ef10ad122a24b5560288c8ed90);
+        
+    
+        var popup_655533c905c25a4417b6662722048aeb = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_815115a4ee3a504d5334ad01bf2ea408 = $(`<div id="html_815115a4ee3a504d5334ad01bf2ea408" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7816<br>                <strong>Centro:</strong> CEIP LUIS VIVES ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6321672, -0.8874234999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_655533c905c25a4417b6662722048aeb.setContent(html_815115a4ee3a504d5334ad01bf2ea408);
+            
+        
+
+        marker_8dd46b1f70db6f2077046bc28e07527d.bindPopup(popup_655533c905c25a4417b6662722048aeb)
+        ;
+
+        
+    
+    
+            var marker_44b6d39c5713b4feba82cf8ca0d3acb4 = L.marker(
+                [41.6419215, -0.8774527999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5891f12ab5bc38d36a57783e0674d6c8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_44b6d39c5713b4feba82cf8ca0d3acb4.setIcon(icon_5891f12ab5bc38d36a57783e0674d6c8);
+        
+    
+        var popup_d445f606967e79b518df3b32673f2ac4 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_4d40ee2649cc1f510c9745819b1c0092 = $(`<div id="html_4d40ee2649cc1f510c9745819b1c0092" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8008<br>                <strong>Centro:</strong> CEIP MIRAFLORES ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6419215, -0.8774527999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_d445f606967e79b518df3b32673f2ac4.setContent(html_4d40ee2649cc1f510c9745819b1c0092);
+            
+        
+
+        marker_44b6d39c5713b4feba82cf8ca0d3acb4.bindPopup(popup_d445f606967e79b518df3b32673f2ac4)
+        ;
+
+        
+    
+    
+            var marker_55765265a8527c20b0f695a33f242a41 = L.marker(
+                [41.652453, -0.9237762999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_0f64b58a449b94873dc052096d9dd1df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_55765265a8527c20b0f695a33f242a41.setIcon(icon_0f64b58a449b94873dc052096d9dd1df);
+        
+    
+        var popup_c22d54680dcd54b1b9102a2b5395d8da = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_a97a2283185b74cef1a3cf4a4dc319fd = $(`<div id="html_a97a2283185b74cef1a3cf4a4dc319fd" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7794<br>                <strong>Centro:</strong> CEIP RAMIRO SOLÁNS ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.652453, -0.9237762999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c22d54680dcd54b1b9102a2b5395d8da.setContent(html_a97a2283185b74cef1a3cf4a4dc319fd);
+            
+        
+
+        marker_55765265a8527c20b0f695a33f242a41.bindPopup(popup_c22d54680dcd54b1b9102a2b5395d8da)
+        ;
+
+        
+    
+    
+            var marker_7293c8f04fb4fcdf443c472ad3d96188 = L.marker(
+                [41.6576008, -0.8853325999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_bebaa129ef8697c40f12457745407754 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7293c8f04fb4fcdf443c472ad3d96188.setIcon(icon_bebaa129ef8697c40f12457745407754);
+        
+    
+        var popup_60def3ba92ce267c662f59cc72d7179f = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9ad794bdee175600c3c19ac27d7cd9b0 = $(`<div id="html_9ad794bdee175600c3c19ac27d7cd9b0" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 8289<br>                <strong>Centro:</strong> CEIP SANTO DOMINGO ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6576008, -0.8853325999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_60def3ba92ce267c662f59cc72d7179f.setContent(html_9ad794bdee175600c3c19ac27d7cd9b0);
+            
+        
+
+        marker_7293c8f04fb4fcdf443c472ad3d96188.bindPopup(popup_60def3ba92ce267c662f59cc72d7179f)
+        ;
+
+        
+    
+    
+            var marker_9b1fd50e4cf9314519f95d383692fbec = L.marker(
+                [41.644202, -0.8615425999999999],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5a4c94cbada0bf5d21817f55edbbf581 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9b1fd50e4cf9314519f95d383692fbec.setIcon(icon_5a4c94cbada0bf5d21817f55edbbf581);
+        
+    
+        var popup_ce4fd738f804b36199c9cd13a215aae9 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_1570874f5bcb111bdbacf25132863274 = $(`<div id="html_1570874f5bcb111bdbacf25132863274" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7762<br>                <strong>Centro:</strong> CEIP TORRE RAMONA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.644202, -0.8615425999999999)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_ce4fd738f804b36199c9cd13a215aae9.setContent(html_1570874f5bcb111bdbacf25132863274);
+            
+        
+
+        marker_9b1fd50e4cf9314519f95d383692fbec.bindPopup(popup_ce4fd738f804b36199c9cd13a215aae9)
+        ;
+
+        
+    
+    
+            var marker_c63666c2512b54d3712f71490fe42da8 = L.marker(
+                [41.65706489999999, -0.9241172000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Enfermedad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_fd39470bb88d3b20dcb3446bfbf801d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c63666c2512b54d3712f71490fe42da8.setIcon(icon_fd39470bb88d3b20dcb3446bfbf801d3);
+        
+    
+        var popup_2e83956f685179107c35c60271b205da = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_274ef8eb179bcacb02abb210e197ffc8 = $(`<div id="html_274ef8eb179bcacb02abb210e197ffc8" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7756<br>                <strong>Centro:</strong> CPI JULIO VERNE ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Enfermedad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.65706489999999, -0.9241172000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_2e83956f685179107c35c60271b205da.setContent(html_274ef8eb179bcacb02abb210e197ffc8);
+            
+        
+
+        marker_c63666c2512b54d3712f71490fe42da8.bindPopup(popup_2e83956f685179107c35c60271b205da)
+        ;
+
+        
+    
+    
+            var marker_9e8e1d2341b83a8cb5825daf14ff0108 = L.marker(
+                [41.6180143, -0.8746837],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Otras Sustituciones", "Parcial"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_92a1c83e506d63f429244fb7d8e28f29 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9e8e1d2341b83a8cb5825daf14ff0108.setIcon(icon_92a1c83e506d63f429244fb7d8e28f29);
+        
+    
+        var popup_ee619ceb5a009433691f7b3dca4d43c5 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_ea3cbb3324d4b1a6d84646856c3c5986 = $(`<div id="html_ea3cbb3324d4b1a6d84646856c3c5986" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7546<br>                <strong>Centro:</strong> CPI PARQUE VENECIA ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Parcial<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6180143, -0.8746837)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_ee619ceb5a009433691f7b3dca4d43c5.setContent(html_ea3cbb3324d4b1a6d84646856c3c5986);
+            
+        
+
+        marker_9e8e1d2341b83a8cb5825daf14ff0108.bindPopup(popup_ee619ceb5a009433691f7b3dca4d43c5)
+        ;
+
+        
+    
+    
+            var marker_4cad667f267f15fd88064572a58a0427 = L.marker(
+                [41.6357584, -0.9398352000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_5382cfdddec947ba1eb59aeb816bcf97 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4cad667f267f15fd88064572a58a0427.setIcon(icon_5382cfdddec947ba1eb59aeb816bcf97);
+        
+    
+        var popup_c322b70c5075e7e06af34ea2d1979561 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_9abfb4562c9904193c360fe5f307d58d = $(`<div id="html_9abfb4562c9904193c360fe5f307d58d" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7626<br>                <strong>Centro:</strong> CPI ROSALES DEL CANAL ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Voluntaria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> Si<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6357584, -0.9398352000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_c322b70c5075e7e06af34ea2d1979561.setContent(html_9abfb4562c9904193c360fe5f307d58d);
+            
+        
+
+        marker_4cad667f267f15fd88064572a58a0427.bindPopup(popup_c322b70c5075e7e06af34ea2d1979561)
+        ;
+
+        
+    
+    
+            var marker_1cf7d4bd969223c14356fa43cd627e2f = L.marker(
+                [41.6252819, -0.9289932000000001],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_ec90a4ab66efa031311b0fc0a8bc2598 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1cf7d4bd969223c14356fa43cd627e2f.setIcon(icon_ec90a4ab66efa031311b0fc0a8bc2598);
+        
+    
+        var popup_e1dba30bc1f8799d484d32f44f218fc6 = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_63c0fd4570e4e8b2ea78abf69f5ce144 = $(`<div id="html_63c0fd4570e4e8b2ea78abf69f5ce144" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7528<br>                <strong>Centro:</strong> CPI SOLEDAD PUÉRTOLAS ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6252819, -0.9289932000000001)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_e1dba30bc1f8799d484d32f44f218fc6.setContent(html_63c0fd4570e4e8b2ea78abf69f5ce144);
+            
+        
+
+        marker_1cf7d4bd969223c14356fa43cd627e2f.bindPopup(popup_e1dba30bc1f8799d484d32f44f218fc6)
+        ;
+
+        
+    
+    
+            var marker_d2eb17b9bbbaaba305f2353e6c5ee608 = L.marker(
+                [41.6267092, -0.9340685999999998],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Maternidad", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_d70bf711067837540d17c5c85aa87be2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d2eb17b9bbbaaba305f2353e6c5ee608.setIcon(icon_d70bf711067837540d17c5c85aa87be2);
+        
+    
+        var popup_d595daab9b4c897c997cb3239dc71c2d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_7d2527d242c79bb36c7b71e005b2e7ca = $(`<div id="html_7d2527d242c79bb36c7b71e005b2e7ca" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7513<br>                <strong>Centro:</strong> CPI VALDESPARTERA III ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Maternidad<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6267092, -0.9340685999999998)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_d595daab9b4c897c997cb3239dc71c2d.setContent(html_7d2527d242c79bb36c7b71e005b2e7ca);
+            
+        
+
+        marker_d2eb17b9bbbaaba305f2353e6c5ee608.bindPopup(popup_d595daab9b4c897c997cb3239dc71c2d)
+        ;
+
+        
+    
+    
+            var marker_daa87b9fe6d159bfee825f2136a096e0 = L.marker(
+                [41.6267092, -0.9340685999999998],
+                {"tags": ["FI - LENGUA EXTRANJERA: INGL\u00c9S", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Otras Sustituciones", "Completa"]}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var icon_825ad4237c63164228c49ea6908faf82 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "glyphicon-map-marker", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_daa87b9fe6d159bfee825f2136a096e0.setIcon(icon_825ad4237c63164228c49ea6908faf82);
+        
+    
+        var popup_7eda86b802c32def7dd9c40834c5a75d = L.popup({"maxWidth": 12000});
+
+        
+            
+                var html_bffb418dc83e37e39b2c9b1fd0090480 = $(`<div id="html_bffb418dc83e37e39b2c9b1fd0090480" style="width: 100.0%; height: 100.0%;">                <strong>Vacante:</strong> 7682<br>                <strong>Centro:</strong> CPI VALDESPARTERA III ZARAGOZA (ZARAGOZA)<br>                <strong>Especialidad:</strong> FI - LENGUA EXTRANJERA: INGLÉS<br>                <strong>Jornada:</strong> Completa<br>                <strong>Duración:</strong> Sustitución - Obligación - Obligatoria<br>                <strong>Causa:</strong> Otras Sustituciones<br>                <strong>Itinerante:</strong> No tiene<br>                <strong>Perfilada:</strong> No tiene<br>                <strong>Perfiles:</strong> No tiene<br>                <strong>Coordenadas:</strong> (41.6267092, -0.9340685999999998)<br>                <strong>Requisitos:</strong> No tiene                </div>`)[0];
+                popup_7eda86b802c32def7dd9c40834c5a75d.setContent(html_bffb418dc83e37e39b2c9b1fd0090480);
+            
+        
+
+        marker_daa87b9fe6d159bfee825f2136a096e0.bindPopup(popup_7eda86b802c32def7dd9c40834c5a75d)
+        ;
+
+        
+    
+    
+            var tag_filter_button_7eb9431ca5318219cdd661888e4e02fe = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Parcial", "Completa"], "filterOnEveryClick": true, "icon": "glyphicon-time", "openPopupOnHover": false}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var tag_filter_button_18fdce1897d1247adeab60c60b999d89 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["FI - LENGUA EXTRANJERA: INGL\u00c9S"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var tag_filter_button_093dbf080e2d1cce920ba5603bd351d6 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Curso Completo\n- Obligaci\u00f3n -\nVoluntaria", "Curso Completo\n- Obligaci\u00f3n -\nObligatoria", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nObligatoria", "Sustituci\u00f3n\n- Obligaci\u00f3n -\nVoluntaria"], "filterOnEveryClick": true, "icon": "glyphicon-calendar", "openPopupOnHover": false}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+    
+            var tag_filter_button_c1fd1063ceb6499658b645710f40fad7 = L.control.tagFilterButton(
+                {"buttonStyle": "primary", "clearText": "Limpiar filtros", "data": ["Enfermedad", "Excedencia cuidado hijos", "De Cupo Sin titular", "De Plantilla Definitiva Sin Titular", "Otras Sustituciones", "Dispensa Sindical (reserva titular)", "Comisi\u00f3n Servicio docente (reserva titular)", "Otras Vacantes (reserva titular)", "Nupcialidad", "Excedencia cuidado familiares (reserva titular)", "Maternidad", "Reducci\u00f3n de Jornada"], "filterOnEveryClick": true, "icon": "glyphicon-user", "openPopupOnHover": false}
+            ).addTo(map_dd6142a921820b939ccc54f487e69882);
+        
+</script>
+</html>
